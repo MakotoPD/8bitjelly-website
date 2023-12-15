@@ -8,11 +8,11 @@
                 {{ $t('page.home.tech.desc1') }} <br/>
                 {{ $t('page.home.tech.desc2') }}
             </p>
-            <button 
+            <!-- <button 
                 class="bg-[#D891D9]/60 text-white px-5 py-2 rounded-lg border border-[#FD84FF] shadow-[#D891D9]/50 shadow-xl hover:scale-105 duration-150"
             >
                 {{ $t('page.home.tech.btn') }}
-            </button>
+            </button> -->
         </div>
 
         <div style="z-index: -1;" class="blocks absolute left-0 top-0 w-full h-full">
