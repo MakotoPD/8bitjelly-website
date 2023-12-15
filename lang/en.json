@@ -1,0 +1,37 @@
+{
+	"menu.tech": "Technology",
+	"menu.blog": "Priorities",
+	"menu.about": "About us",
+	"menu.projects": "Awarded projects",
+	"menu.policy": "Privacy policy",
+
+	"page": {
+		"home": {
+			"sub": "Hello Jelly",
+			"title": "Our hobby is game development",
+			"desc": "We are a small but close-knit team who love making games and want to share this with others. The most important thing for us is support, having fun together and being creative while learning new knowledge and skills.",
+			"btn": "Read more",
+			"projects": {
+				"sub": "Projects",
+				"title": "Our projects",
+				"desc": "Here are the projects we have created and you can already test on your own!"
+			},
+			"tech": {
+				"title": "Technology",
+				"desc1": "The technologies we use allow us ",
+				"desc2": "to exploit the full potential of the platforms",
+				"btn": "Check our github"
+			},
+			"about": {
+				"sub": "About us",
+				"title": "About our group",
+				"desc": "Our entire team is made up of individuals with a passion for gaming! Each of ours is different but we create something amazing together!"
+			}
+		},
+		"error": {
+			"title": "Oops! Something went wrong",
+			"desc": "Octopuses are already working valiantly to rectify this mistake, in the meantime check out what we're up to!",
+			"btn": "Back to home"
+		}
+	}
+}
