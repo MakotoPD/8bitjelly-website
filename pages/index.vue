@@ -32,7 +32,7 @@
             <div class="flex flex-wrap justify-center gap-x-4 gap-y-6 mb-24">
                 <div v-for="osoba in osoby.data" class="p-4 rounded-xl bg-primary/20 max-w-sm relative">
                     <div class="mb-4 h-40">
-                        <nuxt-img loading="lazy" class="h-40 rounded-lg" :src="'http://141.145.197.144:1337'+osoba.attributes.Avatar.data.attributes.url " :alt="osoba.attributes.Nick"/>
+                        <img loading="lazy" class="h-40 rounded-lg" :src="'http://141.145.197.144:1337'+osoba.attributes.Avatar.data.attributes.url " :alt="osoba.attributes.Nick"/>
                     </div>
                     <div class="mb-8">
                         <div><span class="text-darker font-semibold text-xl">{{ osoba.attributes.Nick}}</span> | <span class="text-primary">{{ osoba.attributes.Stanowisko }}</span></div>
