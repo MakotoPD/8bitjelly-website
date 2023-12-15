@@ -25,7 +25,7 @@
 
             <hr class="border-darker border-1 mx-8 my-4">
         
-            <p class="text-darker text-center mb-4">© 2023 8BitJelly. MIT</p>
+            <p class="text-darker text-center mb-4">© 2024 8BitJelly. MIT</p>
 
             <div class="flex justify-center gap-x-4">
                 <NuxtLink to="#">
