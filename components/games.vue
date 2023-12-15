@@ -50,6 +50,6 @@
 
 <script setup lang="ts">
 const { data, pending, error } = await useFetch(
-    `http://141.145.197.144:1337/api/games?populate=gameLogo&locale=en`
+    `https://panel.makoto.com.pl/api/games?populate=gameLogo&locale=en`
 )
 </script>

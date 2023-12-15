@@ -79,7 +79,7 @@ const lang = ref(locale.value)
 
 const fetchPeopleByLang = async () => {
     const { data, pending } = await useFetch(
-        `http://141.145.197.144:1337/api/osobies?populate=Avatar&locale=${lang.value}`
+        `https://panel.makoto.com.pl/api/osobies?populate=Avatar&locale=${lang.value}`
     )
     osoby.value = data.value
 }
