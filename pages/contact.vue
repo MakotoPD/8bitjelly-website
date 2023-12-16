@@ -8,19 +8,19 @@
         <Menu />
 
         <div class="grid lg:grid-cols-2 py-24">
-            <div class="flex justify-center">
+            <div class="flex justify-center px-8">
                 <Blottie
                     ref="blottie"
                     :loop="true"
                     renderer="svg"
-                    path="/jelly-contact.json"
+                    path="/8bitjelly-contact.json"
                     :autoplay="true"
-                    class="hidden lg:block lg:w-full"
+                    class="octopus hidden lg:block lg:w-full"
                 />
                 <!-- <img src="/svg/jelly-contact.svg" alt="Contact octopus" class="octopus hidden lg:block lg:w-4/6"> -->
             </div>
             <div class="px-12 flex justify-center lg:justify-start">
-                <div class="bg-white/50 p-12 rounded-3xl max-w-2xl">
+                <div class="bg-white/50 p-12 rounded-3xl max-w-2xl h-fit">
                     <h1 class="text-4xl font-semibold">{{ $t('page.contact.title') }}</h1>
                     <div class="pt-6">
                         <form id="messform" @submit.prevent="submitForm">
@@ -125,7 +125,7 @@ onMounted(() => {
         $anime({ 
             targets: '.octopus',
             keyframes: [
-                {translateY: 50},
+                {translateY: 20},
                 {translateY: 0}
             ],
             loop: true,
