@@ -19,8 +19,9 @@
 			"tech": {
 				"title": "Technology",
 				"desc1": "The technologies we use allow us ",
-				"desc2": "to exploit the full potential of the platforms",
-				"btn": "Check our github"
+				"desc2": "to exploit the full potential of the platforms.",
+				"desc3": "Would you like to act with us? Or perhaps get in touch?",
+				"btn": "Contact us"
 			},
 			"about": {
 				"sub": "About us",
@@ -32,6 +33,24 @@
 			"title": "Oops! Something went wrong",
 			"desc": "Octopuses are already working valiantly to rectify this mistake, in the meantime check out what we're up to!",
 			"btn": "Back to home"
+		},
+		"contact": {
+			"title": "Contact",
+			"Form": {
+				"why": "Select the reason by which you are contacting us",
+				"fName": "First name",
+				"lName": "Last name",
+				"phone": "Phone number",
+				"email": "Email address",
+				"title": "Select the subject",
+				"subject": "Subject",
+				"mess": "Your message",
+				"btn": "Send",
+				"optional": "optional",
+				"verifiedError": "Please confirm that you are not a robot",
+				"senderror": "Unfortunately the message failed to send, please try again in a few moments....",
+				"sendsucces": "Thank you, the message has been sent :)"
+			}
 		}
 	}
 }

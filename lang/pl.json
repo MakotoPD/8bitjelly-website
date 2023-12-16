@@ -19,8 +19,9 @@
 			"tech": {
 				"title": "Technologie",
 				"desc1": "Technologie które używamy pozwalają na wykorzystanie",
-				"desc2": "pełni potencjału platform",
-				"btn": "Sprawdź nasz github"
+				"desc2": "pełni potencjału platform. ",
+				"desc3": "Chcesz z nami działać? A może skontaktować?",
+				"btn": "Napisz do nas"
 			},
 			"about": {
 				"sub": "O nas",
@@ -32,6 +33,24 @@
 			"title": "Ups! Coś poszło nie tak",
 			"desc": "Ośmiorniczki już dzielnie pracują nad naprawieniem tego błędu, tymczasem sprawdź, co u nas słychać!",
 			"btn": "Strona główna"
+		},
+		"contact": {
+			"title": "Kontakt",
+			"Form": {
+				"why": "Wybierz powód, dla którego się z nami kontaktujesz",
+				"fName": "Imię",
+				"lName": "Nazwisko",
+				"phone": "Numer telefonu",
+				"email": "Adres E-mail",
+				"title": "Wybierz temat",
+				"subject": "Tytuł",
+				"mess": "Wiadomość",
+				"btn": "Wyslij",
+				"optional": "opcjonalne",
+				"verifiedError": "Proszę potwierdzić że nie jesteś robotem",
+				"senderror": "Niestety nie udało się wysłać wiadomości, spróbuj ponownie za kilka chwil...",
+				"sendsucces": "Dziekujemy, wiadomość została wysłana :)"
+			}
 		}
 	}
 }

@@ -57,6 +57,12 @@
                         <a v-if="osoba.attributes.TikTok" :href="osoba.attributes.TikTok" target="_blank">
                             <img class="h-6" src="/icons/tiktok.svg" alt="">
                         </a>
+                        <a v-if="osoba.attributes.Facebook" :href="osoba.attributes.Facebook" target="_blank">
+                            <img class="h-6" src="/icons/facebook.svg" alt="">
+                        </a>
+                        <a v-if="osoba.attributes.Itchio" :href="osoba.attributes.Itchio" target="_blank">
+                            <img class="h-6" src="/icons/itchio.svg" alt="">
+                        </a>
                     </div>
                    
                 </div>

@@ -15,6 +15,7 @@
 * [Gtag](https://nuxt.com/modules/gtag/)
 * [Google Fonts](https://google-fonts.nuxtjs.org/)
 * [NuxtImage](https://image.nuxt.com/)
+* [Blottie (LottieFiles)](https://github.com/Applelo/blottie)
 
 ### Develop
 
