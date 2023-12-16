@@ -19,7 +19,7 @@
                 />
             </div>
             <div class="lg:px-12 flex justify-center lg:justify-start">
-                <div class="bg-white/50 p-12 rounded-3xl max-w-2xl h-fit">
+                <div class="bg-white/50 py-12 px-4 lg:p-12 rounded-3xl max-w-2xl h-fit">
                     <h1 class="text-4xl font-semibold">{{ $t('page.contact.title') }}</h1>
                     <div class="pt-6">
                         <form id="messform" @submit.prevent="submitForm">
