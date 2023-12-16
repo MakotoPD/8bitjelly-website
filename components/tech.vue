@@ -10,7 +10,7 @@
                 {{ $t('page.home.tech.desc3') }}
             </p>
             <NuxtLink 
-                to="/contact"
+                :to="localePath('/contact')"
                 class="bg-[#D891D9]/60 text-white px-5 py-2 rounded-lg border border-[#FD84FF] shadow-[#D891D9]/50 shadow-xl hover:scale-105 duration-150"
             >
                 {{ $t('page.home.tech.btn') }}
@@ -70,6 +70,7 @@
 
 <script setup lang="ts">
 const { $anime } = useNuxtApp()
+const localePath = useLocalePath()
 
 onMounted(() => {
     $anime({ 

@@ -17,9 +17,8 @@
                     :autoplay="true"
                     class="octopus hidden lg:block lg:w-full"
                 />
-                <!-- <img src="/svg/jelly-contact.svg" alt="Contact octopus" class="octopus hidden lg:block lg:w-4/6"> -->
             </div>
-            <div class="px-12 flex justify-center lg:justify-start">
+            <div class="lg:px-12 flex justify-center lg:justify-start">
                 <div class="bg-white/50 p-12 rounded-3xl max-w-2xl h-fit">
                     <h1 class="text-4xl font-semibold">{{ $t('page.contact.title') }}</h1>
                     <div class="pt-6">
