@@ -86,7 +86,7 @@
                             <Alert v-if="senderror" :text="$t('page.contact.Form.senderror')" type="error" />
                             <Alert v-if="verifiedError" :text="$t('page.contact.Form.verifiedError')" type="error" />
 
-                            
+
                         </form>
                     </div>
 
@@ -111,7 +111,6 @@ useHead({
 	]
 })
 
-import type { AnimationItem } from 'lottie-web'
 import { Blottie, type BlottieExpose } from 'blottie'
 
 const blottie = ref<BlottieExpose>()
