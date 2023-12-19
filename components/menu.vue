@@ -10,7 +10,7 @@
             <NuxtLink :to="localePath('/#projects')" class="text-lg font-semibold">{{ $t('menu.projects') }}</NuxtLink>
         </div>
 
-        <header id="mobileNav" class="ease-in-out duration-300 z-[100] grid grid-cols-5 bg-primary/40 backdrop-blur-md fixed bottom-2 left-1/2 -translate-x-1/2 py-2 px-4 md:hidden w-11/12 border border-primary rounded-2xl">
+        <header id="mobileNav" class="ease-in-out duration-300 z-[100] grid grid-cols-5 gap-1 bg-primary/40 backdrop-blur-md fixed bottom-2 left-1/2 -translate-x-1/2 py-2 px-4 md:hidden w-11/12 border border-primary rounded-2xl">
 			<NuxtLink :to="localePath('/#tech')" class="mobileMenu py-1 flex flex-col -space-y-0.5 items-center">
 				<i class='text-black/90 bx-sm bx bx-code-alt'></i>
 				<p class="text-black/80 text-xs text-center">{{ $t('menu.tech') }}</p>
