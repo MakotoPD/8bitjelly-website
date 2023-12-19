@@ -133,7 +133,7 @@ onMounted(() => {
     }
 })
 
-const WEB3FORMS_ACCESS_KEY = "b7b212cb-59d3-431a-8149-4ea3b7fa42cd"
+const WEB3FORMS_ACCESS_KEY = "71eefaed-9403-4ff8-a29c-7f03ffd1e6ff"
 
 const fname = ref('')
 const lname = ref('')
@@ -183,7 +183,7 @@ function onError(err: string) {
 
 const submitForm = async () => {
 
-	if (email.value != "makotopd@icloud.com") {
+	if (email.value != "contact@8bitjelly.com") {
 
 
 		if(verified.value == false){
