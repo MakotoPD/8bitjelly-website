@@ -37,6 +37,10 @@ export default defineNuxtConfig({
 					href: '/favicon.ico'
 				},
 				{
+					rel: 'stylesheet',
+					href: 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+				},
+				{
 					rel: 'alternate',
 					hreflang: 'pl',
 					href: 'https://www.8bitjelly.com/pl'

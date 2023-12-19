@@ -7,7 +7,7 @@
 
         <Menu />
 
-        <div class="grid lg:grid-cols-2 py-24">
+        <div class="grid lg:grid-cols-2 pb-24 md:py-24">
             <div class="flex justify-center px-8">
                 <Blottie
                     ref="blottie"
@@ -80,7 +80,7 @@
                                 <label for="remember" class="ml-2 text-sm font-medium text-gray-900">I agree with the <a href="#" class="hover:underline  text-pink-500">terms and conditions</a>.</label>
                             </div>
                         
-                            <button type="submit" class="bg-[#D891D9]/60 text-white px-5 py-2 rounded-lg border border-[#FD84FF] shadow-[#D891D9]/50 shadow-xl hover:scale-105 duration-150"> <p>{{ $t('page.contact.Form.btn') }}</p> <i class='mt-px bx bx-xs bx-send'></i></button>
+                            <button type="submit" class="bg-[#D891D9]/60 text-white px-5 py-2 rounded-lg border border-[#FD84FF] shadow-[#D891D9]/50 shadow-xl hover:scale-105 duration-150 flex gap-x-2 items-center"> <p>{{ $t('page.contact.Form.btn') }}</p> <i class='mt-px bx bx-xs bx-send'></i></button>
 
                             <Alert v-if="sendsucces" :text=" $t('page.contact.Form.sendsucces')" type="success" />
                             <Alert v-if="senderror" :text="$t('page.contact.Form.senderror')" type="error" />
