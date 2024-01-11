@@ -72,17 +72,14 @@
                     <p class="text-darker text-center mb-4">© 2023 8BitJelly. MIT</p>
                 </div>
                 <div class="flex gap-x-3">
-                    <NuxtLink to="#">
+                    <NuxtLink target="_blank" to="https://www.instagram.com/8bitjelly/">
                         <nuxt-img src="/svg/instagram-logo-duotone.svg" />
                     </NuxtLink>
-                    <NuxtLink to="#">
+                    <NuxtLink target="_blank" to="https://www.facebook.com/8bitjelly">
                         <nuxt-img src="/svg/facebook-logo-duotone.svg" />
                     </NuxtLink>
-                    <NuxtLink to="#">
+                    <NuxtLink target="_blank" to="https://github.com/8bitjelly">
                         <nuxt-img src="/svg/github-logo-duotone.svg" />
-                    </NuxtLink>
-                    <NuxtLink to="#">
-                        <nuxt-img src="/svg/discord-logo-duotone.svg" />
                     </NuxtLink>
                 </div>
             </div>
