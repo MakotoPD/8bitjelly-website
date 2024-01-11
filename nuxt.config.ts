@@ -103,6 +103,10 @@ export default defineNuxtConfig({
 		}
 	},
 
+	gtag: {
+		id: 'G-PCLLKCCJSV'
+	},
+
 	googleFonts: {
 		display: 'swap',
 		families: {
