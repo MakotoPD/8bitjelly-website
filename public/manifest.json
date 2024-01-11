@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "8BitJelly",
+    "version": "1.0.0",
+    "description": "Our hobby is game development. We are a small but close-knit team who love making games and want to share this with others. The most important thing for us is support, having fun together and being creative while learning new knowledge and skills.",
+    "icons": {
+      "48": "maskable_icons/icon-48.png",
+      "72": "maskable_icons/icon-72.png"
+    }
+  }

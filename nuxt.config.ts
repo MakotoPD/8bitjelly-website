@@ -29,6 +29,10 @@ export default defineNuxtConfig({
 				{
 					name: 'og:image',
 					content: '/og.png'
+				},
+				{
+					name: 'theme-color',
+					content: '#feeff5'
 				}
 			],
 			link: [{
