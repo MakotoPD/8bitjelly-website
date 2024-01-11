@@ -74,6 +74,7 @@ export default defineNuxtConfig({
 		'@hypernym/nuxt-anime',		//animations  https://github.com/hypernym-studio/nuxt-anime  https://animejs.com/documentation/
 		'nuxt-swiper',				//swiper		https://nuxt.com/modules/swiper
 		'@nuxtjs/robots',			//robots
+		'@nuxtjs/sitemap'			//sitemap	
 	],
 
 	tailwindcss: {
@@ -112,7 +113,15 @@ export default defineNuxtConfig({
 
 	robots: {
 		UserAgent: '*',
-		Disallow: ''
+		Disallow: '',
+		Sitemap: 'https://8bitjelly.com/sitemap.xml'
+	},
+
+
+	site: {
+		sources: [
+			'/api/__sitemap__/urls',
+		  ]
 	},
 
 
