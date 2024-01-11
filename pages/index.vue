@@ -10,7 +10,7 @@
             <div class="mt-24 md:mt-0">
                 <div class="px-4 flex flex-col gap-y-2 mb-8">
                     <p class="z-10 text-primary font-bold">- {{ $t('page.home.projects.sub') }}</p>
-                    <h1 class="z-10 text-darker text-4xl font-bold leading-tight">{{ $t('page.home.projects.title') }}</h1>
+                    <h3 class="z-10 text-darker text-4xl font-bold leading-tight">{{ $t('page.home.projects.title') }}</h3>
                     <p class="z-10 text-darker/80 text-md font-light">{{ $t('page.home.projects.desc') }}</p>
                 </div>
 
@@ -25,7 +25,7 @@
         <div id="about" class="mt-24 container mx-auto">
             <div class="px-4 flex flex-col gap-y-2 mb-8">
                 <p class="z-10 text-primary font-bold">- {{ $t('page.home.about.sub') }}</p>
-                <h1 class="z-10 text-darker text-4xl font-bold leading-tight">{{ $t('page.home.about.title') }}</h1>
+                <h3 class="z-10 text-darker text-4xl font-bold leading-tight">{{ $t('page.home.about.title') }}</h3>
                 <p class="z-10 text-darker/80 text-md font-light max-w-xl">{{ $t('page.home.about.desc') }}</p>
             </div>
 

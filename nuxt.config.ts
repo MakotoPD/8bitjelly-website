@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
 		head: {
-			title: '8BitJelly - 😊',
+			title: '8BitJelly - Hobby group game development',
 			htmlAttrs: {
 				lang: 'en',
 			},
