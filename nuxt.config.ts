@@ -73,6 +73,7 @@ export default defineNuxtConfig({
 		'@nuxt/image',				//images
 		'@hypernym/nuxt-anime',		//animations  https://github.com/hypernym-studio/nuxt-anime  https://animejs.com/documentation/
 		'nuxt-swiper',				//swiper		https://nuxt.com/modules/swiper
+		'@nuxtjs/robots',			//robots
 	],
 
 	tailwindcss: {
@@ -106,6 +107,12 @@ export default defineNuxtConfig({
 		families: {
 			Poppins: [100, 200, 300, 400, 500, 600, 700, 800, 900],
 		}
+	},
+
+
+	robots: {
+		UserAgent: '*',
+		Disallow: ''
 	},
 
 
