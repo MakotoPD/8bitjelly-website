@@ -42,7 +42,9 @@ export default defineNuxtConfig({
 				},
 				{
 					rel: 'stylesheet',
-					href: 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+					href: 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css',
+					media: 'print', 
+					onload: 'this.media="all"'
 				},
 				{
 					rel: 'alternate',
@@ -56,11 +58,15 @@ export default defineNuxtConfig({
 				},
 				{
 					rel: 'stylesheet',
-					href: 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css'
+					href: 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+					media: 'print', 
+					onload: 'this.media="all"'
 				}
 			],
 			script: [{
-				src: "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+				src: "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js",
+				async: true,
+				defer: true,
 			}]
 		},
 
