@@ -63,6 +63,9 @@
                         <a v-if="osoba.attributes.Itchio" :href="osoba.attributes.Itchio" target="_blank">
                             <img class="h-6" src="/icons/itchio.svg" alt="">
                         </a>
+                        <a v-if="osoba.attributes.Artstation" :href="osoba.attributes.Artstation" target="_blank">
+                            <img class="h-6" src="/icons/artstation.svg" alt="">
+                        </a>
                     </div>
                    
                 </div>
