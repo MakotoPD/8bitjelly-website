@@ -2,7 +2,7 @@
     <div class="h-14 py-4 ">
         <div class="hidden md:flex justify-center items-center gap-x-4">
             <NuxtLink :to="localePath('/#tech')" class="text-lg font-semibold">{{ $t('menu.tech') }}</NuxtLink>
-            <NuxtLink :to="localePath('/#')" class="text-lg font-semibold">{{ $t('menu.blog') }}</NuxtLink>
+            <!-- <NuxtLink :to="localePath('/#')" class="text-lg font-semibold">{{ $t('menu.blog') }}</NuxtLink> -->
             <NuxtLink :to="localePath('/')" >
                 <nuxt-img class="h-12" loading="lazy" src="/logo_black.svg" alt="8BitJelly"/>
             </NuxtLink>
@@ -17,7 +17,7 @@
 			</NuxtLink>
 			<NuxtLink :to="localePath('/#')" class="mobileMenu py-1 flex flex-col -space-y-0.5 items-center">
 				<i class='text-black/90 bx-sm bx bxs-pyramid'></i>
-				<p class="text-black/80 text-xs text-center">{{ $t('menu.blog') }}</p>
+				<!-- <p class="text-black/80 text-xs text-center">{{ $t('menu.blog') }}</p> -->
 			</NuxtLink>
 			<NuxtLink :to="localePath('/')" class="mobileMenu py-1 flex flex-col -space-y-0.5 items-center">
 				<i class='text-black/90 bx-sm bx bxs-home-alt-2'></i>
