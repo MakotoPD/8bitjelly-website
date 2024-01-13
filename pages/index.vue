@@ -5,7 +5,7 @@
 
         <div id="projects" class="md:grid grid-cols-2 mt-24 container mx-auto">
             <div class="flex justify-center items-cente">
-                <img loading="lazy" class="whale w-full h-full" src="/whale.png" />
+                <img loading="lazy" class="whale w-full h-full object-contain" src="/whale.png" />
             </div>
             <div class="mt-24 md:mt-0">
                 <div class="px-4 flex flex-col gap-y-2 mb-8">
