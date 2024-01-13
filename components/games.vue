@@ -43,11 +43,10 @@ import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
 let fetchGameByLang = async () => {
   const { data, pending, error } = await useFetch(
-    `https://panel.makoto.com.pl/api/games?populate=gameLogo&locale=${lang.value}`
+    `https://panel.8bitjelly.com/api/games?populate=gameLogo&locale=${lang.value}`
   )
 
   games.value = data.value
-  console.log(error)
 }
 
 
