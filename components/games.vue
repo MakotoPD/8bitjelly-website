@@ -6,7 +6,13 @@
             <p class="text-darker">Lorem ipsum dolor</p>
         </div>
     </div>
-    <carousel :items-to-show="2.5" :wrap-around="true" :transition="500" class="rounded-lg">
+    <carousel 
+      v-bind="settings"
+      :wrap-around="true" 
+      :transition="500" 
+      :breakpoints="breakpoints"
+      :autoplay="2000"
+    >
         <slide v-for="(game, idx) in data.data" :key="idx" >
             <div class="carousel__item h-[30rem] hover:shadow-lg hover:shadow-primary/40 duration-100 bg-primary/20 border border-white backdrop-blur-xl rounded-xl p-4">
                 <img loading="lazy" class="h-64 w-64 object-cover rounded-xl mb-2" :src="'https://panel.makoto.com.pl'+game.attributes.gameLogo.data.attributes.url " :alt="game.attributes.name"/>
@@ -35,6 +41,33 @@ import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 const { data, pending, error } = await useFetch(
     `https://panel.makoto.com.pl/api/games?populate=gameLogo&locale=en`
 )
+
+const settings = {
+  itemsToShow: 1,
+}
+
+const breakpoints= {
+
+  500: {
+    itemsToShow: 1.5,
+  },
+  550: {
+    itemsToShow: 2,
+  },
+  768: {
+    itemsToShow: 1.25,
+  },
+  1024: {
+    itemsToShow: 1.7,
+  },
+  1280: {
+    itemsToShow: 2,
+  },
+  1536: {
+    itemsToShow: 2.5,
+  },
+}
+
 </script>
 
 <style>
