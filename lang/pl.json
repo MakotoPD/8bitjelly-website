@@ -14,7 +14,8 @@
 			"projects": {
 				"sub": "Projekty",
 				"title": "Nasze projekty",
-				"desc": "Oto projekty które stworzyliśmy i już możesz testować na własną rękę!"
+				"desc": "Oto projekty które stworzyliśmy i już możesz testować na własną rękę!",
+				"btn": "Czytaj dalej"
 			},
 			"tech": {
 				"title": "Technologie",

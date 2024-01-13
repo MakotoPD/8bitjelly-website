@@ -14,7 +14,8 @@
 			"projects": {
 				"sub": "Projects",
 				"title": "Our projects",
-				"desc": "Here are the projects we have created and you can already test on your own!"
+				"desc": "Here are the projects we have created and you can already test on your own!",
+				"btn": "Read more"
 			},
 			"tech": {
 				"title": "Technology",

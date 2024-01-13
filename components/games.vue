@@ -18,7 +18,7 @@
                 <img loading="lazy" class="h-64 w-64 object-cover rounded-xl mb-2" :src="'https://panel.makoto.com.pl'+game.attributes.gameLogo.data.attributes.url " :alt="game.attributes.name"/>
                 <p class="text-xl text-primary font-bold mb-4">{{ game.attributes.name }}</p>
                 <p class="text-darker text-sm w-64">{{ game.attributes.shortDescription }}</p>
-                <a :href="game.attributes.link" target="_blank" class="absolute bottom-2 left-1/2 -translate-x-1/2 px-2 py-1 text-white bg-primary rounded-md">Read more</a>
+                <a :href="game.attributes.link" target="_blank" class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary/60 text-white px-5 py-1 rounded-lg border border-primary">{{ $t('page.home.projects.btn') }}</a>
             </div>
         </slide>
 
