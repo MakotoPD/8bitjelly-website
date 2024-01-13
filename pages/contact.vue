@@ -133,7 +133,7 @@ onMounted(() => {
     }
 })
 
-const WEB3FORMS_ACCESS_KEY = "71eefaed-9403-4ff8-a29c-7f03ffd1e6ff"
+const WEB3FORMS_ACCESS_KEY = "d503b806-9e80-42a2-a4e0-5ca88f9da25e"
 
 const fname = ref('')
 const lname = ref('')
