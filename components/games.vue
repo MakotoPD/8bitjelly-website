@@ -6,50 +6,85 @@
             <p class="text-darker">Lorem ipsum dolor</p>
         </div>
     </div>
-    <Swiper
-        v-else
-        :height="300"
-        :modules="[
-            SwiperAutoplay,
-            SwiperNavigation,
-            SwiperScrollbar,
-        ]"
-        :scrollbar="true"
-        :breakpoints="{
-            500: {
-                slidesPerView: 2,
-                spaceBetween: 5
-            },
-            800: {
-                slidesPerView: 2,
-                spaceBetween: 20
-            },
-            1400:{
-                slidesPerView: 3,
-                spaceBetween: 10
-            }
-
-        }"
-        :loop="true"
-        :autoplay="{
-            delay: 1000
-        }"
-    >
-        <SwiperSlide v-for="(game, idx) in data.data" :key="idx" >
-            <a :href="game.attributes.link" target="_blank" class="swiper-slide !h-[28rem] hover:shadow-xl hover:shadow-primary/40 duration-100 bg-primary/20 border border-white backdrop-blur-xl rounded-xl p-4">
+    <carousel :items-to-show="2.5" :wrap-around="true" :transition="500" class="rounded-lg">
+        <slide v-for="(game, idx) in data.data" :key="idx" >
+            <div class="carousel__item h-[30rem] hover:shadow-lg hover:shadow-primary/40 duration-100 bg-primary/20 border border-white backdrop-blur-xl rounded-xl p-4">
                 <img loading="lazy" class="h-64 w-64 object-cover rounded-xl mb-2" :src="'https://panel.makoto.com.pl'+game.attributes.gameLogo.data.attributes.url " :alt="game.attributes.name"/>
                 <p class="text-xl text-primary font-bold mb-4">{{ game.attributes.name }}</p>
                 <p class="text-darker text-sm w-64">{{ game.attributes.shortDescription }}</p>
-            </a>
-        </SwiperSlide>
-    </Swiper>
+                <a :href="game.attributes.link" target="_blank" class="absolute bottom-2 left-1/2 -translate-x-1/2 px-2 py-1 text-white bg-primary rounded-md">Read more</a>
+            </div>
+        </slide>
+
+        <template #addons>
+            <navigation />
+            <pagination />
+        </template>
+    </carousel>
     
     
 </template>
 
 
 <script setup lang="ts">
+
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+
+
 const { data, pending, error } = await useFetch(
     `https://panel.makoto.com.pl/api/games?populate=gameLogo&locale=en`
 )
 </script>
+
+<style>
+.carousel{
+    overflow: hidden;
+}
+
+.carousel__icon{
+    fill: white
+}
+
+.carousel__slide {
+  padding: 5px;
+}
+
+.carousel__viewport {
+  perspective: 2000px;
+  overflow: visible;
+}
+
+.carousel__track {
+  transform-style: preserve-3d;
+}
+
+.carousel__slide--sliding {
+  transition: 0.5s;
+}
+
+.carousel__slide {
+  opacity: 0.9;
+  transform: scale(0.9);
+}
+
+.carousel__slide--active ~ .carousel__slide {
+  transform: scale(0.9);
+}
+
+.carousel__slide--prev {
+  opacity: 1;
+  transform: scale(0.95);
+}
+
+.carousel__slide--next {
+  opacity: 1;
+  transform: scale(0.95);
+}
+
+.carousel__slide--active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+</style>
