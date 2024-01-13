@@ -202,7 +202,7 @@ const submitForm = async () => {
 			body: JSON.stringify({
 				access_key: WEB3FORMS_ACCESS_KEY,
                 from_name: 'Formularz kontaktowy - 8BitJelly',
-                whymess: whymess.value,
+                reason: whymess.value,
 				subject: subject.value,
 				name: fname.value + " " + lname.value,
 				email: email.value,
