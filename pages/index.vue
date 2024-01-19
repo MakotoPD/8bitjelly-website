@@ -70,7 +70,7 @@
                     <li>
                         <input v-model="filter" type="radio" id="filters-web" name="filters" value="Web" class="hidden peer">
                         <label for="filters-web" class="inline-flex items-center justify-between w-full py-1 px-4 text-white bg-primary/20 border border-pink-600 rounded-lg cursor-pointer peer-checked:bg-primary peer-checked:text-white duration-150">                           
-                                <div class="w-full">Web designer</div>
+                                <div class="w-full">Web developer</div>
                         </label>
                     </li>
 
