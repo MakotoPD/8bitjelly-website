@@ -34,43 +34,43 @@
                     <li>
                         <input v-model="filter" type="radio" id="filters-all" name="filters" value="All" class="hidden peer" checked>
                         <label for="filters-all" class="inline-flex items-center justify-between w-full py-1 px-4 text-white bg-primary/20 border border-pink-600 rounded-lg cursor-pointer peer-checked:bg-primary peer-checked:text-white duration-150">                           
-                                <div class="w-full">All</div>
+                                <div class="w-full">{{ $t('filter.all') }}</div>
                         </label>
                     </li>
                     <li>
                         <input v-model="filter" type="radio" id="filters-2d" name="filters" value="2D" class="hidden peer">
                         <label for="filters-2d" class="inline-flex items-center justify-between w-full py-1 px-4 text-white bg-primary/20 border border-pink-600 rounded-lg cursor-pointer peer-checked:bg-primary peer-checked:text-white duration-150">                           
-                                <div class="w-full">2D Artist</div>
+                                <div class="w-full">{{ $t('filter.2d') }}</div>
                         </label>
                     </li>
                     <li>
                         <input v-model="filter" type="radio" id="filters-3d" name="filters" value="3D" class="hidden peer">
                         <label for="filters-3d" class="inline-flex items-center justify-between w-full py-1 px-4 text-white bg-primary/20 border border-pink-600 rounded-lg cursor-pointer peer-checked:bg-primary peer-checked:text-white duration-150">                           
-                                <div class="w-full">3D Artist</div>
+                                <div class="w-full">{{ $t('filter.3d') }}</div>
                         </label>
                     </li>
                     <li>
                         <input v-model="filter" type="radio" id="filters-concept" name="filters" value="Concept" class="hidden peer">
                         <label for="filters-concept" class="inline-flex items-center justify-between w-full py-1 px-4 text-white bg-primary/20 border border-pink-600 rounded-lg cursor-pointer peer-checked:bg-primary peer-checked:text-white duration-150">                           
-                                <div class="w-full">Concept Artist</div>
+                                <div class="w-full">{{ $t('filter.concept') }}</div>
                         </label>
                     </li>
                     <li>
                         <input v-model="filter" type="radio" id="filters-programmer" name="filters" value="Programmer" class="hidden peer">
                         <label for="filters-programmer" class="inline-flex items-center justify-between w-full py-1 px-4 text-white bg-primary/20 border border-pink-600 rounded-lg cursor-pointer peer-checked:bg-primary peer-checked:text-white duration-150">                           
-                                <div class="w-full">Programmer</div>
+                                <div class="w-full">{{ $t('filter.program') }}</div>
                         </label>
                     </li>
                     <li>
                         <input v-model="filter" type="radio" id="filters-game" name="filters" value="Gamedesign" class="hidden peer">
                         <label for="filters-game" class="inline-flex items-center justify-between w-full py-1 px-4 text-white bg-primary/20 border border-pink-600 rounded-lg cursor-pointer peer-checked:bg-primary peer-checked:text-white duration-150">                           
-                                <div class="w-full">Game designer</div>
+                                <div class="w-full">{{ $t('filter.game') }}</div>
                         </label>
                     </li>
                     <li>
                         <input v-model="filter" type="radio" id="filters-web" name="filters" value="Web" class="hidden peer">
                         <label for="filters-web" class="inline-flex items-center justify-between w-full py-1 px-4 text-white bg-primary/20 border border-pink-600 rounded-lg cursor-pointer peer-checked:bg-primary peer-checked:text-white duration-150">                           
-                                <div class="w-full">Web developer</div>
+                                <div class="w-full">{{ $t('filter.web') }}</div>
                         </label>
                     </li>
 

@@ -5,6 +5,16 @@
 	"menu.projects": "Awarded projects",
 	"menu.policy": "Privacy policy",
 
+	"filter": {
+		"all": "All",
+		"2d": "2D Artists",
+		"3d": "3D Artists",
+		"concept": "Concept artists",
+		"program": "Programmers",
+		"game": "Game designers",
+		"web": "Web developers"
+	},
+
 	"page": {
 		"home": {
 			"sub": "Hello Jelly",
