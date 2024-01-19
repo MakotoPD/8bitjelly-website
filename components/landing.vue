@@ -100,8 +100,6 @@ const { $anime } = useNuxtApp()
 
 onMounted(() => {
 
-    console.log(window.innerWidth)
-
     if (window.innerWidth < 768) {
         $anime({ 
             targets: '.while',
