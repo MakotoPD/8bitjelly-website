@@ -15,7 +15,7 @@
 						<button @click="handleClearError" class="z-[50] bg-primary py-2 px-4 rounded-xl text-white mt-4 duration-300 hover:bg-primary/80 hover:shadow-primary/50 hover:shadow-xl">{{ $t('page.error.btn') }}</button>
 					</div>
 					<div class="pl-24">
-						<img src="/svg/jelly_404_opt.svg" class="h-[36rem]" alt="">
+						<img src="/svg/jelly_404_opt.svg" class="h-[36rem] object-contain" alt="">
 					</div>
 				</div>
 			</div>
