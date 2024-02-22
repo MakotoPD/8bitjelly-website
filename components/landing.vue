@@ -20,7 +20,7 @@
                         <NuxtLink @click="closeMenu()" to="#projects" class="text-xl font-semibold">{{ $t('menu.projects') }}</NuxtLink>
                         <NuxtLink @click="closeMenu()" to="#tech" class="text-xl font-semibold">{{ $t('menu.tech') }}</NuxtLink>
                         <NuxtLink @click="closeMenu()" to="#about" class="text-xl font-semibold">{{ $t('menu.about') }}</NuxtLink>
-                        <!-- <NuxtLink @click="closeMenu()" to="#" class="text-xl font-semibold">{{ $t('menu.blog') }}</NuxtLink> -->
+                        <NuxtLink @click="closeMenu()" to="#priorities" class="text-xl font-semibold">{{ $t('menu.priorities') }}</NuxtLink>
                         
                         <div class="absolute w-full left-0 bottom-4">
                             <hr class="mx-4" />
@@ -41,12 +41,12 @@
 
 
                     <div class="hidden md:flex gap-x-12">
-                        <NuxtLink to="#projects" class="text-white text-xl z-50">{{ $t('menu.projects') }}</NuxtLink>
-                        <NuxtLink to="#tech" class="text-white text-xl z-50">{{ $t('menu.tech') }}</NuxtLink>
-                        <NuxtLink to="#about" class="text-white text-xl z-50">{{ $t('menu.about') }}</NuxtLink>
-                        <!-- <NuxtLink to="#" class="text-white text-xl z-50">{{ $t('menu.blog') }}</NuxtLink> -->
+                        <NuxtLink to="#projects" class="text-white text-xl z-50 whitespace-nowrap">{{ $t('menu.projects') }}</NuxtLink>
+                        <NuxtLink to="#tech" class="text-white text-xl z-50 whitespace-nowrap">{{ $t('menu.tech') }}</NuxtLink>
+                        <NuxtLink to="#about" class="text-white text-xl z-50 whitespace-nowrap">{{ $t('menu.about') }}</NuxtLink>
+                        <NuxtLink to="#priorities" class="text-white text-xl z-50 whitespace-nowrap">{{ $t('menu.priorities') }}</NuxtLink>
                         <div class="hidden xl:flex justify-center items-center space-x-2 ">
-                            <label for="lang" class="text-white/90 text-sm">Select language:</label>
+                            <label for="lang" class="text-white/90 text-sm">Lang:</label>
                             <select id="lang" v-model="locale" class="bg-primary/80 rounded-lg text-white px-2 z-50">
                                 <option class="" value="en">EN</option>
                                 <option class="" value="pl">PL</option>

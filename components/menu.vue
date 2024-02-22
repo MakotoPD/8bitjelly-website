@@ -15,9 +15,9 @@
 				<i class='text-black/90 bx-sm bx bx-code-alt'></i>
 				<p class="text-black/80 text-xs text-center">{{ $t('menu.tech') }}</p>
 			</NuxtLink>
-			<NuxtLink :to="localePath('/#')" class="mobileMenu py-1 flex flex-col -space-y-0.5 items-center">
+			<NuxtLink :to="localePath('/#priorities')" class="mobileMenu py-1 flex flex-col -space-y-0.5 items-center">
 				<i class='text-black/90 bx-sm bx bxs-pyramid'></i>
-				<!-- <p class="text-black/80 text-xs text-center">{{ $t('menu.blog') }}</p> -->
+				<p class="text-black/80 text-xs text-center">{{ $t('menu.priorities') }}</p>
 			</NuxtLink>
 			<NuxtLink :to="localePath('/')" class="mobileMenu py-1 flex flex-col -space-y-0.5 items-center">
 				<i class='text-black/90 bx-sm bx bxs-home-alt-2'></i>

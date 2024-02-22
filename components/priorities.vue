@@ -21,6 +21,10 @@
                         <p v-for="tag in game.attributes.Tags" class="text-white text-sm bg-darkest/50 border-2 border-primary/60 rounded-full px-2 py-0.5">{{tag}}</p>
                     </div>
 
+                    <div class="-z-10 absolute right-2 bottom-2">
+                        <img src="/svg/arrow-down-right.svg" alt="">
+                    </div>
+
                     <div  class="-z-40 absolute top-0 right-0 h-full w-full bg-black/60"></div>
                 </div>
 
@@ -58,11 +62,11 @@ watch(locale, (newLocale, oldLocale) => {
 })
 
 
-let showgame = (e) => {
+let showgame = (e: any) => {
     e.toElement.childNodes[0].classList.remove('opacity-0')
 }
 
-let hidegame = (e) => {
+let hidegame = (e: any) => {
     e.fromElement.childNodes[0].classList.add('opacity-0')
 }
 
