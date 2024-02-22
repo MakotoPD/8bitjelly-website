@@ -65,6 +65,10 @@ export default defineNuxtConfig({
 				{
 					rel: 'canonical',
 					href: 'https://8bitjelly.com'
+				},
+				{
+					rel: 'manifest',
+					href: "manifest.json"
 				}
 			],
 
