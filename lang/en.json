@@ -1,6 +1,6 @@
 {
 	"menu.tech": "Technology",
-	"menu.blog": "Priorities",
+	"menu.priorities": "Priorities",
 	"menu.about": "About us",
 	"menu.projects": "Awarded projects",
 	"menu.policy": "Privacy policy",
@@ -21,6 +21,11 @@
 			"title": "Our hobby is game development",
 			"desc": "We are a small but close-knit team who love making games and want to share this with others. The most important thing for us is support, having fun together and being creative while learning new knowledge and skills.",
 			"btn": "Read more",
+			"priorities": {
+				"sub": "Priorities",
+				"title": "Future projects",
+				"desc": "Here are the projects we are currently working on!"
+			},
 			"projects": {
 				"sub": "Projects",
 				"title": "Our projects",

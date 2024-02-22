@@ -17,7 +17,7 @@
     "@nuxtjs/i18n": "^8.0.0-rc.4",
     "@nuxtjs/sitemap": "^5.0.1",
     "blottie": "^1.1.4",
-    "nuxt": "^3.7.3",
+    "nuxt": "^3.10.2",
     "nuxt-gtag": "^1.1.1"
   },
   "dependencies": {

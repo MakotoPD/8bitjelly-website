@@ -1,6 +1,6 @@
 {
 	"menu.tech": "Technologie",
-	"menu.blog": "Priorytety",
+	"menu.priorities": "Priorytety",
 	"menu.about": "O nas",
 	"menu.projects": "Wyróżnione projekty",
 	"menu.policy": "Polityka prywatności",
@@ -21,6 +21,11 @@
 			"title": "Nasze hobby to tworzenie gier",
 			"desc": "Jesteśmy małym, ale zgranym zespołem, który uwielbia tworzyć gry i chce dzielić się tym z innymi. Najważniejsze dla nas jest wsparcie, wspólna zabawa i kreatywność podczas zdobywania nowej wiedzy i umiejętności.",
 			"btn": "Czytaj dalej",
+			"priorities": {
+				"sub": "Priorytety",
+				"title": "Przyszłe projekty",
+				"desc": "Oto projekty nad którymi aktualnie pracujemy!"
+			},
 			"projects": {
 				"sub": "Projekty",
 				"title": "Nasze projekty",

@@ -3,6 +3,8 @@
 
         <Landing />
 
+        <Priorities/>
+
         <div id="projects" class="md:grid grid-cols-2 mt-24 container mx-auto">
             <div class="flex justify-center items-cente">
                 <img loading="lazy" class="whale w-full h-full object-contain" src="/whale.png" />
@@ -141,8 +143,6 @@ const fetchPeopleByLang = async () => {
         `https://panel.8bitjelly.com/api/osobies?populate=Avatar&locale=${lang.value}&filters[filtry][$contains]=${filter.value}`
     )
     osoby.value = data.value
-
-    console.log(data.value)
 }
 
 

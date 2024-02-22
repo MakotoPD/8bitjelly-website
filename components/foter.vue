@@ -29,16 +29,13 @@
 
             <div class="flex justify-center gap-x-4">
                 <NuxtLink target="_blank" to="https://www.instagram.com/8bitjelly/">
-                    <nuxt-img src="/svg/instagram-logo-duotone.svg" />
+                    <nuxt-img class="h-6" src="/svg/instagram-logo-duotone.svg" />
                 </NuxtLink>
                 <NuxtLink target="_blank" to="https://www.facebook.com/8bitjelly">
-                    <nuxt-img src="/svg/facebook-logo-duotone.svg" />
+                    <nuxt-img class="h-6" src="/svg/facebook-logo-duotone.svg" />
                 </NuxtLink>
                 <NuxtLink target="_blank" to="https://github.com/8bitjelly">
-                    <nuxt-img src="/svg/github-logo-duotone.svg" />
-                </NuxtLink>
-                <NuxtLink to="#">
-                    <nuxt-img src="/svg/discord-logo-duotone.svg" />
+                    <nuxt-img class="h-6" src="/svg/github-logo-duotone.svg" />
                 </NuxtLink>
             </div>
         </div>
@@ -73,13 +70,13 @@
                 </div>
                 <div class="flex gap-x-3">
                     <NuxtLink target="_blank" to="https://www.instagram.com/8bitjelly/">
-                        <nuxt-img src="/svg/instagram-logo-duotone.svg" />
+                        <nuxt-img class="h-6" src="/svg/instagram-logo-duotone.svg" />
                     </NuxtLink>
                     <NuxtLink target="_blank" to="https://www.facebook.com/8bitjelly">
-                        <nuxt-img src="/svg/facebook-logo-duotone.svg" />
+                        <nuxt-img class="h-6" src="/svg/facebook-logo-duotone.svg" />
                     </NuxtLink>
                     <NuxtLink target="_blank" to="https://github.com/8bitjelly">
-                        <nuxt-img src="/svg/github-logo-duotone.svg" />
+                        <nuxt-img class="h-6" src="/svg/github-logo-duotone.svg" />
                     </NuxtLink>
                 </div>
             </div>

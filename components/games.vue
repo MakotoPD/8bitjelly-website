@@ -1,5 +1,5 @@
 <template>
-    <div v-if="pending">
+    <div v-if="isPending">
         <div>
             <div class="bg-gray-400 w-64 h-64 rounded-xl mb-4 animate-pulse"></div>
             <p class="text-xl text-primary font-bold">Gierka 1</p>
@@ -36,6 +36,7 @@
 const { locale } = useI18n()
 
 const games = ref()
+const isPending = ref(false)
 const lang = ref(locale.value)
 
 import 'vue3-carousel/dist/carousel.css'
@@ -47,6 +48,7 @@ let fetchGameByLang = async () => {
   )
 
   games.value = data.value
+  isPending.value = pending.value
 }
 
 
