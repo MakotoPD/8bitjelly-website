@@ -8,7 +8,7 @@
                 <p class="z-10 text-darker/80 text-md font-light">{{ $t('page.home.priorities.desc') }}</p>
             </div>
         </div>
-        <div class="grid  md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-24 xl:gap-40 2xl:gap-64 mt-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-24 xl:gap-40 2xl:gap-64 px-3 md:px-0 mt-8">
             <div v-for="game in games.data" v-on:mouseenter="showgame($event)" v-on:mouseleave="hidegame($event)" class="w-full h-[33rem] rounded-3xl overflow-hidden relative">
                 <div class="opacity-0 duration-100">
                     <div class="p-4 pt-8">
