@@ -10,39 +10,41 @@
 
 		<div class="container mx-auto md:mt-24  mb-24 md:mb-0 px-8">
 			
-			<h1 class="text-xl font-semibold ">Zasady i Warunki Korzystania z Formularza Kontaktowego:</h1>
+			<h1 class="text-xl font-semibold ">{{ $t('page.terms.sub') }}</h1>
 
 			<p class="py-8">
 
 				<ul class="list-decimal pb-4">
 					<li>
-						Dane osobowe: Wypełniając formularz kontaktowy, użytkownik zgadza się na przetwarzanie swoich danych osobowych w celu udzielenia odpowiedzi na zapytanie lub komunikacji z nami.
+						{{ $t('page.terms.1') }}
 					</li>
 					<li>
-						Użytek zgodny z przeznaczeniem: Formularz kontaktowy służy wyłącznie do przekazywania zapytań, sugestii lub informacji bezpośrednio związanym z naszymi usługami lub ofertą. Nie jest przeznaczony do promocji, spamu ani przekazywania treści niezwiązanych z tematyką strony.
+						{{ $t('page.terms.2') }}
 					</li>
 					<li>
-						Prawidłowe dane: Użytkownik zobowiązuje się do podawania prawdziwych danych kontaktowych w formularzu. Nieprawidłowe informacje mogą uniemożliwić udzielenie odpowiedzi na zapytanie.
+						{{ $t('page.terms.3') }}
 					</li>
 					<li>
-						Ochrona danych osobowych: Zgromadzone dane osobowe są chronione zgodnie z naszą Polityką Prywatności i nie są udostępniane osobom trzecim bez zgody użytkownika.
+						{{ $t('page.terms.4') }}
 					</li>
 					<li>
-						Uprawnienia użytkownika: Użytkownik ma prawo do dostępu do swoich danych osobowych, ich poprawiania, usuwania oraz wycofania zgody na ich przetwarzanie w dowolnym momencie, poprzez kontakt z nami za pośrednictwem formularza lub innych dostępnych metod kontaktu.
+						{{ $t('page.terms.5') }}
 					</li>
 					<li>
-						Ograniczenie odpowiedzialności: Nie ponosimy odpowiedzialności za treści przekazywane przez użytkowników za pomocą formularza kontaktowego. Zastrzegamy sobie prawo do usuwania niezgodnych z zasadami treści oraz do odpowiedniego reagowania na nadużycia.
+						{{ $t('page.terms.6') }}
 					</li>
 					<li>
-						Zmiany w Warunkach: Zastrzegamy sobie prawo do zmiany Zasad i Warunków Korzystania z Formularza Kontaktowego w dowolnym momencie. Zaktualizowane warunki będą obowiązywać od chwili ich opublikowania na naszej stronie internetowej.
+						{{ $t('page.terms.7') }}
 					</li>
 				</ul>
 
-				Korzystając z formularza kontaktowego, użytkownik potwierdza, że zapoznał się z niniejszymi Zasadami i Warunkami oraz akceptuje ich postanowienia.
+				{{ $t('page.terms.end') }}
 
 			</p>
 
 		</div>
 
+
+		<Foter/>
 	</div>
 </template>

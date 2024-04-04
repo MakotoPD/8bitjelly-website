@@ -70,7 +70,17 @@
 			}
 		},
 		"terms": {
-			"title": "Zasady i warunki"
+			"title": "Zasady i warunki",
+
+			"sub": "Zasady i Warunki Korzystania z Formularza Kontaktowego:",
+			"1": "Dane osobowe: Wypełniając formularz kontaktowy, użytkownik zgadza się na przetwarzanie swoich danych osobowych w celu udzielenia odpowiedzi na zapytanie lub komunikacji z nami.",
+			"2": "Użytek zgodny z przeznaczeniem: Formularz kontaktowy służy wyłącznie do przekazywania zapytań, sugestii lub informacji bezpośrednio związanym z naszymi usługami lub ofertą. Nie jest przeznaczony do promocji, spamu ani przekazywania treści niezwiązanych z tematyką strony.",
+			"3": "Prawidłowe dane: Użytkownik zobowiązuje się do podawania prawdziwych danych kontaktowych w formularzu. Nieprawidłowe informacje mogą uniemożliwić udzielenie odpowiedzi na zapytanie.",
+			"4": "Ochrona danych osobowych: Zgromadzone dane osobowe są chronione zgodnie z naszą Polityką Prywatności i nie są udostępniane osobom trzecim bez zgody użytkownika.",
+			"5": "Uprawnienia użytkownika: Użytkownik ma prawo do dostępu do swoich danych osobowych, ich poprawiania, usuwania oraz wycofania zgody na ich przetwarzanie w dowolnym momencie, poprzez kontakt z nami za pośrednictwem formularza lub innych dostępnych metod kontaktu.",
+			"6": "Ograniczenie odpowiedzialności: Nie ponosimy odpowiedzialności za treści przekazywane przez użytkowników za pomocą formularza kontaktowego. Zastrzegamy sobie prawo do usuwania niezgodnych z zasadami treści oraz do odpowiedniego reagowania na nadużycia.",
+			"7": "Zmiany w Warunkach: Zastrzegamy sobie prawo do zmiany Zasad i Warunków Korzystania z Formularza Kontaktowego w dowolnym momencie. Zaktualizowane warunki będą obowiązywać od chwili ich opublikowania na naszej stronie internetowej.",
+			"end": "Korzystając z formularza kontaktowego, użytkownik potwierdza, że zapoznał się z niniejszymi Zasadami i Warunkami oraz akceptuje ich postanowienia."
 		}
 	}
 }

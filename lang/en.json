@@ -70,7 +70,17 @@
 			}
 		},
 		"terms": {
-			"title": "Terms and conditions"
+			"title": "Terms and conditions",
+			
+			"sub": "Terms and Conditions of Use of the Contact Form:",
+			"1": "Personal data: By completing the contact form, you consent to the processing of your personal data for the purpose of responding to your enquiry or communicating with us.",
+			"2": "Intended use: The contact form is used exclusively for the transmission of enquiries, suggestions or information directly related to our services or offerings. It is not intended for promotion, spamming or the transmission of content unrelated to the subject matter of the website.",
+			"3": "Correct data: The user undertakes to provide truthful contact details in the form. Incorrect information may make it impossible to respond to an enquiry.",
+			"4": "Data protection: The personal data collected is protected in accordance with our Privacy Policy and is not shared with third parties without your consent.",
+			"5": "User rights: You have the right to access, correct, delete and withdraw your consent to the processing of your personal data at any time by contacting us via the form or other available contact methods.",
+			"6": "Limitation of liability: We are not responsible for content submitted by users via the contact form. We reserve the right to remove non-compliant content and to respond appropriately to abuse.",
+			"7": "Changes to Terms and Conditions: We reserve the right to change the Terms and Conditions of Use of the Contact Form at any time. The updated terms and conditions will be effective as soon as they are published on our website.",
+			"end": "By using the contact form, the user confirms that he/she has read and accepts these Terms and Conditions."
 		}
 	}
 }
