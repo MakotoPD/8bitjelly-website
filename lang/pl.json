@@ -68,6 +68,9 @@
 				"senderror": "Niestety nie udało się wysłać wiadomości, spróbuj ponownie za kilka chwil...",
 				"sendsucces": "Dziekujemy, wiadomość została wysłana :)"
 			}
+		},
+		"terms": {
+			"title": "Zasady i warunki"
 		}
 	}
 }

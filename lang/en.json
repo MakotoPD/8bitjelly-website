@@ -68,6 +68,9 @@
 				"senderror": "Unfortunately the message failed to send, please try again in a few moments....",
 				"sendsucces": "Thank you, the message has been sent :)"
 			}
+		},
+		"terms": {
+			"title": "Terms and conditions"
 		}
 	}
 }
