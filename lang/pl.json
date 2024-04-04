@@ -1,5 +1,5 @@
 {
-	"menu.tech": "Technologie",
+	"menu.tech": "Dołącz do nas",
 	"menu.priorities": "Priorytety",
 	"menu.about": "O nas",
 	"menu.projects": "Projekty",
@@ -12,7 +12,8 @@
 		"concept": "Artyści koncepcyjni",
 		"program": "Programiści",
 		"game": "Projektanci gier",
-		"web": "Programiści strony"
+		"web": "Programiści strony",
+		"audio": "Audio"
 	},
 
 	"page": {
@@ -33,10 +34,10 @@
 				"btn": "Czytaj dalej"
 			},
 			"tech": {
-				"title": "Technologie",
-				"desc1": "Technologie które używamy pozwalają na wykorzystanie",
-				"desc2": "pełni potencjału platform. ",
-				"desc3": "Chcesz z nami działać? A może skontaktować?",
+				"title": "Dołącz do nas",
+				"desc1": "Dołącz do naszej dynamicznej społeczności, gdzie wspólnie tworzymy",
+				"desc2": "wspólnie projekty i rozwijamy nasze umiejętności.",
+				"desc3": "Znajdź swoje miejsce w naszym zespole i bądź częścią inspirującej drogi do sukcesu!",
 				"btn": "Napisz do nas"
 			},
 			"about": {

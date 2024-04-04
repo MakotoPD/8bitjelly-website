@@ -1,5 +1,5 @@
 {
-	"menu.tech": "Technology",
+	"menu.tech": "Join us",
 	"menu.priorities": "Priorities",
 	"menu.about": "About us",
 	"menu.projects": "Awarded projects",
@@ -12,7 +12,8 @@
 		"concept": "Concept artists",
 		"program": "Programmers",
 		"game": "Game designers",
-		"web": "Web developers"
+		"web": "Web developers",
+		"audio": "Audio"
 	},
 
 	"page": {
@@ -33,10 +34,10 @@
 				"btn": "Read more"
 			},
 			"tech": {
-				"title": "Technology",
-				"desc1": "The technologies we use allow us ",
-				"desc2": "to exploit the full potential of the platforms.",
-				"desc3": "Would you like to act with us? Or perhaps get in touch?",
+				"title": "Join us",
+				"desc1": "Join our dynamic community where we create",
+				"desc2": "projects together and develop our skills.",
+				"desc3": "Find your place in our team and be part of an inspiring path to success!",
 				"btn": "Contact us"
 			},
 			"about": {

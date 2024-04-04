@@ -28,6 +28,14 @@
 
                             <ul class="flex w-full gap-6 flex-wrap">
                                 <li>
+                                    <input v-model="whymess" type="radio" id="joinus" name="joinus" value="joinus" class="hidden peer" required>
+                                    <label for="joinus" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-pink-200 rounded-lg cursor-pointer  peer-checked:border-pink-200 peer-checked:text-pink-600 hover:text-gray-600 hover:bg-gray-100">                           
+                                        <div class="block">
+                                            <div class="w-full text-lg font-semibold">Join us</div>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li>
                                     <input v-model="whymess" type="radio" id="Another" name="Another" value="Another" class="hidden peer" required>
                                     <label for="Another" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-pink-200 rounded-lg cursor-pointer  peer-checked:border-pink-200 peer-checked:text-pink-600 hover:text-gray-600 hover:bg-gray-100">                           
                                         <div class="block">
@@ -183,7 +191,7 @@ function onError(err: string) {
 
 const submitForm = async () => {
 
-	if (email.value != "contact@8bitjelly.com") {
+	if (email.value != "marketing@8bitjelly.com") {
 
 
 		if(verified.value == false){
@@ -220,6 +228,10 @@ const submitForm = async () => {
 				console.log(error.value)
 				senderror.value = true
 			}
+
+            let messform = document.querySelector('#messform')
+
+            messform.reset()
 		}
 	}
 	

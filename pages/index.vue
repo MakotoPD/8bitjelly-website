@@ -75,6 +75,12 @@
                                 <div class="w-full">{{ $t('filter.web') }}</div>
                         </label>
                     </li>
+                    <li>
+                        <input v-model="filter" type="radio" id="filters-audio" name="filters" value="Audio" class="hidden peer">
+                        <label for="filters-audio" class="inline-flex items-center justify-between w-full py-1 px-4 text-white bg-primary/20 border border-pink-600 rounded-lg cursor-pointer peer-checked:bg-primary peer-checked:text-white duration-150">                           
+                                <div class="w-full">{{ $t('filter.audio') }}</div>
+                        </label>
+                    </li>
 
                 </ul>
             </div>
