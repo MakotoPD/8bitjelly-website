@@ -1,19 +1,19 @@
 <template>
-    <div style="z-index: 1;" class="tech overflow-hidden mx-4 md:mx-0 rounded-[44px] md:rounded-[64px] bg-darkest py-24 px-4">
+    <div style="z-index: 1;" class="join overflow-hidden mx-4 md:mx-0 rounded-[44px] md:rounded-[64px] bg-darkest py-24 px-4">
         <div style="z-index: 2;" class=" flex flex-col items-center gap-y-10">
-            <h2 class="text-white font-semibold text-5xl md:text-8xl title">{{ $t('page.home.tech.title') }}</h2>
+            <h2 class="text-white font-semibold text-5xl md:text-8xl title">{{ $t('page.home.join.title') }}</h2>
             <p 
                 class="text-light text-center"
             >
-                {{ $t('page.home.tech.desc1') }} <br/>
-                {{ $t('page.home.tech.desc2') }} <br/>
-                {{ $t('page.home.tech.desc3') }}
+                {{ $t('page.home.join.desc1') }} <br/>
+                {{ $t('page.home.join.desc2') }} <br/>
+                {{ $t('page.home.join.desc3') }}
             </p>
             <NuxtLink 
                 :to="localePath('/contact')"
                 class="bg-[#D891D9]/60 text-white px-5 py-2 rounded-lg border border-[#FD84FF] shadow-[#D891D9]/50 shadow-xl hover:scale-105 duration-150"
             >
-                {{ $t('page.home.tech.btn') }}
+                {{ $t('page.home.join.btn') }}
             </NuxtLink>
         </div>
 
@@ -51,11 +51,11 @@
 </template>
 
 <style scoped>
-.tech{
+.join{
     position: relative;
 }
 
-.tech::after{
+.join::after{
     content: '';
     position: absolute;
     left: 0;

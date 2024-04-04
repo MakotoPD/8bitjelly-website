@@ -6,7 +6,7 @@
             </div>
 
             <div class="flex flex-wrap justify-center gap-x-3 gap-y-2 mx-8 text-white">
-                <NuxtLink to="#">{{ $t('menu.tech') }}</NuxtLink>
+                <NuxtLink to="#">{{ $t('menu.join') }}</NuxtLink>
                 <!-- <NuxtLink to="#">{{ $t('menu.blog') }}</NuxtLink> -->
                 <NuxtLink to="#">{{ $t('menu.about') }}</NuxtLink>
                 <NuxtLink to="#">{{ $t('menu.projects') }}</NuxtLink>
@@ -47,7 +47,7 @@
                 </div>
                 <div>
                     <div class="flex gap-x-4 text-white">
-                        <NuxtLink to="#">{{ $t('menu.tech') }}</NuxtLink>
+                        <NuxtLink to="#">{{ $t('menu.join') }}</NuxtLink>
                         <!-- <NuxtLink to="#">{{ $t('menu.blog') }}</NuxtLink> -->
                         <NuxtLink to="#">{{ $t('menu.about') }}</NuxtLink>
                         <NuxtLink to="#">{{ $t('menu.projects') }}</NuxtLink>

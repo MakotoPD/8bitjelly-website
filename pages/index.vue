@@ -20,8 +20,8 @@
             </div>
         </div>
         
-        <div id="tech" class="mt-24 flex justify-center md:block md:px-4">
-            <Tech />
+        <div id="join" class="mt-24 flex justify-center md:block md:px-4">
+            <Joinus />
         </div>
 
         <div id="about" class="mt-24 container mx-auto">

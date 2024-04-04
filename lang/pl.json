@@ -1,5 +1,5 @@
 {
-	"menu.tech": "Dołącz do nas",
+	"menu.join": "Dołącz do nas",
 	"menu.priorities": "Priorytety",
 	"menu.about": "O nas",
 	"menu.projects": "Projekty",
@@ -33,7 +33,7 @@
 				"desc": "Oto projekty które stworzyliśmy i już możesz testować na własną rękę!",
 				"btn": "Czytaj dalej"
 			},
-			"tech": {
+			"join": {
 				"title": "Dołącz do nas",
 				"desc1": "Dołącz do naszej dynamicznej społeczności, gdzie wspólnie tworzymy",
 				"desc2": "wspólnie projekty i rozwijamy nasze umiejętności.",
