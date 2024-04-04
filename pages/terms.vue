@@ -8,7 +8,7 @@
         <Menu />
 
 
-		<div class="container mx-auto md:mt-24  mb-24 md:mb-0 px-8">
+		<div class="container mx-auto md:mt-24  mb-24 md:mb-0 px-8 min-h-screen">
 			
 			<h1 class="text-xl font-semibold ">{{ $t('page.terms.sub') }}</h1>
 
