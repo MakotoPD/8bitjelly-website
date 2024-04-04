@@ -146,7 +146,6 @@ const WEB3FORMS_ACCESS_KEY = "d503b806-9e80-42a2-a4e0-5ca88f9da25e"
 const fname = ref('')
 const lname = ref('')
 const email = ref('')
-const phone = ref('')
 const subject = ref('')
 const message = ref('')
 
@@ -214,8 +213,7 @@ const submitForm = async () => {
 				subject: subject.value,
 				name: fname.value + " " + lname.value,
 				email: email.value,
-				message: message.value,
-				captcha: token.value
+				message: message.value
 			}),
 			});
 			const result = await response.json();
@@ -223,15 +221,19 @@ const submitForm = async () => {
 				console.log(result);
 				console.log('Wiadmość wysłana')
 				sendsucces.value = true
+
+                fname.value = ''
+                lname.value = ''
+                email.value = ''
+                subject.value = ''
+                message.value = ''
+
+
 			} else if(result.error) {
 				console.log('Błąd wysyłania')
 				console.log(error.value)
 				senderror.value = true
 			}
-
-            let messform = document.querySelector('#messform')
-
-            messform.reset()
 		}
 	}
 	
