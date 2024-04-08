@@ -146,7 +146,7 @@
                     </p>
 
                     <div>
-                        <a href="https://www.buymeacoffee.com/8bitJelly" target="_blank"><img src="https://img.buymeacoffee.com/button-api/?text=Buy us a coffee&emoji=☕&slug=8bitJelly&button_colour=BD5FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00" /></a>
+                        <a href="https://www.buymeacoffee.com/8bitJelly" target="_blank"><img class="h-12" src="https://img.buymeacoffee.com/button-api/?text=Buy us a coffee&emoji=☕&slug=8bitJelly&button_colour=BD5FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00" /></a>
                     </div>
                     
                 </div>
