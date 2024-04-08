@@ -17,10 +17,11 @@
                     <div class="menu md:hidden translate-x-[-110%] duration-300 z-50 absolute bg-white w-[calc(100%-100px)] h-auto left-2 top-2 py-20 px-12 rounded-3xl rounded-br-[40px] flex flex-col gap-y-3">
                         
                         <button @click="closeMenu()" class="absolute left-4 top-4"> <nuxt-img class="w-10" src="/svg/x-bold.svg" /> </button>
-                        <NuxtLink @click="closeMenu()" to="#projects" class="text-xl font-semibold">{{ $t('menu.projects') }}</NuxtLink>
-                        <NuxtLink @click="closeMenu()" to="#join" class="text-xl font-semibold">{{ $t('menu.join') }}</NuxtLink>
-                        <NuxtLink @click="closeMenu()" to="#about" class="text-xl font-semibold">{{ $t('menu.about') }}</NuxtLink>
-                        <NuxtLink @click="closeMenu()" to="#priorities" class="text-xl font-semibold">{{ $t('menu.priorities') }}</NuxtLink>
+                        <NuxtLink @click="closeMenu()" :to="localePath('/#about')" class="text-xl font-semibold">{{ $t('menu.about') }}</NuxtLink>
+                        <NuxtLink @click="closeMenu()" :to="localePath('/#priorities')" class="text-xl font-semibold">{{ $t('menu.priorities') }}</NuxtLink>
+                        <NuxtLink @click="closeMenu()" :to="localePath('/blog')" class="text-xl font-semibold">{{ $t('menu.blog') }}</NuxtLink>
+                        <NuxtLink @click="closeMenu()" :to="localePath('/gallery')" class="text-xl font-semibold">{{ $t('menu.gallery') }}</NuxtLink>
+                        <NuxtLink @click="closeMenu()" :to="localePath('/#join')" class="text-xl font-semibold">{{ $t('menu.join') }}</NuxtLink>
                         
                         <div class="absolute w-full left-0 bottom-4">
                             <hr class="mx-4" />
@@ -35,16 +36,17 @@
                         
                     </div>
 
-                    <NuxtLink to="/" class="z-[50]">
+                    <NuxtLink :to="localePath('/')" class="z-[50]">
                         <nuxt-img class="h-10" src="logo_white.svg" loading="lazy" quality="40" />
                     </NuxtLink>
 
 
-                    <div class="hidden md:flex gap-x-12">
-                        <NuxtLink to="#projects" class="text-white text-xl z-50 whitespace-nowrap">{{ $t('menu.projects') }}</NuxtLink>
-                        <NuxtLink to="#join" class="text-white text-xl z-50 whitespace-nowrap">{{ $t('menu.join') }}</NuxtLink>
-                        <NuxtLink to="#about" class="text-white text-xl z-50 whitespace-nowrap">{{ $t('menu.about') }}</NuxtLink>
-                        <NuxtLink to="#priorities" class="text-white text-xl z-50 whitespace-nowrap">{{ $t('menu.priorities') }}</NuxtLink>
+                    <div class="hidden md:flex gap-x-6">
+                        <NuxtLink :to="localePath('/#about')" class="text-white text-xl z-50 whitespace-nowrap">{{ $t('menu.about') }}</NuxtLink>
+                        <NuxtLink :to="localePath('/#priorities')" class="text-white text-xl z-50 whitespace-nowrap">{{ $t('menu.priorities') }}</NuxtLink>
+                        <NuxtLink :to="localePath('/blog')" class="text-white text-xl z-50 whitespace-nowrap">{{ $t('menu.blog') }}</NuxtLink>
+                        <NuxtLink :to="localePath('/gallery')" class="text-white text-xl z-50 whitespace-nowrap">{{ $t('menu.gallery') }}</NuxtLink>
+                        <NuxtLink :to="localePath('/#join')" class="text-white text-xl z-50 whitespace-nowrap">{{ $t('menu.join') }}</NuxtLink>
                         <div class="hidden xl:flex justify-center items-center space-x-2 ">
                             <label for="lang" class="text-white/90 text-sm">Lang:</label>
                             <select id="lang" v-model="locale" class="bg-primary/80 rounded-lg text-white px-2 z-50">

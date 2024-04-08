@@ -3,7 +3,9 @@
 	"menu.priorities": "Priorytety",
 	"menu.about": "O nas",
 	"menu.projects": "Projekty",
-	"menu.policy": "Polityka prywatności",
+	"menu.policy": "Zasady i warunki",
+	"menu.blog": "Blog",
+	"menu.gallery": "Galeria",
 
 	"filter": {
 		"all": "Wszyscy",
@@ -44,6 +46,10 @@
 				"sub": "O nas",
 				"title": "O naszej grupie",
 				"desc": "Cały nasz zespół jest stworzony przez osoby z zamiłowaniem do gier! Każdy z nasz różni się ale tworzymy razem coś niesamowitego!"
+			},
+			"sponsor": {
+				"title": "Wsparcie",
+				"sub": "Hej! 👋 Może chciałbyś nas wesprzeć?"
 			}
 		},
 		"error": {
@@ -81,6 +87,9 @@
 			"6": "Ograniczenie odpowiedzialności: Nie ponosimy odpowiedzialności za treści przekazywane przez użytkowników za pomocą formularza kontaktowego. Zastrzegamy sobie prawo do usuwania niezgodnych z zasadami treści oraz do odpowiedniego reagowania na nadużycia.",
 			"7": "Zmiany w Warunkach: Zastrzegamy sobie prawo do zmiany Zasad i Warunków Korzystania z Formularza Kontaktowego w dowolnym momencie. Zaktualizowane warunki będą obowiązywać od chwili ich opublikowania na naszej stronie internetowej.",
 			"end": "Korzystając z formularza kontaktowego, użytkownik potwierdza, że zapoznał się z niniejszymi Zasadami i Warunkami oraz akceptuje ich postanowienia."
+		},
+		"blog": {
+			"new": "Nowy post wkrótce..."
 		}
 	}
 }

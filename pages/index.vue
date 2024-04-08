@@ -1,6 +1,11 @@
 <template>
     <div class="overflow-x-hidden">
 
+        <Head>
+			<Title>8BitJelly - Hobby group game development</Title>
+		</Head>
+
+
         <Landing />
 
         <Priorities/>
@@ -128,6 +133,27 @@
 
             </div>
         </div>
+
+
+        <div class="container mx-auto px-4 md:px-18 lg:px-24">
+            <div style="z-index: 1;" class="join overflow-hidden mb-24 rounded-[44px] md:rounded-[64px] bg-darkest py-14 px-4">
+                <div style="z-index: 2;" class=" flex flex-col items-center gap-y-6">
+                    <h2 class="text-white font-semibold text-5xl md:text-8xl title">{{ $t('page.home.sponsor.title') }}</h2>
+                    <p 
+                        class="text-light text-center"
+                    >
+                        {{ $t('page.home.sponsor.sub') }} <br/>
+                    </p>
+
+                    <div>
+                        <a href="https://www.buymeacoffee.com/8bitJelly" target="_blank"><img src="https://img.buymeacoffee.com/button-api/?text=Buy us a coffee&emoji=☕&slug=8bitJelly&button_colour=BD5FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00" /></a>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+
 
         <Foter />
     </div>

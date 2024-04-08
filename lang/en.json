@@ -3,7 +3,9 @@
 	"menu.priorities": "Priorities",
 	"menu.about": "About us",
 	"menu.projects": "Awarded projects",
-	"menu.policy": "Privacy policy",
+	"menu.policy": "Terms and conditions",
+	"menu.blog": "Blog",
+	"menu.gallery": "Gallery",
 
 	"filter": {
 		"all": "All",
@@ -44,6 +46,10 @@
 				"sub": "About us",
 				"title": "About our group",
 				"desc": "Our entire team is made up of individuals with a passion for gaming! Each of ours is different but we create something amazing together!"
+			},
+			"sponsor": {
+				"title": "Support",
+				"sub": "Hey! 👋 Maybe you'd like to support us?"
 			}
 		},
 		"error": {
@@ -81,6 +87,9 @@
 			"6": "Limitation of liability: We are not responsible for content submitted by users via the contact form. We reserve the right to remove non-compliant content and to respond appropriately to abuse.",
 			"7": "Changes to Terms and Conditions: We reserve the right to change the Terms and Conditions of Use of the Contact Form at any time. The updated terms and conditions will be effective as soon as they are published on our website.",
 			"end": "By using the contact form, the user confirms that he/she has read and accepts these Terms and Conditions."
+		},
+		"blog": {
+			"new": "New post soon..."
 		}
 	}
 }

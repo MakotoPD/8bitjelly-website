@@ -47,13 +47,15 @@
                 </div>
                 <div>
                     <div class="flex gap-x-4 text-white">
-                        <NuxtLink to="#">{{ $t('menu.join') }}</NuxtLink>
-                        <!-- <NuxtLink to="#">{{ $t('menu.blog') }}</NuxtLink> -->
-                        <NuxtLink to="#">{{ $t('menu.about') }}</NuxtLink>
-                        <NuxtLink to="#">{{ $t('menu.projects') }}</NuxtLink>
-                        <NuxtLink to="#">{{ $t('menu.policy') }}</NuxtLink>
+                        <NuxtLink :to="localePath('/contact')">{{ $t('menu.join') }}</NuxtLink>
+                        <NuxtLink :to="localePath('/blog')">{{ $t('menu.blog') }}</NuxtLink>
+                        <NuxtLink :to="localePath('/gallery')">{{ $t('menu.gallery') }}</NuxtLink>
+                        <NuxtLink :to="localePath('/#about')">{{ $t('menu.about') }}</NuxtLink>
+                        <NuxtLink :to="localePath('/#priorities')">{{ $t('menu.projects') }}</NuxtLink>
+                        <NuxtLink :to="localePath('/terms')">{{ $t('menu.policy') }}</NuxtLink>
+                        
                     </div>
-                    <div class="mt-2 flex justify-end items-center space-x-2 ">
+                    <div v-if="useRoute().params.slug == undefined"  class="mt-2 flex justify-end items-center space-x-2 ">
                         <label for="lang" class="text-white/70 text-sm">Select language:</label>
                         <select id="lang" v-model="locale" class="bg-white/40 rounded-lg text-black px-2">
                             <option class="" value="en">en</option>

@@ -1,7 +1,7 @@
 <template>
 	<div class="relative bg-light w-screen h-screen overflow-hidden">
 		<nuxt-img  src="/svg/lines.svg" alt="x" class="absolute right-12 -top-4 z-0 h-[120%]" loading="lazy" />
-		<nuxt-img class="z-0 absolute left-0 bottom-0 -translate-x-1/2 scale-[3]" src="/svg/Ellipse 3.svg" alt="circle background" loading="lazy" />
+		<nuxt-img class="z-0 absolute left-0 bottom-0 -translate-x-1/2 scale-[3]" src="/svg/Ellipse3.svg" alt="circle background" loading="lazy" />
 		<Menu class="relative z-[50]" />
 		<NuxtErrorBoundary class="relative z-[50]">
 
