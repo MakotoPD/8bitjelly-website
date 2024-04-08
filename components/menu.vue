@@ -47,6 +47,7 @@
 				<div class="menu md:hidden translate-x-[-110%] duration-300 z-50 absolute bg-white w-[calc(100%-100px)] h-auto left-2 top-2 py-20 px-12 rounded-3xl rounded-br-[40px] flex flex-col gap-y-3">
 					
 					<button @click="closeMenu()" class="absolute left-4 top-4"> <nuxt-img class="w-10" src="/svg/x-bold.svg" /> </button>
+					<NuxtLink @click="closeMenu()" :to="localePath('/')" class="text-xl font-semibold">{{ $t('menu.home') }}</NuxtLink>
 					<NuxtLink @click="closeMenu()" :to="localePath('/#about')" class="text-xl font-semibold">{{ $t('menu.about') }}</NuxtLink>
 					<NuxtLink @click="closeMenu()" :to="localePath('/#priorities')" class="text-xl font-semibold">{{ $t('menu.priorities') }}</NuxtLink>
 					<NuxtLink @click="closeMenu()" :to="localePath('/blog')" class="text-xl font-semibold">{{ $t('menu.blog') }}</NuxtLink>
