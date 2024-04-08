@@ -68,8 +68,6 @@ const fetchBlog = async () => {
 
 		blog.value = data.value
 
-		console.log(data.value)
-
 
 	} else {
 		const { data, pending } = await useFetch(
@@ -78,7 +76,6 @@ const fetchBlog = async () => {
 
 		blog.value = data.value
 
-		console.log(data.value)
 	}
 
 
