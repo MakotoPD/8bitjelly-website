@@ -68,7 +68,7 @@
             <hr class="border-darker border-1 mx-8 my-4">
             <div class="container mx-auto flex justify-between">
                 <div>
-                    <p class="text-darker text-center mb-4">© 2023 8BitJelly. MIT</p>
+                    <p class="text-darker text-center mb-4">© 2024 8BitJelly. MIT</p>
                 </div>
                 <div class="flex gap-x-3">
                     <NuxtLink target="_blank" to="https://www.instagram.com/8bitjelly/">
