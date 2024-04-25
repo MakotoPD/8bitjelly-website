@@ -10,11 +10,11 @@
 
         <Priorities/>
 
-        <div id="projects" class="md:grid grid-cols-2 mt-24 container mx-auto">
+        <div id="projects" class="md:grid grid-cols-3 mt-24 container mx-auto">
             <div class="flex justify-center items-cente">
                 <img loading="lazy" class="whale w-full h-full object-contain" src="/whale.png" />
             </div>
-            <div class="mt-24 md:mt-0">
+            <div class="mt-24 md:mt-0 col-span-2 ">
                 <div class="px-4 flex flex-col gap-y-2 mb-8">
                     <p class="z-10 text-primary font-bold">- {{ $t('page.home.projects.sub') }}</p>
                     <h3 class="z-10 text-darker text-4xl font-bold leading-tight">{{ $t('page.home.projects.title') }}</h3>
