@@ -27,6 +27,15 @@
                             <p class="mb-2">{{ $t('page.contact.Form.why') }}</p>
 
                             <ul class="flex w-full gap-6 flex-wrap">
+                                <li v-for="pos in position.data">
+                                    <input v-model="whymess" type="radio" id="join" name="why" :value="pos.attributes.stanowisko" class="hidden peer" required>
+                                    <label for="join" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-pink-200 rounded-lg cursor-pointer  peer-checked:border-pink-200 peer-checked:text-pink-600 hover:text-gray-600 hover:bg-gray-100">                           
+                                        <div class="block text-center">
+                                            <div class="w-full text-lg font-semibold">Join us</div>
+                                            <div class="w-full text-sm text-gray-400 font-semibold">{{ pos.attributes.stanowisko }}</div>
+                                        </div>
+                                    </label>
+                                </li>
                                 <li>
                                     <input v-model="whymess" type="radio" id="join" name="why" value="join" class="hidden peer" required>
                                     <label for="join" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-pink-200 rounded-lg cursor-pointer  peer-checked:border-pink-200 peer-checked:text-pink-600 hover:text-gray-600 hover:bg-gray-100">                           
@@ -118,6 +127,10 @@ useHead({
 		{ src: 'https://js.hcaptcha.com/1/api.js', async: true, defer: true}
 	]
 })
+
+
+const {data: position} = useFetch(`https://panel.8bitjelly.com/api/lookings?fields=stanowisko`)
+console.log(position)
 
 import { Blottie, type BlottieExpose } from 'blottie'
 
