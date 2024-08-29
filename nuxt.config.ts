@@ -71,6 +71,9 @@ export default defineNuxtConfig({
 					href: "manifest.json"
 				}
 			],
+			script: [
+				{ defer: true, src: 'https://cloud.umami.is/script.js', "data-website-id": "f5e6e1c2-8bca-41c2-b6e3-c0f66d215ddf"}
+			]
 
 		},
 
