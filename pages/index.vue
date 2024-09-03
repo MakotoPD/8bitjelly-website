@@ -12,7 +12,7 @@
 
         <div id="projects" class="md:grid grid-cols-3 mt-24 container mx-auto">
             <div class="flex justify-center items-cente">
-                <img loading="lazy" class="whale w-full h-full object-contain" src="/whale.png" />
+                <img loading="lazy" class="whale w-full h-full object-contain" src="/whale.png" alt="whale" />
             </div>
             <div class="mt-24 md:mt-0 col-span-2 ">
                 <div class="px-4 flex flex-col gap-y-2 mb-8">
@@ -146,7 +146,7 @@
                     </p>
 
                     <div>
-                        <a href="https://www.buymeacoffee.com/8bitJelly" target="_blank"><img class="h-12 w-auto object-contain" src="https://img.buymeacoffee.com/button-api/?text=Buy us a coffee&emoji=☕&slug=8bitJelly&button_colour=BD5FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00" /></a>
+                        <a href="https://www.buymeacoffee.com/8bitJelly" target="_blank"><img class="h-12 w-auto object-contain" alt="buy us a coffee" src="https://img.buymeacoffee.com/button-api/?text=Buy us a coffee&emoji=☕&slug=8bitJelly&button_colour=BD5FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00" /></a>
                     </div>
                     
                 </div>

@@ -29,13 +29,13 @@
 
             <div class="flex justify-center gap-x-4">
                 <NuxtLink target="_blank" to="https://www.instagram.com/8bitjelly/">
-                    <nuxt-img class="h-6" src="/svg/instagram-logo-duotone.svg" />
+                    <nuxt-img class="h-6" alt="instagram" src="/svg/instagram-logo-duotone.svg" />
                 </NuxtLink>
                 <NuxtLink target="_blank" to="https://www.facebook.com/8bitjelly">
-                    <nuxt-img class="h-6" src="/svg/facebook-logo-duotone.svg" />
+                    <nuxt-img class="h-6" alt="facebook" src="/svg/facebook-logo-duotone.svg" />
                 </NuxtLink>
                 <NuxtLink target="_blank" to="https://github.com/8bitjelly">
-                    <nuxt-img class="h-6" src="/svg/github-logo-duotone.svg" />
+                    <nuxt-img class="h-6" alt="github" src="/svg/github-logo-duotone.svg" />
                 </NuxtLink>
             </div>
         </div>
