@@ -91,7 +91,9 @@
 			"end": "Korzystając z formularza kontaktowego, użytkownik potwierdza, że zapoznał się z niniejszymi Zasadami i Warunkami oraz akceptuje ich postanowienia."
 		},
 		"blog": {
-			"new": "Nowy post wkrótce..."
+			"new": "Nowy post wkrótce...",
+			"newest": "Najnowsze wpisy",
+			"tags": "Tags"
 		}
 	}
 }

@@ -3,10 +3,7 @@
 		<Head>
 			<Title>8BitJelly - Gallery</Title>
 		</Head>
-
-        <Menu />
 		
-
 		<div class="container mx-auto mt-24 mb-24">
 			<h1 class="text-5xl font-semibold text-darkest ml-12">{{ $t('menu.gallery') }}</h1>
 
