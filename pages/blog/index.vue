@@ -21,9 +21,6 @@
 			</div>
 
 			<div class="mt-8 px-8 md:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-				<div class="animate-pulse flex items-center justify-center pb-2 md:pb-4 w-full h-16 md:h-auto bg-primary/20 rounded-2xl md:rounded-3xl border border-primary/50">
-					<p class="text-darker text-xl animate-pulse	"> {{ $t('page.blog.new') }}</p>
-				</div>
 
 				<NuxtLink :to="localePath('/blog/'+wpis.attributes.slug)" v-for="wpis in blog.data" 
 					class="relative pb-4 md:pb-4 w-full bg-primary/20 rounded-2xl md:rounded-3xl border border-primary/50 hover:scale-105 duration-75">
@@ -43,7 +40,6 @@
 						</div>
 					</div>
 
-				
 				</NuxtLink>
 				
 			</div>
