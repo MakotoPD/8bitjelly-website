@@ -14,6 +14,7 @@
 					<button class="px-3 py-0.5 bg-darkest/15 border-2 border-darkest/60 rounded-lg duration-150 hover:bg-darkest/50 hover:border-darkest/0 hover:text-white" >All</button>
 					<button v-for="tag in tags.data"
 						class="px-3 py-0.5 bg-darkest/15 border-2 border-darkest/60 rounded-lg duration-150 hover:bg-darkest/50 hover:border-darkest/0 hover:text-white"
+						:data-id="tag.attributes.id"
 					>
 						{{tag.attributes.name}}
 					</button>
