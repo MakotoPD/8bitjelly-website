@@ -22,7 +22,6 @@
 							{{tag.attributes.name}}
 						</button>
 					</div>
-					
 				</div>
 			</div>
 
