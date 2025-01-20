@@ -91,7 +91,9 @@
 			"end": "By using the contact form, the user confirms that he/she has read and accepts these Terms and Conditions."
 		},
 		"blog": {
-			"new": "New post soon..."
+			"new": "New post soon...",
+			"newest": "Newest posts",
+			"tags": "Tagi"
 		}
 	}
 }

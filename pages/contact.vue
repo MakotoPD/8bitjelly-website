@@ -5,8 +5,6 @@
 			<Title>8BitJelly - {{ $t('page.contact.title') }}</Title>
 		</Head>
 
-        <Menu />
-
         <div class="grid lg:grid-cols-2 pb-24 md:py-24">
             <div class="flex justify-center px-8">
                 <Blottie
@@ -128,9 +126,10 @@ useHead({
 	]
 })
 
+const position = ref()
 
-const {data: position} = useFetch(`https://panel.8bitjelly.com/api/lookings?fields=stanowisko`)
-console.log(position)
+const {data} = useFetch(`https://panel.8bitjelly.com/api/lookings?fields=stanowisko`)
+position.value = data
 
 import { Blottie, type BlottieExpose } from 'blottie'
 

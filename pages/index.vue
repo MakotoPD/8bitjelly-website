@@ -5,7 +5,6 @@
 			<Title>8BitJelly - Hobby group game development</Title>
 		</Head>
 
-
         <Landing />
 
         <Priorities/>
@@ -162,6 +161,9 @@
 
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'index'
+})
 const { locale } = useI18n()
 const { $anime } = useNuxtApp()
 

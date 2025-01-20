@@ -4,9 +4,6 @@
 			<Title>8BitJelly - Blog</Title>
 		</Head>
 
-        <Menu />
-		
-
 		<div class="container mx-auto px-4 my-16 min-h-screen max-w-screen-lg">
 
 			<div v-for="wpis in blog.data">
@@ -25,19 +22,23 @@
 
 <style>
 .blogpost h1{
-	@apply text-5xl my-4 font-semibold
+	@apply text-5xl my-4 font-semibold text-primary border-l-4 border-primary pl-4 relative -left-4
 }
 .blogpost h2{
-	@apply text-4xl my-4
+	@apply text-4xl my-4 text-darker/80
 }
 .blogpost h3{
-	@apply text-3xl my-4
+	@apply text-3xl my-4 text-darker/80
 }
 .blogpost h4{
 	@apply text-2xl my-4
 }
 .blogpost p{
 	@apply my-4
+}
+
+.blogpost img{
+	@apply my-4 rounded-2xl
 }
 
 @media screen and (max-width:800px) {
@@ -58,8 +59,13 @@
 </style>
 
 <script setup lang="ts">
-const { slug } = useRoute().params;
+definePageMeta({
+  layout: 'post'
+})
 
+const route = useRoute()
+
+const { slug } = useRoute().params;
 const { locale } = useI18n()
 
 const blog = ref()
@@ -73,7 +79,7 @@ const fetchBlog = async () => {
 		)
 
 		blog.value = data.value
-
+		
 
 	} else {
 		const { data, pending } = await useFetch(
@@ -85,11 +91,41 @@ const fetchBlog = async () => {
 	}
 
 
-
 }
 
 await fetchBlog();
 
+
+useHead({
+	script: [
+		{ type:"application/ld+json", children: `{
+				"@context": "https://schema.org",
+				"@type": "BlogPosting",
+				"mainEntityOfPage": {
+					"@type": "WebPage",
+					"@id": "https://8bitjelly.com${route.fullPath}"
+				},
+				"headline": "${blog.value.data[0].attributes.Tytul}",
+				"description": "${blog.value.data[0].attributes.blog.replace(/<[^>]*>?/gm, ' ').substring('0', '150').replace(blog.value.data[0].attributes.Tytul, '')}",
+				"image": "https://panel.8bitjelly.com${blog.value.data[0].attributes.zdjecie.data.attributes.formats.small.url}",  
+				"author": {
+					"@type": "Organization",
+					"name": "8BitJelly",
+					"url": "https://8bitjelly.com"
+				},  
+				"publisher": {
+					"@type": "Organization",
+					"name": "8BitJelly",
+					"logo": {
+					"@type": "ImageObject",
+					"url": "https://8bitjelly.com/_vercel/image?url=%2Flogo_white.svg&w=1536&q=40"
+					}
+				},
+				"datePublished": "2024-11-18"
+			}` 
+		}
+	]
+})
 
 watch(locale, (newLocale, oldLocale) => {
     lang.value = newLocale
