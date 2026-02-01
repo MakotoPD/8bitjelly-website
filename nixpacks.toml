@@ -1,17 +1,17 @@
 # 1. Setup
 [phases.setup]
-nixPkgs = ['nodejs_20', 'pnpm', 'vips', 'python3', 'gcc', 'gnumake']
+# Usuwamy pnpm, zostawiamy nodejs (który zawiera npm) oraz biblioteki systemowe
+nixPkgs = ['nodejs_20', 'vips', 'python3', 'gcc', 'gnumake']
 
+# 2. Install
+# KROK 1: Usuwamy pnpm-lock.yaml, aby npm nie próbował go interpretować
+# KROK 2: Instalujemy zależności przy pomocy npm (to naprawia błąd oxc-parser)
 [phases.install]
-cmds = [
-    'echo "node-linker=hoisted" > .npmrc',
-    'rm -rf node_modules pnpm-lock.yaml',
-    'pnpm install'
-]
+cmds = ['rm -f pnpm-lock.yaml', 'npm install']
 
 # 3. Build
 [phases.build]
-cmds = ['pnpm run build']
+cmds = ['npm run build']
 
 # 4. Start
 [start]
