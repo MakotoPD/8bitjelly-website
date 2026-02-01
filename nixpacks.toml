@@ -1,12 +1,16 @@
+# 1. Setup - dodajemy gcc i python3 na wypadek gdyby node-gyp musiał coś skompilować
 [phases.setup]
-nixPkgs = ['nodejs_20', 'pnpm', 'vips']
+nixPkgs = ['nodejs_20', 'pnpm', 'vips', 'python3', 'gcc', 'gnumake']
 
-
+# 2. Install - KLUCZOWA ZMIANA: --shamefully-hoist
+# To naprawia błąd "Cannot find native binding"
 [phases.install]
-cmds = ['pnpm install']
+cmds = ['pnpm install --shamefully-hoist']
 
+# 3. Build
 [phases.build]
 cmds = ['pnpm run build']
 
+# 4. Start
 [start]
 cmd = 'node .output/server/index.mjs'
