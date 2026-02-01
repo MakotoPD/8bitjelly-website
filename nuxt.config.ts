@@ -92,6 +92,15 @@ export default defineNuxtConfig({
 		'vue3-carousel-nuxt',		//carousel
 	],
 
+	image: {
+		provider: 'ipx', 
+	},
+	nitro: {
+		externals: {
+			trace: false, 
+		}
+	},
+
 	tailwindcss: {
 		configPath: 'tailwind.config',
 	},
