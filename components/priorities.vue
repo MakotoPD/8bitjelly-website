@@ -29,7 +29,7 @@
                 </div>
 
 
-                <img v-if="game.attributes.image.data" class="-z-50 absolute top-0 right-0 h-full w-full object-cover" :src="'https://panel.8bitjelly.com'+game.attributes.image.data.attributes.url" alt="">
+                <img v-if="game.attributes.image.data" class="-z-50 absolute top-0 right-0 h-full w-full object-cover" :src="'https://api.8bitjelly.com'+game.attributes.image.data.attributes.url" alt="">
                 <img v-else class="-z-50 absolute top-0 right-0 h-full w-full object-cover" src="/unknown.png" alt="">
             </div>
         </div>
@@ -45,7 +45,7 @@ const lang = ref(locale.value)
 
 const fetchGameByLang = async () => {
     const { data, pending } = await useFetch(
-        `https://panel.8bitjelly.com/api/priority-games?populate=image&locale=${lang.value}`
+        `https://api.8bitjelly.com/api/priority-games?populate=image&locale=${lang.value}`
     )
     games.value = data.value
 

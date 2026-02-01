@@ -75,7 +75,7 @@ const lang = ref(locale.value)
 const fetchBlog = async () => {
 	if (lang.value == 'pl') {
 		const { data, pending } = await useFetch(
-			`https://panel.8bitjelly.com/api/blogs?populate=*&filters[slug][$eq]=${slug}&locale=pl`
+			`https://api.8bitjelly.com/api/blogs?populate=*&filters[slug][$eq]=${slug}&locale=pl`
 		)
 
 		blog.value = data.value
@@ -83,7 +83,7 @@ const fetchBlog = async () => {
 
 	} else {
 		const { data, pending } = await useFetch(
-			`https://panel.8bitjelly.com/api/blogs?populate=*&filters[slug][$eq]=${slug}`
+			`https://api.8bitjelly.com/api/blogs?populate=*&filters[slug][$eq]=${slug}`
 		)
 
 		blog.value = data.value
@@ -107,7 +107,7 @@ useHead({
 				},
 				"headline": "${blog.value.data[0].attributes.Tytul}",
 				"description": "${blog.value.data[0].attributes.blog.replace(/<[^>]*>?/gm, ' ').substring('0', '150').replace(blog.value.data[0].attributes.Tytul, '')}",
-				"image": "https://panel.8bitjelly.com${blog.value.data[0].attributes.zdjecie.data.attributes.formats.small.url}",  
+				"image": "https://api.8bitjelly.com${blog.value.data[0].attributes.zdjecie.data.attributes.formats.small.url}",  
 				"author": {
 					"@type": "Organization",
 					"name": "8BitJelly",

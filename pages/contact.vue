@@ -128,7 +128,7 @@ useHead({
 
 const position = ref()
 
-const {data} = useFetch(`https://panel.8bitjelly.com/api/lookings?fields=stanowisko`)
+const {data} = useFetch(`https://api.8bitjelly.com/api/lookings?fields=stanowisko`)
 position.value = data
 
 import { Blottie, type BlottieExpose } from 'blottie'

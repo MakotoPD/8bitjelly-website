@@ -92,7 +92,7 @@
             <div class="flex flex-wrap justify-center gap-x-4 gap-y-6 mb-24">
                 <div v-for="osoba in osoby.data" :data-filter="osoba.attributes.Filtry" class="p-4 rounded-xl bg-primary/20 max-w-sm relative">
                     <div class="mb-4 h-40">
-                        <img loading="lazy" class="h-40 rounded-lg" :src="'https://panel.8bitjelly.com'+osoba.attributes.Avatar.data.attributes.url " :alt="osoba.attributes.Nick"/>
+                        <img loading="lazy" class="h-40 rounded-lg" :src="'https://api.8bitjelly.com'+osoba.attributes.Avatar.data.attributes.url " :alt="osoba.attributes.Nick"/>
                     </div>
                     <div class="mb-8">
                         <div><span class="text-darker font-semibold text-xl">{{ osoba.attributes.Nick}}</span> | <span class="text-primary">{{ osoba.attributes.Stanowisko }}</span></div>
@@ -174,7 +174,7 @@ const filter = ref('All')
 
 const fetchPeopleByLang = async () => {
     const { data, pending } = await useFetch(
-        `https://panel.8bitjelly.com/api/osobies?populate=Avatar&locale=${lang.value}&filters[filtry][$contains]=${filter.value}`
+        `https://api.8bitjelly.com/api/osobies?populate=Avatar&locale=${lang.value}&filters[filtry][$contains]=${filter.value}`
     )
     osoby.value = data.value
 }

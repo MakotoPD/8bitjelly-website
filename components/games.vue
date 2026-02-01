@@ -15,7 +15,7 @@
     >
         <slide v-for="(game, idx) in games.data" :key="idx" >
             <div class="carousel__item h-[30rem] w-[18rem] hover:shadow-lg hover:shadow-primary/40 duration-100 bg-primary/20 border border-white backdrop-blur-xl rounded-xl p-4">
-                <img loading="lazy" class="h-64 w-64 object-cover rounded-xl mb-2" :src="'https://panel.8bitjelly.com'+game.attributes.gameLogo.data.attributes.url " :alt="game.attributes.name"/>
+                <img loading="lazy" class="h-64 w-64 object-cover rounded-xl mb-2" :src="'https://api.8bitjelly.com'+game.attributes.gameLogo.data.attributes.url " :alt="game.attributes.name"/>
                 <p class="text-xl text-primary font-bold mb-4">{{ game.attributes.name }}</p>
                 <p class="text-darker text-sm w-64">{{ game.attributes.shortDescription }}</p>
                 <a :href="game.attributes.link" target="_blank" class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary/60 text-white px-5 py-1 rounded-lg border border-primary">{{ $t('page.home.projects.btn') }}</a>
@@ -44,7 +44,7 @@ import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
 let fetchGameByLang = async () => {
   const { data, pending, error } = await useFetch(
-    `https://panel.8bitjelly.com/api/games?populate=gameLogo&locale=${lang.value}`
+    `https://api.8bitjelly.com/api/games?populate=gameLogo&locale=${lang.value}`
   )
 
   games.value = data.value

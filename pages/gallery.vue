@@ -12,7 +12,7 @@
 				<h1 class="text-3xl font-semibold text-darkest drop-shadow-lg">{{ galeria.attributes.tytulGry }}</h1>
 
 				<div class="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-6 px-4 md:px-0">
-					<img v-for="zdjecie in galeria.attributes.zdjecia.data" loading="lazy" :src="'https://panel.8bitjelly.com'+zdjecie.attributes.formats.small.url" :alt="zdjecie.attributes.name" class="rounded-xl">
+					<img v-for="zdjecie in galeria.attributes.zdjecia.data" loading="lazy" :src="'https://api.8bitjelly.com'+zdjecie.attributes.formats.small.url" :alt="zdjecie.attributes.name" class="rounded-xl">
 				</div>
 			</div>
 			
@@ -32,7 +32,7 @@ const lang = ref(locale.value)
 
 const fetchGallery = async () => {
     const { data, pending } = await useFetch(
-        `https://panel.8bitjelly.com/api/galerias?populate=zdjecia`
+        `https://api.8bitjelly.com/api/galerias?populate=zdjecia`
     )
     gallery.value = data.value
 

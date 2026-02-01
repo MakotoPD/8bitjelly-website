@@ -29,7 +29,7 @@
 
 				<NuxtLink :to="localePath('/blog/'+wpis.attributes.slug)" v-for="wpis in blog.data" 
 					class="relative pb-4 md:pb-4 w-full bg-primary/20 rounded-2xl md:rounded-3xl border border-primary/50 hover:scale-105 duration-75">
-					<img class="rounded-xl md:rounded-3xl mb-2 h-44 w-full object-cover" :src="'https://panel.8bitjelly.com'+wpis.attributes.zdjecie.data.attributes.formats.small.url" :alt="wpis.attributes.zdjecie.data.attributes.name">
+					<img class="rounded-xl md:rounded-3xl mb-2 h-44 w-full object-cover" :src="'https://api.8bitjelly.com'+wpis.attributes.zdjecie.data.attributes.formats.small.url" :alt="wpis.attributes.zdjecie.data.attributes.name">
 					<p class="text-start px-4 text-sm text-darker/60">{{ wpis.attributes.autor }}・{{ wpis.attributes.publishedAt.split('T')[0] }}</p>
 					<div class="mx-4">
 						<p class="text-lg text-black/90">{{ wpis.attributes.Tytul }}</p>
@@ -68,7 +68,7 @@ const filterByTags = ref('filters[tags][name][$eq]=All')
 
 const fetchBlog = async () => {
     const { data, pending } = await useFetch(
-        `https://panel.8bitjelly.com/api/blogs?sort[0]=createdAt:desc&locale[0]=${lang.value}&${filterByTags.value}&populate[tags][fields][0]=name&populate[zdjecie]=true&fields[0]=Tytul&fields[1]=autor&fields[2]=locale&fields[3]=publishedAt&fields[4]=blog&fields[5]=slug`
+        `https://api.8bitjelly.com/api/blogs?sort[0]=createdAt:desc&locale[0]=${lang.value}&${filterByTags.value}&populate[tags][fields][0]=name&populate[zdjecie]=true&fields[0]=Tytul&fields[1]=autor&fields[2]=locale&fields[3]=publishedAt&fields[4]=blog&fields[5]=slug`
     )
     blog.value = data.value
 
@@ -85,7 +85,7 @@ const filterBlog = async (e) => {
 
 const fetchTags = async () => {
     const { data, pending } = await useFetch(
-        `https://panel.8bitjelly.com/api/blog-tags?locale[0]=${lang.value}&fields[0]=name&sort[0]=name:asc`
+        `https://api.8bitjelly.com/api/blog-tags?locale[0]=${lang.value}&fields[0]=name&sort[0]=name:asc`
     )
     tags.value = data.value
 
