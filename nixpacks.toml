@@ -16,3 +16,8 @@ cmds = ['npm run build']
 # 4. Start
 [start]
 cmd = 'node .output/server/index.mjs'
+
+[variables]
+NUXT_HOST = '0.0.0.0'
+NUXT_PORT = '3000'
+NODE_ENV = 'production'
