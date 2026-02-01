@@ -27,5 +27,15 @@
     "@nuxtjs/tailwindcss": "^6.8.0",
     "nuxt-swiper": "^1.2.2",
     "vue3-carousel-nuxt": "^1.1.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "esbuild",
+      "@parcel/watcher",
+      "oxc-parser",
+      "cpu-features",
+      "ssh2"
+    ]
   }
 }

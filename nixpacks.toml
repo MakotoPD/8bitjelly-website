@@ -1,11 +1,11 @@
-# 1. Setup - dodajemy gcc i python3 na wypadek gdyby node-gyp musiał coś skompilować
+# 1. Setup
 [phases.setup]
 nixPkgs = ['nodejs_20', 'pnpm', 'vips', 'python3', 'gcc', 'gnumake']
 
-# 2. Install - KLUCZOWA ZMIANA: --shamefully-hoist
-# To naprawia błąd "Cannot find native binding"
+# 2. Install - ZMIANA TUTAJ
+# Usuwamy pnpm-lock.yaml przed instalacją, aby wymusić pobranie wersji Linuxowych
 [phases.install]
-cmds = ['pnpm install --shamefully-hoist']
+cmds = ['rm -f pnpm-lock.yaml', 'pnpm install --shamefully-hoist']
 
 # 3. Build
 [phases.build]
