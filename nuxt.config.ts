@@ -30,6 +30,14 @@ export default defineNuxtConfig({
 
   gtag: {
     id: 'G-PCLLKCCJSV',
+    initCommands: [
+      ['consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+      }],
+    ],
   },
 
   i18n: {
@@ -94,6 +102,7 @@ export default defineNuxtConfig({
       { loc: '/blog',    priority: 0.8, changefreq: 'weekly'  },
       { loc: '/gallery', priority: 0.6, changefreq: 'monthly' },
       { loc: '/contact', priority: 0.5, changefreq: 'yearly'  },
+      { loc: '/privacy', priority: 0.3, changefreq: 'yearly'  },
       { loc: '/terms',   priority: 0.2, changefreq: 'yearly'  },
     ],
   },

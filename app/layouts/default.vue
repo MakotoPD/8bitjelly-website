@@ -4,11 +4,14 @@
     <main>
       <slot />
     </main>
-    <AppFooter />
+    <AppFooter @manage-cookies="cookieBanner?.reopen()" />
+    <CookieBanner ref="cookieBanner" />
   </div>
 </template>
 
 <script setup lang="ts">
+const cookieBanner = ref<{ reopen: () => void } | null>(null)
+
 useHead({
   script: [{
     type: 'application/ld+json',

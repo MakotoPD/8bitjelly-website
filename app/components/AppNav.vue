@@ -2,8 +2,7 @@
   <nav class="top">
     <div class="nav-inner">
       <NuxtLink :to="localePath('/')" class="logo">
-        <span class="logo-mark"></span>
-        8BitJelly
+        <img src="/logo_black.svg" alt="8BitJelly" class="logo-img" />
       </NuxtLink>
 
       <div class="nav-links">
@@ -29,14 +28,13 @@
         </button>
       </div>
     </div>
-
   </nav>
 
   <Teleport to="body">
     <Transition name="slide">
       <div v-if="mobileOpen" class="mobile-menu">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
-          <span class="logo"><span class="logo-mark"></span>8BitJelly</span>
+          <img src="/logo_black.svg" alt="8BitJelly" class="logo-img" />
           <button style="background:none;border:2px solid var(--ink);border-radius:8px;padding:8px;cursor:pointer;" @click="mobileOpen = false">
             <UIcon name="i-heroicons-x-mark" style="width:20px;height:20px;" />
           </button>
@@ -63,6 +61,20 @@ watch(useRoute(), () => { mobileOpen.value = false })
 </script>
 
 <style scoped>
+.logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+  /* Colorize to brand magenta (#FF3D7F) */
+  filter: brightness(0) saturate(100%) invert(37%) sepia(97%) saturate(1366%) hue-rotate(311deg) brightness(104%);
+  transition: filter 0.2s ease;
+}
+.logo:hover .logo-img,
+.logo-img:hover {
+  /* Darken slightly on hover */
+  filter: brightness(0) saturate(100%) invert(22%) sepia(97%) saturate(1200%) hue-rotate(311deg) brightness(90%);
+}
+
 .slide-enter-active, .slide-leave-active { transition: transform 0.3s ease; }
 .slide-enter-from, .slide-leave-to { transform: translateX(100%); }
 </style>

@@ -49,7 +49,8 @@
           <h5>{{ $t('footer.legal') }}</h5>
           <ul>
             <li><NuxtLink :to="localePath('/terms')">{{ $t('footer.terms') }}</NuxtLink></li>
-            <li><NuxtLink :to="localePath('/terms')">{{ $t('footer.privacy') }}</NuxtLink></li>
+            <li><NuxtLink :to="localePath('/privacy')">{{ $t('footer.privacy') }}</NuxtLink></li>
+            <li><button class="cookie-manage-btn" @click="$emit('manageCookies')">{{ $t('footer.cookies') }}</button></li>
           </ul>
         </div>
       </div>
@@ -68,4 +69,19 @@
 <script setup lang="ts">
 const { locale, setLocale } = useI18n()
 const localePath = useLocalePath()
+defineEmits(['manageCookies'])
 </script>
+
+<style scoped>
+.cookie-manage-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-size: 15px;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+.cookie-manage-btn:hover { color: var(--magenta); }
+</style>

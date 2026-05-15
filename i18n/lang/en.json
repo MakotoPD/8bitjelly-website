@@ -125,8 +125,9 @@
     "explore": "Explore",
     "company": "Company",
     "legal": "Legal",
-    "terms": "Terms",
-    "privacy": "Privacy",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Settings",
     "about": "About",
     "copyright": "© 2025 8BitJelly. Made with"
   },
