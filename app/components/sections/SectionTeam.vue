@@ -143,7 +143,7 @@ onMounted(() => {
 .member-bio {
   margin-top: 10px; font-size: 13px; line-height: 1.45;
   color: color-mix(in oklab, var(--ink) 75%, transparent);
-  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  display: -webkit-box; -webkit-box-orient: vertical;
 }
 .member-socials { display: flex; gap: 6px; margin-top: 12px; }
 .soc {

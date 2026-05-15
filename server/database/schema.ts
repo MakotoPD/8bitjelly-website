@@ -90,6 +90,31 @@ export const lookings = pgTable('lookings', {
   sortOrder: integer('sort_order').notNull().default(0),
 })
 
+export const accountUsers = pgTable('account_users', {
+  id: serial('id').primaryKey(),
+  email: text('email').notNull().unique(),
+  passwordHash: text('password_hash'),
+  teamMemberId: integer('team_member_id').references(() => team.id, { onDelete: 'set null' }),
+  role: text('role').notNull().default('member'), // 'member' | 'admin'
+  isActive: boolean('is_active').notNull().default(true),
+  inviteToken: text('invite_token').unique(),
+  inviteExpiresAt: timestamp('invite_expires_at', { withTimezone: true }),
+  totpSecret: text('totp_secret'),
+  totpEnabled: boolean('totp_enabled').notNull().default(false),
+  emailOtpEnabled: boolean('email_otp_enabled').notNull().default(false),
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+}, t => [index('account_users_email_idx').on(t.email)])
+
+export const otpCodes = pgTable('otp_codes', {
+  id: serial('id').primaryKey(),
+  accountUserId: integer('account_user_id').notNull().references(() => accountUsers.id, { onDelete: 'cascade' }),
+  code: text('code').notNull(),
+  type: text('type').notNull(), // 'email_2fa'
+  expiresAt: timestamp('expires_at', { withTimezone: true }).notNull(),
+  usedAt: timestamp('used_at', { withTimezone: true }),
+})
+
 export type Blog = typeof blogs.$inferSelect
 export type BlogInsert = typeof blogs.$inferInsert
 export type Game = typeof games.$inferSelect
@@ -98,3 +123,5 @@ export type TeamMember = typeof team.$inferSelect
 export type TeamMemberInsert = typeof team.$inferInsert
 export type GalleryItem = typeof gallery.$inferSelect
 export type Looking = typeof lookings.$inferSelect
+export type AccountUser = typeof accountUsers.$inferSelect
+export type AccountUserInsert = typeof accountUsers.$inferInsert

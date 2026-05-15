@@ -115,6 +115,9 @@ export default defineNuxtConfig({
     r2SecretAccessKey: process.env.R2_SECRET_ACCESS_KEY || '',
     r2Bucket: process.env.R2_BUCKET || '',
     r2PublicUrl: process.env.R2_PUBLIC_URL || '',
+    resendApiKey: process.env.RESEND_API_KEY || '',
+    resendFromEmail: process.env.RESEND_FROM_EMAIL || 'no-reply@8bitjelly.com',
+    appUrl: process.env.APP_URL || 'https://8bitjelly.com',
     public: {
       hcaptchaSiteKey: '32d19c18-6642-4cec-9657-1b132dedf61a',
       web3formsKey: 'd503b806-9e80-42a2-a4e0-5ca88f9da25e',
