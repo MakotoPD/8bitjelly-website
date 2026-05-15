@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
     '@nuxtjs/i18n',
+    '@nuxtjs/sitemap',
     '@pinia/nuxt',
     '@nuxtjs/google-fonts',
     '@nuxt/image',
@@ -71,6 +72,27 @@ export default defineNuxtConfig({
         },
       ],
     },
+  },
+
+  site: {
+    url: 'https://8bitjelly.com',
+    name: '8BitJelly',
+  },
+
+  sitemap: {
+    sources: ['/api/sitemap/urls'],
+    exclude: ['/admin/**'],
+    defaults: {
+      changefreq: 'monthly',
+      priority: 0.6,
+    },
+    urls: [
+      { loc: '/',        priority: 1.0, changefreq: 'weekly'  },
+      { loc: '/blog',    priority: 0.8, changefreq: 'weekly'  },
+      { loc: '/gallery', priority: 0.6, changefreq: 'monthly' },
+      { loc: '/contact', priority: 0.5, changefreq: 'yearly'  },
+      { loc: '/terms',   priority: 0.2, changefreq: 'yearly'  },
+    ],
   },
 
   runtimeConfig: {

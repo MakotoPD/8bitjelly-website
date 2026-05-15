@@ -1,17 +1,19 @@
-﻿import { useDB } from '~~/server/database'
-import { blogs, games } from '~~/server/database/schema'
+import { useDB } from '~~/server/database'
+import { blogs } from '~~/server/database/schema'
 import { eq } from 'drizzle-orm'
 
 export default defineEventHandler(async () => {
   const db = useDB()
-  const [blogRows, gameRows] = await Promise.all([
-    db.select({ slug: blogs.slug }).from(blogs).where(eq(blogs.isPublished, true)),
-    db.select({ slug: games.slug }).from(games),
-  ])
+  const blogRows = await db
+    .select({ slug: blogs.slug, updatedAt: blogs.updatedAt })
+    .from(blogs)
+    .where(eq(blogs.isPublished, true))
 
-  return [
-    ...blogRows.map(r => ({ loc: `/blog/${r.slug}`, _i18nTransform: true })),
-    ...gameRows.map(r => ({ loc: `/games/${r.slug}`, _i18nTransform: true })),
-  ]
+  return blogRows.map(r => ({
+    loc: `/blog/${r.slug}`,
+    lastmod: r.updatedAt,
+    changefreq: 'monthly',
+    priority: 0.7,
+    _i18nTransform: true,
+  }))
 })
-
