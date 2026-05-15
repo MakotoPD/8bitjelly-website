@@ -1,159 +1,101 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+
+  modules: [
+    '@nuxt/ui',
+    '@nuxtjs/i18n',
+    '@pinia/nuxt',
+    '@nuxtjs/google-fonts',
+    '@nuxt/image',
+    'nuxt-gtag',
+    'nuxt-auth-utils',
+    '@vueuse/nuxt',
+  ],
+
+  css: ['~/assets/css/main.css'],
+
+  googleFonts: {
+    families: {
+      'Titan One': [400],
+      'Space Grotesk': [400, 500, 600, 700],
+      'Press Start 2P': [400],
+      'JetBrains Mono': [400, 600],
+      Fraunces: [400, 600, 700],
+    },
+    display: 'swap',
+    preconnect: true,
+  },
+
+  gtag: {
+    id: 'G-PCLLKCCJSV',
+  },
+
+  i18n: {
+    locales: [
+      { code: 'en', name: 'English', file: 'en.json' },
+      { code: 'pl', name: 'Polski', file: 'pl.json' },
+    ],
+    defaultLocale: 'en',
+    langDir: 'lang/',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+    },
+  },
+
+  image: {
+    domains: ['api.8bitjelly.com'],
+    format: ['webp', 'jpg', 'png'],
+  },
+
   app: {
-		head: {
-			title: '8BitJelly - Hobby group game development',
-			htmlAttrs: {
-				lang: 'en',
-			},
-			meta: [{
-					charset: 'utf-8'
-				},
-				{
-					name: 'viewport',
-					content: 'width=device-width, initial-scale=1'
-				},
-				{
-					name: 'format-detection',
-					content: 'telephone=no'
-				},
-				{
-					name: 'description',
-					content: 'Our hobby is game development. We are a small but close-knit team who love making games and want to share this with others. The most important thing for us is support, having fun together and being creative while learning new knowledge and skills.'
-				},
-				{
-					name: 'keywords',
-					content: 'gamedev, gamedev polish, gamedev poland, game studio, games, game, developers, developer, 8bit, 8bitjelly, unity, unity game development, unity game, indie game, independent game, unity games, game making, fromsoftware games, indie game dev, digital extreme, unity game dev'
-				},
-				{
-					name: 'og:image',
-					content: '/og.png'
-				},
-				{
-					name: 'theme-color',
-					content: '#feeff5'
-				}
-			],
-			link: [{
-					rel: 'icon',
-					type: 'image/x-icon',
-					href: '/favicon.ico'
-				},
-				{
-					rel: 'stylesheet',
-					href: 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css',
-					media: 'print', 
-					onload: 'this.media="all"'
-				},
-				{
-					rel: 'alternate',
-					hreflang: 'pl',
-					href: 'https://www.8bitjelly.com/pl'
-				},
-				{
-					rel: 'alternate',
-					hreflang: 'en-GB',
-					href: 'https://www.8bitjelly.com/'
-				},
-				{
-					rel: 'stylesheet',
-					href: 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
-					media: 'print', 
-					onload: 'this.media="all"'
-				},
-				{
-					rel: 'canonical',
-					href: 'https://8bitjelly.com'
-				},
-				{
-					rel: 'manifest',
-					href: "manifest.json"
-				}
-			],
-			script: [
-				{ defer: true, src: 'https://cloud.umami.is/script.js', "data-website-id": "f5e6e1c2-8bca-41c2-b6e3-c0f66d215ddf"}
-			
-			]
+    head: {
+      title: '8BitJelly - Hobby group game development',
+      meta: [
+        { name: 'description', content: 'We are a hobby group making games with love. Join us!' },
+        { property: 'og:image', content: '/og.png' },
+        { name: 'theme-color', content: '#FFF1EC' },
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'manifest', href: '/manifest.json' },
+      ],
+      script: [
+        {
+          src: 'https://cloud.umami.is/script.js',
+          'data-website-id': 'f5e6e1c2-8bca-41c2-b6e3-c0f66d215ddf',
+          defer: true,
+        },
+      ],
+    },
+  },
 
-		},
+  runtimeConfig: {
+    adminPassword: process.env.ADMIN_PASSWORD || 'changeme',
+    sessionSecret: process.env.NUXT_SESSION_SECRET || 'default-secret-please-change',
+    r2AccountId: process.env.R2_ACCOUNT_ID || '',
+    r2AccessKeyId: process.env.R2_ACCESS_KEY_ID || '',
+    r2SecretAccessKey: process.env.R2_SECRET_ACCESS_KEY || '',
+    r2Bucket: process.env.R2_BUCKET || '',
+    r2PublicUrl: process.env.R2_PUBLIC_URL || '',
+    public: {
+      hcaptchaSiteKey: '32d19c18-6642-4cec-9657-1b132dedf61a',
+      web3formsKey: 'd503b806-9e80-42a2-a4e0-5ca88f9da25e',
+    },
+  },
 
-	},
-	modules: [
-		'@nuxtjs/tailwindcss', 		//css framework
-		'@nuxtjs/i18n', 			//i18n for multilang page
-		'nuxt-gtag', 				//gtag google analytics
-		'@nuxtjs/google-fonts',   	//google fonts
-		'@nuxt/image',				//images
-		'@hypernym/nuxt-anime',		//animations  https://github.com/hypernym-studio/nuxt-anime  https://animejs.com/documentation/
-		'nuxt-swiper',				//swiper		https://nuxt.com/modules/swiper
-		'@nuxtjs/robots',			//robots
-		'@nuxtjs/sitemap',			//sitemap	
-		'vue3-carousel-nuxt',		//carousel
-	],
+  components: {
+    dirs: [
+      { path: '~/components/sections', pathPrefix: false },
+      { path: '~/components/admin', pathPrefix: false },
+      '~/components',
+    ],
+  },
 
-	image: {
-		provider: 'ipx', 
-	},
-	nitro: {
-		externals: {
-			trace: false, 
-		}
-	},
-
-	tailwindcss: {
-		configPath: 'tailwind.config',
-	},
-
-
-	i18n: {
-		locales: [{
-				code: 'en',
-				iso: 'en-US',
-				file: 'en.json'
-			},
-			{
-				code: 'pl',
-				iso: 'pl-PL',
-				file: 'pl.json'
-			}
-		],
-		langDir: 'lang/',
-		defaultLocale: 'en',
-		detectBrowserLanguage: {
-			useCookie: true,
-			cookieKey: 'i18n_redirected',
-			redirectOn: 'root',
-		}
-	},
-
-	gtag: {
-		id: 'G-PCLLKCCJSV'
-	},
-
-	googleFonts: {
-		display: 'swap',
-		families: {
-			Poppins: [100, 200, 300, 400, 500, 600, 700, 800, 900],
-		}
-	},
-
-
-	robots: {
-		UserAgent: '*',
-		Disallow: '',
-		Sitemap: 'https://8bitjelly.com/sitemap.xml'
-	},
-
-
-	site: {
-		sources: [
-			'/api/__sitemap__/urls',
-		  ]
-	},
-
-
-	css: [
-		'@/assets/css/global.css',
-	]
+  future: {
+    compatibilityVersion: 4,
+  },
 })

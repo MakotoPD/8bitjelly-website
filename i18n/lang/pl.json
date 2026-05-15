@@ -10,11 +10,11 @@
     "joinUs": "Dołącz"
   },
   "hero": {
-    "eyebrow": "Hobbyistyczna ekipa gamedev",
+    "eyebrow": "Hello Jelly",
     "title1": "Tworzymy",
     "title2": "Gry",
-    "title3": "z ❤️",
-    "subtitle": "8BitJelly to ekipa indie gamedev napędzana pasją. Tworzymy gry, dzielimy się wiedzą i świetnie się przy tym bawimy.",
+    "title3": "z pasją",
+    "subtitle": "Jesteśmy małym, ale zgranym zespołem, który uwielbia tworzyć gry i chce dzielić się tym z innymi. Najważniejsze dla nas jest wsparcie, wspólna zabawa i kreatywność podczas zdobywania nowej wiedzy i umiejętności.",
     "cta1": "Nasze gry",
     "cta2": "Poznaj ekipę"
   },
@@ -108,7 +108,7 @@
     "name": "Imię",
     "namePlaceholder": "Twoje imię",
     "email": "Email",
-    "emailPlaceholder": "twoj@email.com",
+    "emailPlaceholder": "ty{'@'}email.com",
     "phone": "Telefon (opcjonalnie)",
     "phonePlaceholder": "+48 123 456 789",
     "position": "Stanowisko, o które się ubiegasz",
