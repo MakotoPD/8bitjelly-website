@@ -1,18 +1,18 @@
 # ── Stage 1: dependencies ────────────────────────────────────────────────────
 FROM node:22-alpine AS deps
 
-RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN corepack enable && corepack prepare pnpm@9.15.9 --activate
 
 WORKDIR /app
 
 COPY package.json pnpm-lock.yaml .npmrc ./
-RUN pnpm install --no-frozen-lockfile
+RUN pnpm install --frozen-lockfile
 
 
 # ── Stage 2: build ───────────────────────────────────────────────────────────
 FROM node:22-alpine AS builder
 
-RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN corepack enable && corepack prepare pnpm@9.15.9 --activate
 
 WORKDIR /app
 
@@ -31,10 +31,12 @@ FROM node:22-alpine AS runner
 
 RUN apk add --no-cache dumb-init
 
+RUN addgroup -g 1001 -S nodejs && adduser -S nuxtjs -u 1001
+
 WORKDIR /app
 
 # Only copy the built output — no source, no dev deps
-COPY --from=builder /app/.output ./output
+COPY --from=builder --chown=nuxtjs:nodejs /app/.output ./.output
 
 ENV NODE_ENV=production
 ENV PORT=3000
@@ -50,7 +52,9 @@ ENV HOST=0.0.0.0
 #   R2_BUCKET
 #   R2_PUBLIC_URL
 
+USER nuxtjs
+
 EXPOSE 3000
 
 ENTRYPOINT ["dumb-init", "--"]
-CMD ["node", "output/server/index.mjs"]
+CMD ["node", ".output/server/index.mjs"]
