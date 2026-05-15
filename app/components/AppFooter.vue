@@ -4,7 +4,6 @@
       <div class="footer-grid">
         <div>
           <NuxtLink :to="localePath('/')" class="logo" style="color:var(--cream);margin-bottom:16px;display:inline-flex;">
-            <span class="logo-mark"></span>
             8BitJelly
           </NuxtLink>
           <p style="font-size:14px;line-height:1.6;color:color-mix(in oklab, var(--cream) 70%, transparent);margin:12px 0 20px;max-width:280px;">
@@ -19,9 +18,6 @@
             </a>
             <a href="https://github.com/8bitjelly" target="_blank" rel="noopener" aria-label="GitHub">
               <UIcon name="i-simple-icons-github" style="width:18px;height:18px;" />
-            </a>
-            <a href="https://itch.io/8bitjelly" target="_blank" rel="noopener" aria-label="itch.io">
-              <UIcon name="i-simple-icons-itchdotio" style="width:18px;height:18px;" />
             </a>
           </div>
         </div>

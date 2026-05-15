@@ -2,7 +2,6 @@
   <div style="display:flex; min-height:100vh; background:#f5f5f5;">
     <aside class="admin-sidebar">
       <NuxtLink to="/" class="logo" style="margin-bottom:24px;">
-        <span class="logo-mark"></span>
         8BitJelly
       </NuxtLink>
 
