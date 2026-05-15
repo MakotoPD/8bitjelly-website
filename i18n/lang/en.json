@@ -134,6 +134,16 @@
     "title": "Terms of",
     "titleEm": "Service"
   },
+  "seo": {
+    "homeTitle": "8BitJelly — Indie Gamedev Crew",
+    "homeDescription": "A hobby group of passionate game developers, artists, and musicians making games with love.",
+    "blogTitle": "Blog — 8BitJelly",
+    "blogDescription": "Dev logs, tutorials, and behind-the-scenes posts from the 8BitJelly crew.",
+    "galleryTitle": "Art Gallery — 8BitJelly",
+    "galleryDescription": "Screenshots, concept art, and in-progress artwork from 8BitJelly game projects.",
+    "contactTitle": "Contact — 8BitJelly",
+    "contactDescription": "Get in touch with the 8BitJelly crew — join the team, collaborate, or just say hello."
+  },
   "common": {
     "loading": "Loading...",
     "error": "Something went wrong",

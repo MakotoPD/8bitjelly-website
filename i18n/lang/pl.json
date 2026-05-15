@@ -134,6 +134,16 @@
     "title": "Regulamin",
     "titleEm": "serwisu"
   },
+  "seo": {
+    "homeTitle": "8BitJelly — Indie Gamedev Crew",
+    "homeDescription": "Hobbyistyczna ekipa twórców gier, artystów i muzyków tworząca gry z pasją.",
+    "blogTitle": "Blog — 8BitJelly",
+    "blogDescription": "Dev logi, tutoriale i kulisy projektów ekipy 8BitJelly.",
+    "galleryTitle": "Galeria — 8BitJelly",
+    "galleryDescription": "Screenshoty, concept arty i prace w toku z projektów gier 8BitJelly.",
+    "contactTitle": "Kontakt — 8BitJelly",
+    "contactDescription": "Skontaktuj się z ekipą 8BitJelly — dołącz do zespołu, nawiąż współpracę lub po prostu napisz cześć."
+  },
   "common": {
     "loading": "Ładowanie...",
     "error": "Coś poszło nie tak",

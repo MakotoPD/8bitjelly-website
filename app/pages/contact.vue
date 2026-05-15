@@ -117,8 +117,25 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'default' })
 const { t, locale } = useI18n()
+const route = useRoute()
 
-useSeoMeta({ title: 'Contact — 8BitJelly', description: 'Get in touch with the 8BitJelly crew.' })
+useSeoMeta({
+  title: computed(() => t('seo.contactTitle')),
+  ogTitle: computed(() => t('seo.contactTitle')),
+  description: computed(() => t('seo.contactDescription')),
+  ogDescription: computed(() => t('seo.contactDescription')),
+  ogImage: 'https://8bitjelly.com/og.png',
+  ogType: 'website',
+  ogUrl: computed(() => `https://8bitjelly.com${route.path}`),
+  ogLocale: computed(() => locale.value === 'pl' ? 'pl_PL' : 'en_US'),
+  twitterCard: 'summary_large_image',
+  twitterTitle: computed(() => t('seo.contactTitle')),
+  twitterDescription: computed(() => t('seo.contactDescription')),
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: computed(() => `https://8bitjelly.com${route.path}`) }],
+})
 
 const { data: lookings } = await useFetch('/api/lookings', { query: computed(() => ({ locale: locale.value })) })
 

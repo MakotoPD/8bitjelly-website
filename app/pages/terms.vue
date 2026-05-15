@@ -39,5 +39,9 @@
 
 <script setup lang="ts">
 definePageMeta({ layout: 'default' })
-useSeoMeta({ title: 'Terms of Service — 8BitJelly' })
+useSeoMeta({
+  title: 'Terms of Service — 8BitJelly',
+  description: 'Terms of Service for 8BitJelly — a hobby game development group.',
+  robots: 'noindex, follow',
+})
 </script>

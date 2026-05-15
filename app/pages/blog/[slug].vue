@@ -51,24 +51,69 @@ const { data: post, error } = await useFetch(`/api/blogs/${route.params.slug}`, 
 
 useSeoMeta({
   title: computed(() => post.value ? `${post.value.title} — 8BitJelly` : '8BitJelly Blog'),
+  ogTitle: computed(() => post.value?.title || '8BitJelly Blog'),
   description: computed(() => post.value?.excerpt || ''),
-  ogImage: computed(() => post.value?.coverImage || '/og.png'),
+  ogDescription: computed(() => post.value?.excerpt || ''),
+  ogImage: computed(() => post.value?.coverImage || 'https://8bitjelly.com/og.png'),
+  ogType: 'article',
+  ogUrl: computed(() => `https://8bitjelly.com${route.path}`),
+  ogLocale: computed(() => locale.value === 'pl' ? 'pl_PL' : 'en_US'),
+  articlePublishedTime: computed(() => post.value?.publishedAt ? new Date(post.value.publishedAt).toISOString() : undefined),
+  articleAuthor: computed(() => post.value?.author || '8BitJelly'),
+  author: computed(() => post.value?.author || '8BitJelly'),
+  twitterCard: 'summary_large_image',
+  twitterTitle: computed(() => post.value?.title || '8BitJelly Blog'),
+  twitterDescription: computed(() => post.value?.excerpt || ''),
 })
 
-useHead(computed(() => ({
-  script: post.value ? [{
-    type: 'application/ld+json',
-    innerHTML: JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
-      headline: post.value!.title,
-      author: { '@type': 'Person', name: post.value!.author },
-      datePublished: post.value!.publishedAt,
-      image: post.value!.coverImage || 'https://8bitjelly.com/og.png',
-      publisher: { '@type': 'Organization', name: '8BitJelly' },
-    }),
-  }] : [],
-})))
+useHead(computed(() => {
+  const postUrl = `https://8bitjelly.com${route.path}`
+  const scripts = post.value ? [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        mainEntityOfPage: { '@type': 'WebPage', '@id': postUrl },
+        headline: post.value!.title,
+        description: post.value!.excerpt || '',
+        author: { '@type': 'Person', name: post.value!.author },
+        datePublished: post.value!.publishedAt,
+        dateModified: post.value!.publishedAt,
+        image: {
+          '@type': 'ImageObject',
+          url: post.value!.coverImage || 'https://8bitjelly.com/og.png',
+        },
+        url: postUrl,
+        inLanguage: locale.value === 'pl' ? 'pl-PL' : 'en-US',
+        keywords: (post.value!.tags || []).join(', '),
+        publisher: {
+          '@type': 'Organization',
+          name: '8BitJelly',
+          url: 'https://8bitjelly.com',
+          logo: { '@type': 'ImageObject', url: 'https://8bitjelly.com/logo_white.png' },
+        },
+      }),
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://8bitjelly.com' },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: `https://8bitjelly.com${locale.value === 'pl' ? '/pl' : ''}/blog` },
+          { '@type': 'ListItem', position: 3, name: post.value!.title, item: postUrl },
+        ],
+      }),
+    },
+  ] : []
+
+  return {
+    link: [{ rel: 'canonical', href: postUrl }],
+    script: scripts,
+  }
+}))
 
 function formatDate(d: string | Date | null) {
   if (!d) return ''

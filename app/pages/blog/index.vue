@@ -79,9 +79,26 @@
 definePageMeta({ layout: 'default' })
 const { t, locale } = useI18n()
 const localePath = useLocalePath()
+const route = useRoute()
 const activeTag = ref<string | null>(null)
 
-useSeoMeta({ title: `Blog — 8BitJelly`, description: 'Dev logs, tutorials and news from the 8BitJelly crew.' })
+useSeoMeta({
+  title: computed(() => t('seo.blogTitle')),
+  ogTitle: computed(() => t('seo.blogTitle')),
+  description: computed(() => t('seo.blogDescription')),
+  ogDescription: computed(() => t('seo.blogDescription')),
+  ogImage: 'https://8bitjelly.com/og.png',
+  ogType: 'website',
+  ogUrl: computed(() => `https://8bitjelly.com${route.path}`),
+  ogLocale: computed(() => locale.value === 'pl' ? 'pl_PL' : 'en_US'),
+  twitterCard: 'summary_large_image',
+  twitterTitle: computed(() => t('seo.blogTitle')),
+  twitterDescription: computed(() => t('seo.blogDescription')),
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: computed(() => `https://8bitjelly.com${route.path}`) }],
+})
 
 const { data: tags } = await useFetch('/api/tags')
 

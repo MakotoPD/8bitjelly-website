@@ -56,8 +56,11 @@ export default defineNuxtConfig({
     head: {
       title: '8BitJelly - Hobby group game development',
       meta: [
-        { name: 'description', content: 'We are a hobby group making games with love. Join us!' },
-        { property: 'og:image', content: '/og.png' },
+        { name: 'description', content: 'A hobby group of passionate game developers, artists, and musicians making games with love.' },
+        { property: 'og:image', content: 'https://8bitjelly.com/og.png' },
+        { property: 'og:site_name', content: '8BitJelly' },
+        { property: 'og:type', content: 'website' },
+        { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'theme-color', content: '#FFF1EC' },
       ],
       link: [
@@ -115,6 +118,15 @@ export default defineNuxtConfig({
       { path: '~/components/admin', pathPrefix: false },
       '~/components',
     ],
+  },
+
+  routeRules: {
+    '/admin/**': {
+      headers: { 'X-Robots-Tag': 'noindex, nofollow' },
+    },
+    '/llms-full.txt': {
+      headers: { 'Cache-Control': 'public, max-age=3600' },
+    },
   },
 
   future: {

@@ -63,9 +63,28 @@
 
 <script setup lang="ts">
 definePageMeta({ layout: 'default' })
+
+const { t, locale } = useI18n()
+const route = useRoute()
 const lightbox = ref<string | null>(null)
 
-useSeoMeta({ title: 'Gallery — 8BitJelly', description: 'Art gallery from 8BitJelly game projects.' })
+useSeoMeta({
+  title: computed(() => t('seo.galleryTitle')),
+  ogTitle: computed(() => t('seo.galleryTitle')),
+  description: computed(() => t('seo.galleryDescription')),
+  ogDescription: computed(() => t('seo.galleryDescription')),
+  ogImage: 'https://8bitjelly.com/og.png',
+  ogType: 'website',
+  ogUrl: computed(() => `https://8bitjelly.com${route.path}`),
+  ogLocale: computed(() => locale.value === 'pl' ? 'pl_PL' : 'en_US'),
+  twitterCard: 'summary_large_image',
+  twitterTitle: computed(() => t('seo.galleryTitle')),
+  twitterDescription: computed(() => t('seo.galleryDescription')),
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: computed(() => `https://8bitjelly.com${route.path}`) }],
+})
 
 const { data: gallery, pending } = await useFetch('/api/gallery')
 </script>
