@@ -1,7 +1,7 @@
 <template>
   <div>
     <article>
-      <header style="padding:70px 0 50px;background:var(--cream);border-bottom:2px solid var(--ink);">
+      <header class="post-header" style="background:var(--cream);border-bottom:2px solid var(--ink);">
         <div class="wrap" style="max-width:800px;">
           <NuxtLink :to="localePath('/blog')" style="display:inline-flex;align-items:center;gap:8px;font-family:'Press Start 2P',monospace;font-size:9px;text-transform:uppercase;margin-bottom:24px;color:color-mix(in oklab,var(--ink) 60%,transparent);">
             <UIcon name="i-heroicons-arrow-left" style="width:14px;height:14px;" />
@@ -24,7 +24,7 @@
         </div>
       </header>
 
-      <div v-if="post" style="padding:60px 0 100px;background:var(--cream);">
+      <div v-if="post" class="post-content" style="background:var(--cream);">
         <div class="wrap" style="max-width:800px;">
           <div class="prose" v-html="post.content" />
         </div>
@@ -75,3 +75,13 @@ function formatDate(d: string | Date | null) {
   return new Date(d).toLocaleDateString(locale.value === 'pl' ? 'pl-PL' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })
 }
 </script>
+
+<style scoped>
+.post-header { padding: 70px 0 50px; }
+.post-content { padding: 60px 0 100px; }
+
+@media (max-width: 600px) {
+  .post-header { padding: 36px 0 28px; }
+  .post-content { padding: 36px 0 60px; }
+}
+</style>

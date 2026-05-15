@@ -15,8 +15,8 @@
       </div>
     </div>
 
-    <section style="padding:40px 0 100px;background:var(--cream);">
-      <div class="wrap" style="display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:start;">
+    <section class="contact-section">
+      <div class="wrap contact-grid">
 
         <!-- Form -->
         <div class="form-card" ref="formCard">
@@ -226,12 +226,24 @@ async function submit() {
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
+.contact-section {
+  padding: 40px 0 100px;
+  background: var(--cream);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
 @media (max-width: 1000px) {
-  .wrap > div[style*="grid-template-columns:1.5fr"] { grid-template-columns: 1fr !important; }
-  .page-hero-grid { grid-template-columns: 1fr !important; }
+  .contact-grid { grid-template-columns: 1fr; }
   .whale-side { display: none; }
 }
 @media (max-width: 600px) {
+  .contact-section { padding: 24px 0 60px; }
+  .form-card { padding: 22px 18px; box-shadow: 6px 6px 0 var(--ink); }
   .topics { grid-template-columns: 1fr; }
   .row-2 { grid-template-columns: 1fr; }
 }

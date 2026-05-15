@@ -16,10 +16,10 @@
       </div>
     </div>
 
-    <section style="padding:80px 0 100px;background:var(--cream);">
+    <section class="blog-section">
       <div class="wrap">
         <!-- Tag filter -->
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px;" v-if="tags && tags.length">
+        <div class="filter-bar" v-if="tags && tags.length">
           <button class="chip" :class="{ active: !activeTag }" @click="activeTag = null">
             {{ $t('blog.filterAll') }}
           </button>
@@ -38,7 +38,7 @@
           <p class="pixel">{{ $t('common.loading') }}</p>
         </div>
 
-        <div v-else-if="posts && posts.length" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        <div v-else-if="posts && posts.length" class="posts-grid">
           <NuxtLink
             v-for="post in posts"
             :key="post.id"
@@ -101,10 +101,28 @@ function formatDate(d: string | Date | null) {
 </script>
 
 <style scoped>
+.blog-section {
+  padding: 80px 0 100px;
+  background: var(--cream);
+}
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
 @media (max-width: 1000px) {
-  div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: repeat(2,1fr) !important; }
+  .posts-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 600px) {
-  div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+  .blog-section { padding: 40px 0 60px; }
+  .filter-bar { margin-bottom: 20px; }
+  .posts-grid { grid-template-columns: 1fr; }
 }
 </style>
