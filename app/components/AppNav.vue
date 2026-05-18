@@ -2,7 +2,7 @@
   <nav class="top">
     <div class="nav-inner">
       <NuxtLink :to="localePath('/')" class="logo">
-        <img src="/logo_black.svg" alt="8BitJelly" class="logo-img" />
+        <img src="/logo.webp" alt="8BitJelly" class="logo-img" />
       </NuxtLink>
 
       <div class="nav-links">
@@ -77,13 +77,13 @@ watch(useRoute(), () => { mobileOpen.value = false })
   width: auto;
   display: block;
   /* Colorize to brand magenta (#FF3D7F) */
-  filter: brightness(0) saturate(100%) invert(37%) sepia(97%) saturate(1366%) hue-rotate(311deg) brightness(104%);
+  /* filter: brightness(0) saturate(100%) invert(37%) sepia(97%) saturate(1366%) hue-rotate(311deg) brightness(104%); */
   transition: filter 0.2s ease;
 }
 .logo:hover .logo-img,
 .logo-img:hover {
   /* Darken slightly on hover */
-  filter: brightness(0) saturate(100%) invert(22%) sepia(97%) saturate(1200%) hue-rotate(311deg) brightness(90%);
+  filter: brightness(90%);
 }
 
 .slide-enter-active, .slide-leave-active { transition: transform 0.3s ease; }
