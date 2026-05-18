@@ -139,10 +139,6 @@
         <!-- Settings -->
         <div style="background:var(--cream);border:2.5px solid var(--ink);border-radius:16px;padding:24px;box-shadow:5px 5px 0 var(--ink);">
           <h3 class="display" style="font-size:22px;margin:0 0 16px;">Settings</h3>
-          <div class="field" style="margin-bottom:12px;">
-            <label>Sort Order</label>
-            <input v-model.number="form.sortOrder" type="number" class="input" />
-          </div>
           <label style="display:flex;align-items:center;gap:10px;cursor:pointer;">
             <input type="checkbox" v-model="form.isActive" style="width:18px;height:18px;" />
             <span style="font-weight:600;">Active (show on site)</span>

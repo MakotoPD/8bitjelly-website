@@ -7,7 +7,8 @@
     "blog": "Blog",
     "gallery": "Galeria",
     "contact": "Kontakt",
-    "joinUs": "Dołącz"
+    "joinUs": "Dołącz",
+    "panel": "Panel"
   },
   "hero": {
     "eyebrow": "Hello Jelly",
@@ -64,7 +65,8 @@
     "inDev": "W produkcji",
     "released": "Wydana",
     "hiatus": "Pauza",
-    "cancelled": "Anulowana"
+    "cancelled": "Anulowana",
+    "spotlight": "★ Wyróżniona"
   },
   "blog": {
     "eyebrow": "Od ekipy",

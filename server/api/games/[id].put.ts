@@ -14,6 +14,8 @@ export default defineEventHandler(async (event) => {
     title: body.title,
     descriptionEn: body.descriptionEn || '',
     descriptionPl: body.descriptionPl || '',
+    contentEn: body.contentEn || '',
+    contentPl: body.contentPl || '',
     tags: body.tags || [],
     platform: body.platform,
     status: body.status,

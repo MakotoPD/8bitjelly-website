@@ -87,7 +87,12 @@
           <h3 class="display" style="font-size:22px;margin:0 0 16px;">Settings</h3>
           <div class="field" style="margin-bottom:12px;">
             <label>Slug <span class="req">*</span></label>
-            <input v-model="form.slug" class="input" placeholder="post-url-slug" />
+            <div style="display:flex;gap:8px;">
+              <input v-model="form.slug" class="input" placeholder="post-url-slug" style="flex:1;" />
+              <button type="button" class="btn sm ghost" title="Generate from title" @click="form.slug = form.titleEn.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')">
+                <UIcon name="i-heroicons-arrow-path" style="width:14px;height:14px;" />
+              </button>
+            </div>
           </div>
           <div class="field" style="margin-bottom:12px;">
             <label>Author</label>

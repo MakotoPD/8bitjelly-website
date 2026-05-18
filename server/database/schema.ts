@@ -27,6 +27,8 @@ export const games = pgTable('games', {
   title: text('title').notNull(),
   descriptionEn: text('description_en').notNull().default(''),
   descriptionPl: text('description_pl').notNull().default(''),
+  contentEn: text('content_en').notNull().default(''),
+  contentPl: text('content_pl').notNull().default(''),
   tags: text('tags').array().notNull().default([]),
   platform: text('platform').notNull().default('PC'),
   status: text('status').notNull().default('in-dev'),

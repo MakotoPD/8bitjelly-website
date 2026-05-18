@@ -18,6 +18,7 @@
       </div>
 
       <div style="display:flex;align-items:center;gap:12px;">
+        <NuxtLink v-if="panelLink" :to="panelLink" class="btn sm ghost">{{ $t('nav.panel') }}</NuxtLink>
         <div class="nav-lang">
           <button :class="{ active: locale === 'en' }" @click="setLocale('en')">EN</button>
           <button :class="{ active: locale === 'pl' }" @click="setLocale('pl')">PL</button>
@@ -43,6 +44,7 @@
         <NuxtLink :to="localePath('/blog')" @click="mobileOpen = false">{{ $t('nav.blog') }}</NuxtLink>
         <NuxtLink :to="localePath('/gallery')" @click="mobileOpen = false">{{ $t('nav.gallery') }}</NuxtLink>
         <NuxtLink :to="localePath('/contact')" @click="mobileOpen = false">{{ $t('nav.contact') }}</NuxtLink>
+        <NuxtLink v-if="panelLink" :to="panelLink" @click="mobileOpen = false">{{ $t('nav.panel') }}</NuxtLink>
         <div class="nav-lang w-fit" style="margin-top:16px;">
           <button :class="{ active: locale === 'en' }" @click="setLocale('en'); mobileOpen = false">EN</button>
           <button :class="{ active: locale === 'pl' }" @click="setLocale('pl'); mobileOpen = false">PL</button>
@@ -56,6 +58,15 @@
 const { locale, setLocale } = useI18n()
 const localePath = useLocalePath()
 const mobileOpen = ref(false)
+const { loggedIn, user } = useUserSession()
+
+const panelLink = computed(() => {
+  if (!loggedIn.value) return null
+  const u = user.value as Record<string, unknown> | null
+  if (u?.isAdmin || u?.role === 'admin') return '/admin'
+  if (u?.accountId) return '/member'
+  return null
+})
 
 watch(useRoute(), () => { mobileOpen.value = false })
 </script>

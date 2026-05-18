@@ -8,42 +8,76 @@
         </div>
         <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-end;">
           <p class="section-kicker" style="text-align:right;">{{ $t('games.kicker') }}</p>
-          <!-- <NuxtLink :to="localePath('/gallery')" class="btn ghost">
-            {{ $t('games.viewAll') }} →
-          </NuxtLink> -->
         </div>
       </div>
 
-      <div v-if="games && games.length" class="games-grid">
-        <div
-          v-for="(game, i) in games"
-          :key="game.id"
-          class="game"
-          :class="{ featured: game.isFeatured, wide: i === 0 && !game.isFeatured }"
-        >
-          <div class="game-art">
-            <NuxtImg
-              v-if="game.coverImage"
-              :src="game.coverImage"
-              :alt="game.title"
-              style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
-            />
-            <div v-else class="game-art-fill" :class="game.coverPattern"></div>
-            <div class="game-emoji">{{ game.coverEmoji }}</div>
-            <div class="game-tags">
-              <span v-for="tag in game.tags.slice(0, 2)" :key="tag" class="tag">{{ tag }}</span>
-              <span class="tag dark">{{ statusLabel(game.status) }}</span>
+      <div v-if="games && games.length">
+        <!-- Priority spotlight cards -->
+        <div v-if="priorityGames.length" class="spotlight-list">
+          <div v-for="game in priorityGames" :key="game.id" class="spotlight-card" style="cursor:pointer;" @click="navigateToGame(game.slug)">
+            <div class="spotlight-art">
+              <NuxtImg
+                v-if="game.coverImage"
+                :src="game.coverImage"
+                :alt="game.title"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+              />
+              <div v-else class="game-art-fill" :class="game.coverPattern"></div>
+              <div v-if="!game.coverImage" class="game-emoji spotlight-emoji">{{ game.coverEmoji }}</div>
+              <div class="game-tags">
+                <span v-for="tag in game.tags.slice(0, 3)" :key="tag" class="tag">{{ tag }}</span>
+                <span class="tag dark">{{ statusLabel(game.status) }}</span>
+              </div>
+            </div>
+            <div class="spotlight-body">
+              <span class="eyebrow" style="color:var(--magenta);margin-bottom:12px;display:block;">{{ $t('games.spotlight') }}</span>
+              <h3 class="spotlight-title display">{{ game.title }}</h3>
+              <p class="game-desc" style="font-size:15px;margin:14px 0 20px;">{{ game.description }}</p>
+              <div class="game-meta">
+                <span class="pixel">{{ game.platform }}</span>
+                <a v-if="game.itchioUrl" :href="game.itchioUrl" target="_blank" rel="noopener" @click.stop>
+                  <UIcon name="i-simple-icons-itchdotio" style="width:14px;height:14px;" />
+                  {{ $t('games.playNow') }}
+                </a>
+              </div>
             </div>
           </div>
-          <div class="game-body">
-            <h3 class="game-title display">{{ game.title }}</h3>
-            <p class="game-desc">{{ game.description }}</p>
-            <div class="game-meta">
-              <span class="pixel">{{ game.platform }}</span>
-              <a v-if="game.itchioUrl" :href="game.itchioUrl" target="_blank" rel="noopener">
-                <UIcon name="i-simple-icons-itchdotio" style="width:14px;height:14px;" />
-                {{ $t('games.playNow') }}
-              </a>
+        </div>
+
+        <!-- Regular games grid -->
+        <div v-if="regularGames.length" class="games-grid">
+          <div
+            v-for="(game, i) in regularGames"
+            :key="game.id"
+            class="game"
+            :class="{ featured: game.isFeatured, wide: i === 0 && !game.isFeatured }"
+            style="cursor:pointer;"
+            @click="navigateToGame(game.slug)"
+          >
+            <div class="game-art">
+              <NuxtImg
+                v-if="game.coverImage"
+                :src="game.coverImage"
+                :alt="game.title"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+              />
+              <div v-else class="game-art-fill" :class="game.coverPattern"></div>
+              <div v-if="!game.coverImage" class="game-emoji">{{ game.coverEmoji }}</div>
+              <div class="game-tags">
+                <span v-for="tag in game.tags.slice(0, 2)" :key="tag" class="tag">{{ tag }}</span>
+                <span class="tag dark">{{ statusLabel(game.status) }}</span>
+              </div>
+            </div>
+            <div class="game-body">
+              <h3 class="game-title display">{{ game.title }}</h3>
+              <p class="game-desc">{{ game.description }}</p>
+              <div class="game-meta">
+                <span class="pixel">{{ game.platform }}</span>
+                <a v-if="game.itchioUrl" :href="game.itchioUrl" target="_blank" rel="noopener" @click.stop>
+                  <UIcon name="i-simple-icons-itchdotio" style="width:14px;height:14px;" />
+                  {{ $t('games.playNow') }}
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -63,11 +97,19 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 const { t, locale } = useI18n()
 const localePath = useLocalePath()
 const sectionEl = ref<HTMLElement>()
+const router = useRouter()
+
+function navigateToGame(slug: string) {
+  router.push(localePath(`/games/${slug}`))
+}
 
 const { data: games } = await useFetch('/api/games', {
   query: computed(() => ({ locale: locale.value })),
   watch: [locale],
 })
+
+const priorityGames = computed(() => games.value?.filter(g => g.isPriority) ?? [])
+const regularGames = computed(() => games.value?.filter(g => !g.isPriority) ?? [])
 
 function statusLabel(status: string) {
   const key = status.replace(/-([a-z])/g, (_, c) => c.toUpperCase())
@@ -77,7 +119,7 @@ function statusLabel(status: string) {
 onMounted(() => {
   if (import.meta.client) {
     gsap.registerPlugin(ScrollTrigger)
-    gsap.from('.game', {
+    gsap.from('.game, .spotlight-card', {
       y: 50, opacity: 0, stagger: 0.1, duration: 0.7, ease: 'power3.out',
       scrollTrigger: { trigger: sectionEl.value, start: 'top 80%', once: true },
     })
@@ -87,6 +129,38 @@ onMounted(() => {
 
 <style scoped>
 .games { padding: 110px 0 90px; background: var(--cream); }
+
+/* Spotlight */
+.spotlight-list { display: flex; flex-direction: column; gap: 20px; margin-bottom: 24px; }
+.spotlight-card {
+  display: flex; flex-direction: row;
+  border: 2.5px solid var(--magenta);
+  border-radius: 18px;
+  background: var(--cream);
+  overflow: hidden;
+  box-shadow: 6px 6px 0 var(--magenta);
+  transition: transform 0.2s ease;
+  min-height: 260px;
+}
+.spotlight-card:hover { transform: translate(-3px,-3px); box-shadow: 9px 9px 0 var(--magenta); }
+.spotlight-art {
+  width: 44%; flex: none;
+  position: relative; overflow: hidden;
+  border-right: 2.5px solid var(--magenta);
+}
+.spotlight-emoji {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 120px;
+  filter: drop-shadow(4px 4px 0 var(--ink));
+}
+.spotlight-body {
+  flex: 1; padding: 32px 36px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.spotlight-title { font-size: 48px; line-height: 1; margin: 0; }
+
+/* Regular grid */
 .games-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
 .game {
   grid-column: span 4;
@@ -130,6 +204,11 @@ onMounted(() => {
 .game-meta a:hover { background: var(--magenta); }
 
 @media (max-width: 1000px) {
+  .spotlight-card { flex-direction: column; min-height: unset; }
+  .spotlight-art { width: 100%; aspect-ratio: 16 / 9; border-right: none; border-bottom: 2.5px solid var(--magenta); }
+  .spotlight-body { padding: 22px 20px; }
+  .spotlight-title { font-size: 32px; }
+
   .games-grid > .game,
   .games-grid > .game.featured,
   .games-grid > .game.wide { grid-column: span 12; }

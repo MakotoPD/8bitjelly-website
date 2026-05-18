@@ -105,6 +105,11 @@ export default defineNitroPlugin(async () => {
       await db.execute(sql.raw(`ALTER TABLE team ADD COLUMN IF NOT EXISTS ${col} TEXT`))
     }
 
+    // Add rich-text content columns to games
+    for (const col of ['content_en', 'content_pl']) {
+      await db.execute(sql.raw(`ALTER TABLE games ADD COLUMN IF NOT EXISTS ${col} TEXT NOT NULL DEFAULT ''`))
+    }
+
     console.log('[db] Tables initialized')
   } catch (err) {
     console.error('[db] Init error:', err)

@@ -29,6 +29,16 @@
             <textarea v-model="form.descriptionPl" class="input" rows="5" placeholder="Opis gry po polsku..."></textarea>
           </div>
         </div>
+
+        <div style="background:var(--cream);border:2.5px solid var(--ink);border-radius:16px;padding:28px;box-shadow:5px 5px 0 var(--ink);">
+          <h2 class="display" style="font-size:24px;margin:0 0 20px;">Content (EN)</h2>
+          <TipTapEditor v-model="form.contentEn" placeholder="Full game description, screenshots, credits..." />
+        </div>
+
+        <div style="background:var(--cream);border:2.5px solid var(--ink);border-radius:16px;padding:28px;box-shadow:5px 5px 0 var(--ink);">
+          <h2 class="display" style="font-size:24px;margin:0 0 20px;">Content (PL) <span style="font-size:14px;font-family:'Space Grotesk';font-weight:400;opacity:0.5;">optional</span></h2>
+          <TipTapEditor v-model="form.contentPl" placeholder="Pełny opis gry po polsku..." />
+        </div>
       </div>
 
       <div style="display:grid;gap:20px;position:sticky;top:20px;">
@@ -46,7 +56,12 @@
           <h3 class="display" style="font-size:22px;margin:0 0 16px;">Settings</h3>
           <div class="field" style="margin-bottom:12px;">
             <label>Slug <span class="req">*</span></label>
-            <input v-model="form.slug" class="input" placeholder="game-slug" />
+            <div style="display:flex;gap:8px;">
+              <input v-model="form.slug" class="input" placeholder="game-slug" style="flex:1;" />
+              <button type="button" class="btn sm ghost" title="Generate from title" @click="form.slug = form.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')">
+                <UIcon name="i-heroicons-arrow-path" style="width:14px;height:14px;" />
+              </button>
+            </div>
           </div>
           <div class="field" style="margin-bottom:12px;">
             <label>Platform</label>
@@ -86,10 +101,6 @@
           <div class="field" style="margin-bottom:12px;">
             <label>Steam URL</label>
             <input v-model="form.steamUrl" class="input" placeholder="https://..." />
-          </div>
-          <div class="field" style="margin-bottom:12px;">
-            <label>Sort Order</label>
-            <input v-model.number="form.sortOrder" type="number" class="input" />
           </div>
           <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px;">
             <label style="display:flex;align-items:center;gap:10px;cursor:pointer;">
@@ -132,6 +143,8 @@ const form = reactive({
   isFeatured: props.game?.isFeatured || false,
   isPriority: props.game?.isPriority || false,
   sortOrder: props.game?.sortOrder || 0,
+  contentEn: props.game?.contentEn || '',
+  contentPl: props.game?.contentPl || '',
 })
 
 watch(() => form.title, (val) => {
