@@ -52,7 +52,7 @@
       </div>
 
       <div class="footer-bottom">
-        <span>{{ $t('footer.copyright') }} ❤️</span>
+        <span>{{ $t('footer.copyright') }} ❤️ {{ $t('footer.madeBy')}} <NuxtLink  to="https://makoto.com.pl" target="_blank" rel="noopener">MakotoPD</NuxtLink></span>
         <div class="nav-lang" style="border-color:rgba(255,241,236,0.3);">
           <button :class="{ active: locale === 'en' }" @click="setLocale('en')" style="color:var(--cream);">EN</button>
           <button :class="{ active: locale === 'pl' }" @click="setLocale('pl')" style="color:var(--cream);">PL</button>
