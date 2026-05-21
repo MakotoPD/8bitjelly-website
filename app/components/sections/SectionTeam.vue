@@ -84,7 +84,7 @@ function memberSocials(m: any) {
     { key: 'twitter', url: `https://x.com/${m.twitter}`, icon: 'i-simple-icons-x', label: 'X/Twitter' },
     { key: 'github', url: `https://github.com/${m.github}`, icon: 'i-simple-icons-github', label: 'GitHub' },
     { key: 'youtube', url: `https://youtube.com/@${m.youtube}`, icon: 'i-simple-icons-youtube', label: 'YouTube' },
-    { key: 'artstation', url: `https://artstation.com/${m.artstation}`, icon: 'i-simple-icons-artstation', label: 'ArtStation' },
+    { key: 'artstation', url: `https://${m.artstation}.artstation.com`, icon: 'i-simple-icons-artstation', label: 'ArtStation' },
     { key: 'tiktok', url: `https://tiktok.com/@${m.tiktok}`, icon: 'i-simple-icons-tiktok', label: 'TikTok' },
     { key: 'itchio', url: `https://${m.itchio}.itch.io`, icon: 'i-simple-icons-itchdotio', label: 'itch.io' },
     { key: 'twitch', url: `https://twitch.tv/${m.twitch}`, icon: 'i-simple-icons-twitch', label: 'Twitch' },

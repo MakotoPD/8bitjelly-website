@@ -165,7 +165,7 @@ const socials = [
   { key: 'twitter', label: 'X / Twitter', icon: 'i-simple-icons-x', prefix: 'x.com/', placeholder: 'username' },
   { key: 'github', label: 'GitHub', icon: 'i-simple-icons-github', prefix: 'github.com/', placeholder: 'username' },
   { key: 'youtube', label: 'YouTube', icon: 'i-simple-icons-youtube', prefix: '@', placeholder: 'handle' },
-  { key: 'artstation', label: 'ArtStation', icon: 'i-simple-icons-artstation', prefix: 'artstation.com/', placeholder: 'username' },
+  { key: 'artstation', label: 'ArtStation', icon: 'i-simple-icons-artstation', prefix: '', placeholder: 'username.artstation.com' },
   { key: 'tiktok', label: 'TikTok', icon: 'i-simple-icons-tiktok', prefix: '@', placeholder: 'username' },
   { key: 'itchio', label: 'itch.io', icon: 'i-simple-icons-itchdotio', prefix: '', placeholder: 'username.itch.io' },
   { key: 'twitch', label: 'Twitch', icon: 'i-simple-icons-twitch', prefix: 'twitch.tv/', placeholder: 'username' },

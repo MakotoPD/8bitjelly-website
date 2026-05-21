@@ -121,7 +121,7 @@ const form = reactive({
 const socials = [
   { key: 'instagram', label: 'Instagram', icon: 'i-simple-icons-instagram', prefix: 'instagram.com/', placeholder: 'username' },
   { key: 'github', label: 'GitHub', icon: 'i-simple-icons-github', prefix: 'github.com/', placeholder: 'username' },
-  { key: 'artstation', label: 'ArtStation', icon: 'i-simple-icons-artstation', prefix: 'artstation.com/', placeholder: 'username' },
+  { key: 'artstation', label: 'ArtStation', icon: 'i-simple-icons-artstation', prefix: '', placeholder: 'username.artstation.com' },
   { key: 'itchio', label: 'itch.io', icon: 'i-simple-icons-itchdotio', prefix: 'itch.io/', placeholder: 'username' },
   { key: 'linkedin', label: 'LinkedIn', icon: 'i-simple-icons-linkedin', prefix: 'linkedin.com/in/', placeholder: 'username' },
   { key: 'twitter', label: 'X / Twitter', icon: 'i-simple-icons-x', prefix: 'x.com/', placeholder: 'username' },
