@@ -12,8 +12,11 @@
       <h2 class="display" style="font-size:24px;margin:0 0 20px;">Add Image</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
         <div class="field">
-          <label>Game Title</label>
-          <input v-model="newItem.gameTitle" class="input" placeholder="Game name" />
+          <label>Game</label>
+          <select v-model="newItem.gameTitle" class="select">
+            <option value="" disabled>Select a game...</option>
+            <option v-for="title in gameTitles" :key="title" :value="title">{{ title }}</option>
+          </select>
         </div>
         <div class="field">
           <label>Alt text</label>
@@ -32,14 +35,23 @@
       <template v-for="(images, gameTitle) in gallery" :key="gameTitle">
         <h2 class="display" style="font-size:32px;margin:24px 0 16px;border-bottom:2px solid var(--ink);padding-bottom:12px;">{{ gameTitle }}</h2>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:16px;">
-          <div v-for="img in images" :key="img.id" style="position:relative;border:2.5px solid var(--ink);border-radius:10px;overflow:hidden;box-shadow:3px 3px 0 var(--ink);">
-            <img :src="img.imageUrl" :alt="img.altText" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;" />
-            <button
-              style="position:absolute;top:6px;right:6px;background:var(--pink);border:2px solid var(--ink);border-radius:6px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;"
-              @click="deleteImage(img.id)"
-            >
-              <UIcon name="i-heroicons-x-mark" style="width:14px;height:14px;" />
-            </button>
+          <div v-for="img in images" :key="img.id" style="border:2.5px solid var(--ink);border-radius:10px;overflow:hidden;box-shadow:3px 3px 0 var(--ink);background:var(--cream);">
+            <div style="position:relative;">
+              <img :src="img.imageUrl" :alt="img.altText" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;" />
+              <button
+                style="position:absolute;top:6px;right:6px;background:var(--pink);border:2px solid var(--ink);border-radius:6px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;"
+                @click="deleteImage(img.id)"
+              >
+                <UIcon name="i-heroicons-x-mark" style="width:14px;height:14px;" />
+              </button>
+            </div>
+            <div style="padding:8px;display:grid;gap:6px;border-top:2.5px solid var(--ink);">
+              <select :value="img.gameTitle" class="select" style="font-size:13px;padding:6px 8px;" @change="save(img, { gameTitle: ($event.target as HTMLSelectElement).value })">
+                <option v-for="title in gameTitles" :key="title" :value="title">{{ title }}</option>
+              </select>
+              <input :value="img.altText" class="input" style="font-size:13px;padding:6px 8px;" placeholder="Alt text" @change="save(img, { altText: ($event.target as HTMLInputElement).value })" />
+              <input :value="img.sortOrder" type="number" class="input" style="font-size:13px;padding:6px 8px;" placeholder="Sort" @change="save(img, { sortOrder: ($event.target as HTMLInputElement).value })" />
+            </div>
           </div>
         </div>
       </template>
@@ -54,8 +66,15 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'admin', middleware: 'admin' })
 const { data: gallery, refresh } = await useFetch<Record<string, any[]>>('/api/gallery', { server: false })
+const { data: games } = await useFetch<{ title: string }[]>('/api/games', { server: false })
 const adding = ref(false)
 const newItem = reactive({ gameTitle: '', imageUrl: '', altText: '' })
+
+// games from the catalogue + any title already used in the gallery (legacy rows)
+const gameTitles = computed(() => [...new Set([
+  ...(games.value || []).map(g => g.title),
+  ...Object.keys(gallery.value || {}),
+])].sort())
 
 async function addImage() {
   if (!newItem.gameTitle || !newItem.imageUrl) return
@@ -67,6 +86,11 @@ async function addImage() {
   } finally {
     adding.value = false
   }
+}
+
+async function save(img: any, patch: Record<string, unknown>) {
+  await $fetch(`/api/gallery/${img.id}`, { method: 'PUT', body: { ...img, ...patch } })
+  await refresh()
 }
 
 async function deleteImage(id: number) {
