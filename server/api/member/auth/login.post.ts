@@ -4,8 +4,10 @@ import bcrypt from 'bcryptjs'
 import { accountUsers, team } from '~~/server/database/schema'
 
 export default defineEventHandler(async (event) => {
-  const { email, password } = await readBody<{ email: string; password: string }>(event)
+  const { email, password, turnstileToken } = await readBody<{ email: string; password: string; turnstileToken?: string }>(event)
   if (!email || !password) throw createError({ statusCode: 400, message: 'email i password są wymagane' })
+
+  await verifyTurnstile(event, turnstileToken)
 
   const db = useDB()
   const [account] = await db.select().from(accountUsers).where(eq(accountUsers.email, email.toLowerCase())).limit(1)

@@ -56,11 +56,11 @@
             <li><strong>Zgoda nie jest wymagana</strong> — Umami nie przetwarza danych osobowych.</li>
           </ul>
 
-          <h3>2.4 hCaptcha</h3>
-          <p>Formularz kontaktowy jest chroniony przez hCaptcha (Intuition Machines, Inc., USA) w celu ochrony przed botami. hCaptcha może zbierać dane behawioralne i adres IP w celu weryfikacji, czy jesteś człowiekiem.</p>
+          <h3>2.4 Cloudflare Turnstile</h3>
+          <p>Formularz kontaktowy i strony logowania są chronione przez Cloudflare Turnstile (Cloudflare, Inc., USA) w celu ochrony przed botami. Turnstile może zbierać dane behawioralne i adres IP w celu weryfikacji, czy jesteś człowiekiem.</p>
           <ul>
             <li><strong>Podstawa prawna:</strong> art. 6 ust. 1 lit. f RODO (prawnie uzasadniony interes — bezpieczeństwo serwisu).</li>
-            <li>Polityka prywatności hCaptcha: <a href="https://www.hcaptcha.com/privacy" target="_blank" rel="noopener">hcaptcha.com/privacy</a></li>
+            <li>Polityka prywatności Cloudflare: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a></li>
           </ul>
 
           <h3>2.5 Logi serwera</h3>
@@ -105,7 +105,7 @@
           </p>
 
           <h2>6. Przekazywanie danych poza EOG</h2>
-          <p>Niektórzy nasi procesorzy danych (Google Analytics, Web3Forms, hCaptcha, Railway.app) mają siedziby w USA. Przekazywanie danych odbywa się na podstawie standardowych klauzul umownych (SCC) lub mechanizmu EU-US Data Privacy Framework (DPF), co zapewnia odpowiedni poziom ochrony danych.</p>
+          <p>Niektórzy nasi procesorzy danych (Google Analytics, Web3Forms, Cloudflare, Railway.app) mają siedziby w USA. Przekazywanie danych odbywa się na podstawie standardowych klauzul umownych (SCC) lub mechanizmu EU-US Data Privacy Framework (DPF), co zapewnia odpowiedni poziom ochrony danych.</p>
 
           <h2>7. Bezpieczeństwo danych</h2>
           <p>Stosujemy odpowiednie środki techniczne i organizacyjne w celu ochrony danych osobowych przed nieuprawnionym dostępem, utratą lub ujawnieniem. Komunikacja odbywa się wyłącznie przez szyfrowane połączenie HTTPS.</p>
@@ -154,11 +154,11 @@
             <li><strong>No consent required</strong> — Umami does not process personal data.</li>
           </ul>
 
-          <h3>2.4 hCaptcha</h3>
-          <p>The contact form is protected by hCaptcha (Intuition Machines, Inc., USA) to prevent spam. hCaptcha may collect behavioural data and IP address to verify you are human.</p>
+          <h3>2.4 Cloudflare Turnstile</h3>
+          <p>The contact form and login pages are protected by Cloudflare Turnstile (Cloudflare, Inc., USA) to prevent spam and abuse. Turnstile may collect behavioural data and IP address to verify you are human.</p>
           <ul>
             <li><strong>Legal basis:</strong> Art. 6(1)(f) GDPR (legitimate interest — website security).</li>
-            <li>hCaptcha privacy policy: <a href="https://www.hcaptcha.com/privacy" target="_blank" rel="noopener">hcaptcha.com/privacy</a></li>
+            <li>Cloudflare privacy policy: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a></li>
           </ul>
 
           <h3>2.5 Server Logs</h3>
@@ -203,7 +203,7 @@
           </p>
 
           <h2>6. International Data Transfers</h2>
-          <p>Some of our data processors (Google Analytics, Web3Forms, hCaptcha, Railway.app) are based in the USA. Transfers are made under Standard Contractual Clauses (SCC) or the EU-US Data Privacy Framework (DPF), ensuring an adequate level of protection.</p>
+          <p>Some of our data processors (Google Analytics, Web3Forms, Cloudflare, Railway.app) are based in the USA. Transfers are made under Standard Contractual Clauses (SCC) or the EU-US Data Privacy Framework (DPF), ensuring an adequate level of protection.</p>
 
           <h2>7. Data Security</h2>
           <p>We apply appropriate technical and organisational measures to protect personal data against unauthorised access, loss or disclosure. All communication is encrypted via HTTPS.</p>

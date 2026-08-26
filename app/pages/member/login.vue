@@ -24,7 +24,9 @@
             {{ error }}
           </div>
 
-          <button type="submit" class="btn large" style="width:100%;" :disabled="loading">
+          <Turnstile v-model="turnstileToken" style="margin-bottom:16px;" />
+
+          <button type="submit" class="btn large" style="width:100%;" :disabled="loading || (captchaRequired && !turnstileToken)">
             <UIcon v-if="!loading" name="i-heroicons-arrow-right-circle" />
             <UIcon v-else name="i-heroicons-arrow-path" style="animation:spin 1s linear infinite;" />
             {{ loading ? 'Loguję...' : 'Zaloguj się' }}
@@ -41,6 +43,8 @@ definePageMeta({ layout: false })
 const { fetch: refreshSession } = useUserSession()
 const email = ref('')
 const password = ref('')
+const turnstileToken = ref('')
+const captchaRequired = !!useRuntimeConfig().public.turnstileSiteKey
 const loading = ref(false)
 const error = ref('')
 
@@ -50,7 +54,7 @@ async function login() {
   try {
     const res = await $fetch<{ requiresTwoFactor: boolean; role?: string }>('/api/member/auth/login', {
       method: 'POST',
-      body: { email: email.value, password: password.value },
+      body: { email: email.value, password: password.value, turnstileToken: turnstileToken.value },
     })
     await refreshSession()
     if (res.requiresTwoFactor) {

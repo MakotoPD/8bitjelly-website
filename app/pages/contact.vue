@@ -84,7 +84,9 @@
             {{ alert.text }}
           </div>
 
-          <button class="btn large" :disabled="sending" @click="submit">
+          <Turnstile ref="captcha" v-model="turnstileToken" style="margin-bottom:20px;" />
+
+          <button class="btn large" :disabled="sending || (captchaRequired && !turnstileToken)" @click="submit">
             <UIcon v-if="!sending" name="i-heroicons-paper-airplane" />
             <UIcon v-else name="i-heroicons-arrow-path" style="animation:spin 1s linear infinite;" />
             {{ sending ? $t('contact.sending') : $t('contact.send') }}
@@ -145,6 +147,9 @@ const form = reactive({
 })
 const sending = ref(false)
 const alert = ref<{ type: 'success' | 'error', text: string } | null>(null)
+const captcha = ref<{ reset: () => void }>()
+const turnstileToken = ref('')
+const captchaRequired = !!useRuntimeConfig().public.turnstileSiteKey
 
 const topics = computed(() => [
   { value: 'join', icon: '🎮', title: t('contact.topic1Title'), desc: t('contact.topic1Desc') },
@@ -161,13 +166,14 @@ async function submit() {
   try {
     await $fetch('/api/contact', {
       method: 'POST',
-      body: { ...form, subject: `[8BitJelly] ${form.reason} from ${form.name}` },
+      body: { ...form, turnstileToken: turnstileToken.value, subject: `[8BitJelly] ${form.reason} from ${form.name}` },
     })
     alert.value = { type: 'success', text: t('contact.success') }
     Object.assign(form, { name: '', email: '', phone: '', position: '', message: '', reason: 'hello' })
   } catch {
     alert.value = { type: 'error', text: t('contact.error') }
   } finally {
+    captcha.value?.reset()
     sending.value = false
   }
 }

@@ -118,8 +118,9 @@ export default defineNuxtConfig({
     resendApiKey: process.env.RESEND_API_KEY || '',
     resendFromEmail: process.env.RESEND_FROM_EMAIL || 'no-reply@8bitjelly.com',
     appUrl: process.env.APP_URL || 'https://8bitjelly.com',
+    turnstileSecretKey: process.env.TURNSTILE_SECRET_KEY || '',
     public: {
-      hcaptchaSiteKey: '32d19c18-6642-4cec-9657-1b132dedf61a',
+      turnstileSiteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY || '',
       web3formsKey: 'd503b806-9e80-42a2-a4e0-5ca88f9da25e',
     },
   },

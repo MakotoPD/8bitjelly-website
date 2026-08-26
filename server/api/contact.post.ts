@@ -2,6 +2,8 @@ export default defineEventHandler(async (event) => {
   const body = await readBody(event)
   const config = useRuntimeConfig()
 
+  await verifyTurnstile(event, body.turnstileToken)
+
   const res = await $fetch('https://api.web3forms.com/submit', {
     method: 'POST',
     body: {
