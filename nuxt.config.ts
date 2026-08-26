@@ -134,6 +134,8 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
+    '/login': { redirect: '/member/login' },
+    '/pl/login': { redirect: '/pl/member/login' },
     '/admin/**': {
       headers: { 'X-Robots-Tag': 'noindex, nofollow' },
     },
