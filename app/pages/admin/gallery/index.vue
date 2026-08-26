@@ -53,7 +53,7 @@
 
 <script setup lang="ts">
 definePageMeta({ layout: 'admin', middleware: 'admin' })
-const { data: gallery, refresh } = await useFetch<Record<string, any[]>>('/api/gallery/admin', { server: false })
+const { data: gallery, refresh } = await useFetch<Record<string, any[]>>('/api/gallery', { server: false })
 const adding = ref(false)
 const newItem = reactive({ gameTitle: '', imageUrl: '', altText: '' })
 

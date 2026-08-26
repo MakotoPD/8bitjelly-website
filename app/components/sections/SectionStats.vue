@@ -5,12 +5,12 @@
       <span>Gamedev Passion</span><span class="star">★</span>
       <span>Open to Join</span><span class="star">★</span>
       <span>8BitJelly</span><span class="star">★</span>
-      <span>Made with ❤️</span><span class="star">★</span>
+      <span>Made with passion</span><span class="star">★</span>
       <span>Indie Games</span><span class="star">★</span>
       <span>Gamedev Passion</span><span class="star">★</span>
       <span>Open to Join</span><span class="star">★</span>
       <span>8BitJelly</span><span class="star">★</span>
-      <span>Made with ❤️</span><span class="star">★</span>
+      <span>Made with passion</span><span class="star">★</span>
     </div>
   </div>
 
@@ -59,7 +59,7 @@ onMounted(() => {
 
     animNum(n1.value, 8)
     animNum(n2.value, 20)
-    animNum(n3.value, 3)
+    animNum(n3.value, 4)
 
     gsap.from('.stat', {
       y: 40, opacity: 0, stagger: 0.1, duration: 0.6, ease: 'power3.out',

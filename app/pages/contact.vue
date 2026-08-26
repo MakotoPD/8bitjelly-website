@@ -93,10 +93,6 @@
 
         <!-- Sidebar info -->
         <div style="display:grid;gap:16px;">
-          <div style="border:2.5px solid var(--ink);border-radius:18px;padding:24px;box-shadow:6px 6px 0 var(--ink);background:var(--yellow);">
-            <h3 class="display" style="font-size:28px;margin:0 0 12px;">Discord</h3>
-            <p style="font-size:14px;color:color-mix(in oklab,var(--ink) 75%,transparent);">Join our community for the fastest response.</p>
-          </div>
           <div style="border:2.5px solid var(--ink);border-radius:18px;padding:24px;box-shadow:6px 6px 0 var(--ink);background:var(--mint);">
             <h3 class="display" style="font-size:28px;margin:0 0 12px;">Email</h3>
             <p style="font-size:14px;">hello@8bitjelly.com</p>
