@@ -1,6 +1,6 @@
 import { useDB } from '~~/server/database'
-import { games } from '~~/server/database/schema'
-import { eq } from 'drizzle-orm'
+import { games, gallery } from '~~/server/database/schema'
+import { eq, asc } from 'drizzle-orm'
 
 export default defineEventHandler(async (event) => {
   const slug = getRouterParam(event, 'slug')
@@ -10,6 +10,8 @@ export default defineEventHandler(async (event) => {
   if (!rows[0]) throw createError({ statusCode: 404, message: 'Game not found' })
 
   const g = rows[0]
+  const screenshots = await useDB().select().from(gallery).where(eq(gallery.gameTitle, g.title)).orderBy(asc(gallery.sortOrder))
+
   return {
     id: g.id,
     slug: g.slug,
@@ -26,5 +28,6 @@ export default defineEventHandler(async (event) => {
     steamUrl: g.steamUrl,
     isFeatured: g.isFeatured,
     isPriority: g.isPriority,
+    screenshots,
   }
 })

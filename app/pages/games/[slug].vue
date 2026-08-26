@@ -70,6 +70,32 @@
           <div class="prose" v-html="game.content" />
         </div>
       </div>
+
+      <!-- Screenshots from the gallery -->
+      <section v-if="game.screenshots?.length" style="background:var(--cream);padding:0 0 100px;">
+        <div class="wrap" style="max-width:860px;">
+          <h2 class="display" style="font-size:40px;margin:0 0 24px;border-bottom:2px solid var(--ink);padding-bottom:16px;">
+            {{ $t('games.screenshots') }}
+          </h2>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;">
+            <button
+              v-for="img in game.screenshots"
+              :key="img.id"
+              style="border:2.5px solid var(--ink);border-radius:12px;overflow:hidden;box-shadow:4px 4px 0 var(--ink);cursor:pointer;padding:0;background:none;display:block;"
+              @click="lightbox = img.imageUrl"
+            >
+              <NuxtImg
+                :src="img.imageUrl"
+                :alt="img.altText || game.title"
+                style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;"
+                loading="lazy"
+              />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <Lightbox v-model="lightbox" />
     </div>
 
     <div v-else-if="error" style="text-align:center;padding:120px 0;">
@@ -85,6 +111,7 @@ definePageMeta({ layout: 'default' })
 const { locale, t } = useI18n()
 const localePath = useLocalePath()
 const route = useRoute()
+const lightbox = ref<string | null>(null)
 
 const { data: game, error } = await useFetch(`/api/games/slug/${route.params.slug}`, {
   query: computed(() => ({ locale: locale.value })),
