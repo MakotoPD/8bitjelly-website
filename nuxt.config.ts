@@ -121,7 +121,7 @@ export default defineNuxtConfig({
     turnstileSecretKey: process.env.TURNSTILE_SECRET_KEY || '',
     public: {
       turnstileSiteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY || '',
-      web3formsKey: 'd503b806-9e80-42a2-a4e0-5ca88f9da25e',
+      web3formsKey: '78080b3d-26a0-4078-b621-2e075481c088',
     },
   },
 
