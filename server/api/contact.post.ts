@@ -6,6 +6,7 @@ export default defineEventHandler(async (event) => {
 
   const res = await $fetch('https://api.web3forms.com/submit', {
     method: 'POST',
+    headers: { 'User-Agent': '8bitjelly.com', Accept: 'application/json' },
     body: {
       access_key: config.public.web3formsKey,
       name: body.name,
