@@ -19,7 +19,7 @@
       <div class="wrap contact-grid">
 
         <!-- Form -->
-        <div class="form-card" ref="formCard">
+        <form class="form-card" @submit.prevent="submit">
           <!-- Step 1: Topic -->
           <div class="form-step">
             <div class="step-label">
@@ -86,12 +86,12 @@
 
           <Turnstile ref="captcha" v-model="turnstileToken" style="margin-bottom:20px;" />
 
-          <button class="btn large" :disabled="sending || (captchaRequired && !turnstileToken)" @click="submit">
+          <button class="btn large" :disabled="sending || (captchaRequired && !turnstileToken)">
             <UIcon v-if="!sending" name="i-heroicons-paper-airplane" />
             <UIcon v-else name="i-heroicons-arrow-path" style="animation:spin 1s linear infinite;" />
             {{ sending ? $t('contact.sending') : $t('contact.send') }}
           </button>
-        </div>
+        </form>
 
         <!-- Sidebar info -->
         <div style="display:grid;gap:16px;">
@@ -159,7 +159,6 @@ const topics = computed(() => [
 ])
 
 async function submit() {
-  if (!form.name || !form.email || !form.message) return
   sending.value = true
   alert.value = null
 
@@ -210,6 +209,7 @@ async function submit() {
   padding: 36px;
   box-shadow: 10px 10px 0 var(--ink);
 }
+.topic:has(input:focus-visible) { outline: 3px solid var(--magenta); outline-offset: 3px; }
 .form-step { margin-bottom: 32px; }
 .step-label { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 .step-num {

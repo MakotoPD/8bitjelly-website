@@ -51,6 +51,8 @@ ENV HOST=0.0.0.0
 #   R2_SECRET_ACCESS_KEY
 #   R2_BUCKET
 #   R2_PUBLIC_URL
+#   NUXT_TURNSTILE_SECRET_KEY        <- server secret, MUST be NUXT_-prefixed
+#   NUXT_PUBLIC_TURNSTILE_SITE_KEY
 
 USER nuxtjs
 

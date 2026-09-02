@@ -357,6 +357,8 @@ footer ul a:hover { color: var(--magenta); }
 }
 .card:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 var(--ink); }
 
+:focus-visible { outline: 3px solid var(--magenta); outline-offset: 3px; border-radius: 4px; }
+
 /* ── Form inputs ─────────────────────────────────── */
 .field { display: grid; gap: 6px; }
 .field label {

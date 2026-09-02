@@ -118,7 +118,7 @@ export default defineNuxtConfig({
     resendApiKey: process.env.RESEND_API_KEY || '',
     resendFromEmail: process.env.RESEND_FROM_EMAIL || 'no-reply@8bitjelly.com',
     appUrl: process.env.APP_URL || 'https://8bitjelly.com',
-    turnstileSecretKey: process.env.TURNSTILE_SECRET_KEY || '',
+    turnstileSecretKey: '', // set NUXT_TURNSTILE_SECRET_KEY at runtime (nitro maps NUXT_* -> runtimeConfig)
     public: {
       turnstileSiteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY || '',
       web3formsKey: '78080b3d-26a0-4078-b621-2e075481c088',
