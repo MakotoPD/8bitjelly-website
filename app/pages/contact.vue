@@ -165,7 +165,7 @@ async function submit() {
   try {
     await $fetch('/api/contact', {
       method: 'POST',
-      body: { ...form, turnstileToken: turnstileToken.value, subject: `[8BitJelly] ${form.reason} from ${form.name}` },
+      body: { ...form, turnstileToken: turnstileToken.value },
     })
     alert.value = { type: 'success', text: t('contact.success') }
     Object.assign(form, { name: '', email: '', phone: '', position: '', message: '', reason: 'hello' })

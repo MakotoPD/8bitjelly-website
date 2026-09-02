@@ -19,9 +19,6 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Build args for public runtime config baked at build time
-ARG NUXT_PUBLIC_HCAPTCHA_SITE_KEY
-ARG NUXT_PUBLIC_WEB3FORMS_KEY
 
 RUN pnpm build
 
@@ -53,6 +50,8 @@ ENV HOST=0.0.0.0
 #   R2_PUBLIC_URL
 #   NUXT_TURNSTILE_SECRET_KEY        <- server secret, MUST be NUXT_-prefixed
 #   NUXT_PUBLIC_TURNSTILE_SITE_KEY
+#   NUXT_SMTP_HOST / NUXT_SMTP_PORT / NUXT_SMTP_USER / NUXT_SMTP_PASSWORD
+#   NUXT_CONTACT_TO
 
 USER nuxtjs
 

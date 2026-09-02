@@ -1,3 +1,4 @@
+import nodemailer, { type Transporter } from 'nodemailer'
 import { Resend } from 'resend'
 
 let _resend: Resend | null = null
@@ -58,5 +59,49 @@ export async function sendEmailOtp(to: string, code: string) {
         </p>
       </div>
     `,
+  })
+}
+
+let _smtp: Transporter | null = null
+
+function getSmtp() {
+  const config = useRuntimeConfig()
+  const port = Number(config.smtpPort) || 465
+  _smtp ||= nodemailer.createTransport({
+    host: config.smtpHost,
+    port,
+    secure: port === 465,
+    auth: { user: config.smtpUser, pass: config.smtpPassword },
+  })
+  return _smtp
+}
+
+type ContactForm = {
+  name: string
+  email: string
+  message: string
+  phone?: string
+  reason?: string
+  position?: string
+}
+
+// plain text on purpose — form fields are interpolated raw, so no HTML to escape
+export async function sendContactEmail(f: ContactForm) {
+  const config = useRuntimeConfig()
+
+  await getSmtp().sendMail({
+    from: `"8BitJelly" <${config.smtpUser}>`,
+    to: config.contactTo,
+    replyTo: `${f.name} <${f.email}>`,
+    subject: `[8BitJelly] ${f.reason || 'contact'} — ${f.name}`,
+    text: [
+      `Imię:       ${f.name}`,
+      `Email:      ${f.email}`,
+      `Telefon:    ${f.phone || '—'}`,
+      `Temat:      ${f.reason || '—'}`,
+      `Stanowisko: ${f.position || '—'}`,
+      '',
+      f.message,
+    ].join('\n'),
   })
 }
