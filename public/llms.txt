@@ -1,0 +1,31 @@
+# 8BitJelly
+
+> 8BitJelly is a Polish hobby game development group. We are a small, close-knit team of game developers, artists, programmers, and musicians who make indie games with love. No publisher pressure — just passion, creativity, and community. Based in Poland, active since 2020, bilingual in English and Polish.
+
+## About
+
+- [Home](https://8bitjelly.com/): Overview of 8BitJelly — our mission, featured games, and the crew behind them.
+- [About the Crew](https://8bitjelly.com/#about): Who we are — a passion project started by friends who love making games together. No crunch, no deadlines.
+- [Meet the Team](https://8bitjelly.com/#team): Profiles of our artists, programmers, designers, and musicians with their roles and social links.
+- [Join Us](https://8bitjelly.com/#join): Open positions and how to become part of 8BitJelly.
+
+## Games
+
+- [Our Games](https://8bitjelly.com/#games): Indie games made by 8BitJelly — from game jam entries to longer passion projects. Statuses: in development, released, hiatus.
+
+## Blog
+
+- [Blog](https://8bitjelly.com/blog): Dev logs, tutorials, and behind-the-scenes posts from the 8BitJelly crew. Covers game development, art, programming, and team stories.
+
+## Community & Contact
+
+- [Art Gallery](https://8bitjelly.com/gallery): Screenshots, concept art, and in-progress artwork from our game projects.
+- [Contact](https://8bitjelly.com/contact): Get in touch — join the crew, propose a collaboration, discuss sponsorship, or just say hello. Email: hello@8bitjelly.com
+- [itch.io](https://itch.io/8bitjelly): Play our released games on itch.io.
+- [GitHub](https://github.com/8bitjelly): Our open-source repositories and tools.
+- [Instagram](https://www.instagram.com/8bitjelly): Visual updates and artwork from the crew.
+
+## Optional
+
+- [Terms of Service](https://8bitjelly.com/terms): Legal terms for using the 8BitJelly website.
+- [Facebook](https://www.facebook.com/8bitjelly): Community page and announcements.

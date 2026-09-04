@@ -1,0 +1,182 @@
+{
+  "nav": {
+    "home": "Strona główna",
+    "about": "O nas",
+    "team": "Ekipa",
+    "games": "Gry",
+    "blog": "Blog",
+    "gallery": "Galeria",
+    "contact": "Kontakt",
+    "joinUs": "Dołącz",
+    "panel": "Panel"
+  },
+  "hero": {
+    "eyebrow": "Hello Jelly",
+    "title1": "Tworzymy",
+    "title2": "Gry",
+    "title3": "z pasją",
+    "subtitle": "Jesteśmy małym, ale zgranym zespołem, który uwielbia tworzyć gry i chce dzielić się tym z innymi. Najważniejsze dla nas jest wsparcie, wspólna zabawa i kreatywność podczas zdobywania nowej wiedzy i umiejętności.",
+    "cta1": "Nasze gry",
+    "cta2": "Poznaj ekipę"
+  },
+  "stats": {
+    "games": "Gier stworzonych",
+    "members": "Członków ekipy",
+    "years": "Lat aktywności",
+    "coffees": "Kaw wypitych"
+  },
+  "about": {
+    "eyebrow": "Kim jesteśmy",
+    "title": "Ekipa",
+    "titleEm": "pasjonatów",
+    "titleEnd": "tworzenia",
+    "desc1": "Zaczęliśmy jako znajomi, którzy chcieli tworzyć gry. Żadnej presji wydawcy, żadnego crunch'u — tylko czysta miłość do rzemiosła.",
+    "desc2": "Artyści, programiści, designerzy i muzycy pracujący razem, aby tchnąć życie w dziwaczne i wspaniałe gry.",
+    "pillar1Title": "Twórzmy fajne gry",
+    "pillar1Desc": "Od małych gier jamowych po większe projekty — wydajemy rzeczy, z których jesteśmy dumni.",
+    "pillar2Title": "Uczymy się razem",
+    "pillar2Desc": "Dzielmy się wiedzą, pomagamy sobie nawzajem rosnąć.",
+    "pillar3Title": "Bawmy się dobrze",
+    "pillar3Desc": "Żadnych deadlinów, żadnego stresu."
+  },
+  "team": {
+    "eyebrow": "Ekipa",
+    "title": "Poznaj",
+    "titleEm": "ekipę",
+    "kicker": "Artyści, programiści, designerzy i wariaci — wszyscy zjednoczeni jednym celem: tworzenie fajnych gier.",
+    "filterAll": "Wszyscy",
+    "roles": {
+      "2D": "2D Art",
+      "3D": "3D Art",
+      "Concept": "Concept Art",
+      "Programmer": "Kod",
+      "Gamedesign": "Game Design",
+      "Web": "Web",
+      "Audio": "Audio"
+    }
+  },
+  "games": {
+    "eyebrow": "Nasze projekty",
+    "title": "Gry, które",
+    "titleEm": "zrobiliśmy",
+    "kicker": "Od małych gier jamowych po większe projekty pasji.",
+    "viewAll": "Wszystkie gry",
+    "playNow": "Zagraj teraz",
+    "inDev": "W produkcji",
+    "released": "Wydana",
+    "hiatus": "Pauza",
+    "cancelled": "Anulowana",
+    "spotlight": "★ Wyróżniona",
+    "screenshots": "Screenshoty"
+  },
+  "blog": {
+    "eyebrow": "Od ekipy",
+    "title": "Ostatnie wpisy na",
+    "titleEm": "blogu",
+    "kicker": "Dev logi, tutoriale i losowe myśli od ekipy.",
+    "readAll": "Wszystkie posty",
+    "readMore": "Czytaj więcej",
+    "by": "autor:",
+    "min": "min czytania",
+    "filterAll": "Wszystkie posty"
+  },
+  "join": {
+    "eyebrow": "Wolne miejsca",
+    "title": "Chcesz do nas",
+    "titleEm": "dołączyć",
+    "titleEnd": "?",
+    "desc": "Zawsze szukamy pasjonatów. Nieważne czy jesteś programistą, artystą, muzykiem — jeśli kochasz gry, chcemy Cię poznać.",
+    "cta": "Skontaktuj się",
+    "ctaSub": "To nic nie kosztuje & świetna zabawa"
+  },
+  "gallery": {
+    "title": "Galeria",
+    "titleEm": "sztuki",
+    "subtitle": "Screenshoty, concept arty i prace w toku z naszych projektów."
+  },
+  "contact": {
+    "title": "Napisz",
+    "titleEm": "do nas",
+    "subtitle": "Masz pytanie, chcesz współpracować lub po prostu się przywitać? Chętnie porozmawiamy.",
+    "topic": "O czym piszesz?",
+    "topic1Title": "Dołącz do ekipy",
+    "topic1Desc": "Chcesz zostać częścią 8BitJelly?",
+    "topic2Title": "Sponsoring",
+    "topic2Desc": "Wesprzyj naszą indie przygodę",
+    "topic3Title": "Współpraca",
+    "topic3Desc": "Stwórzmy razem coś fajnego",
+    "topic4Title": "Po prostu hej",
+    "topic4Desc": "Kochamy poznawać nowych ludzi!",
+    "yourInfo": "Twoje dane",
+    "name": "Imię",
+    "namePlaceholder": "Twoje imię",
+    "email": "Email",
+    "emailPlaceholder": "ty{'@'}email.com",
+    "phone": "Telefon (opcjonalnie)",
+    "phonePlaceholder": "+48 123 456 789",
+    "position": "Stanowisko, o które się ubiegasz",
+    "message": "Wiadomość",
+    "messagePlaceholder": "Napisz więcej...",
+    "send": "Wyślij wiadomość",
+    "sending": "Wysyłanie...",
+    "success": "Wiadomość wysłana! Odezwiemy się wkrótce.",
+    "error": "Coś poszło nie tak. Spróbuj ponownie.",
+    "whale": "Cześć! 👋"
+  },
+  "footer": {
+    "desc": "Hobbyistyczna ekipa twórców gier, artystów i marzycieli tworzących gry z miłością.",
+    "explore": "Odkryj",
+    "company": "Firma",
+    "legal": "Prawne",
+    "terms": "Regulamin",
+    "privacy": "Polityka Prywatności",
+    "cookies": "Ustawienia cookies",
+    "about": "O nas",
+    "copyright": "© 2026 8BitJelly. Zrobione z",
+    "madeBy": "przez"
+  },
+  "terms": {
+    "title": "Regulamin",
+    "titleEm": "serwisu"
+  },
+  "seo": {
+    "homeTitle": "8BitJelly — Indie Gamedev Crew",
+    "homeDescription": "Hobbyistyczna ekipa twórców gier, artystów i muzyków tworząca gry z pasją.",
+    "blogTitle": "Blog — 8BitJelly",
+    "blogDescription": "Dev logi, tutoriale i kulisy projektów ekipy 8BitJelly.",
+    "galleryTitle": "Galeria — 8BitJelly",
+    "galleryDescription": "Screenshoty, concept arty i prace w toku z projektów gier 8BitJelly.",
+    "contactTitle": "Kontakt — 8BitJelly",
+    "contactDescription": "Skontaktuj się z ekipą 8BitJelly — dołącz do zespołu, nawiąż współpracę lub po prostu napisz cześć."
+  },
+  "common": {
+    "loading": "Ładowanie...",
+    "error": "Coś poszło nie tak",
+    "noResults": "Brak wyników",
+    "backToHome": "Wróć do strony głównej"
+  },
+  "admin": {
+    "title": "Panel Admina",
+    "dashboard": "Dashboard",
+    "blog": "Blog",
+    "games": "Gry",
+    "team": "Ekipa",
+    "gallery": "Galeria",
+    "lookings": "Otwarte pozycje",
+    "tags": "Tagi",
+    "settings": "Ustawienia",
+    "logout": "Wyloguj",
+    "new": "Nowy",
+    "edit": "Edytuj",
+    "delete": "Usuń",
+    "save": "Zapisz",
+    "cancel": "Anuluj",
+    "publish": "Opublikuj",
+    "unpublish": "Cofnij publikację",
+    "draft": "Szkic",
+    "published": "Opublikowany",
+    "confirmDelete": "Czy na pewno chcesz to usunąć?",
+    "saved": "Zapisano!",
+    "deleted": "Usunięto!"
+  }
+}

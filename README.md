@@ -1,31 +1,75 @@
-# 8BitJelly
+# Nuxt Minimal Starter
 
-![8BitJelly](https://raw.githubusercontent.com/8bitjelly/website-v2/master/public/logo_white.png?token=GHSAT0AAAAAACFVDGX3WI4XRF64G2NPUEAUZKWBHFA)
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Recommended IDE Setup
+## Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+Make sure to install dependencies:
 
-## Used
+```bash
+# npm
+npm install
 
-* [NuxtJs 3](https://nuxt.com/)
-* [TailwindCSS](https://tailwindcss.com/)
-* [AnimeJS](https://animejs.com/)
-* [i18n](https://i18n.nuxtjs.org/)
-* [Gtag](https://nuxt.com/modules/gtag/)
-* [Google Fonts](https://google-fonts.nuxtjs.org/)
-* [NuxtImage](https://image.nuxt.com/)
-* [NuxtSwiper](https://nuxt.com/modules/swiper)
-* [Blottie (LottieFiles)](https://github.com/Applelo/blottie)
+# pnpm
+pnpm install
 
-### Develop
+# yarn
+yarn install
 
-| function name   | command                 |
-|-----------------|-------------------------|
-| develop         | `npm run dev`           |
-| build           | `npm run build`         |
-| preview		  | `npm run preview`		|
+# bun
+bun install
+```
 
-### Development Server
+## Development Server
 
 Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

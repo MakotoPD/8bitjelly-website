@@ -1,0 +1,87 @@
+<template>
+  <div>
+    <div class="page-hero" style="background:var(--sky);border-bottom:2px solid var(--ink);">
+      <div class="wrap">
+        <span class="eyebrow">8BitJelly</span>
+        <h1 class="display" style="font-size:clamp(60px,10vw,140px);margin:14px 0 18px;line-height:0.9;">
+          {{ $t('gallery.title') }} <em style="color:var(--magenta);">{{ $t('gallery.titleEm') }}</em>
+        </h1>
+        <p style="font-size:18px;max-width:540px;color:color-mix(in oklab,var(--ink) 80%,transparent);">{{ $t('gallery.subtitle') }}</p>
+      </div>
+    </div>
+
+    <section style="padding:80px 0 100px;background:var(--cream);">
+      <div class="wrap">
+        <div v-if="pending" style="text-align:center;padding:60px;">
+          <p class="pixel">{{ $t('common.loading') }}</p>
+        </div>
+
+        <template v-else-if="gallery">
+          <template v-for="(images, gameTitle) in gallery" :key="gameTitle">
+            <h2 class="display" style="font-size:48px;margin:48px 0 24px 0;border-bottom:2px solid var(--ink);padding-bottom:16px;">
+              {{ gameTitle }}
+            </h2>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px;">
+              <div
+                v-for="img in images"
+                :key="img.id"
+                style="border:2.5px solid var(--ink);border-radius:12px;overflow:hidden;box-shadow:4px 4px 0 var(--ink);cursor:pointer;"
+                @click="lightbox = img.imageUrl"
+              >
+                <NuxtImg
+                  :src="img.imageUrl"
+                  :alt="img.altText || gameTitle"
+                  style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </template>
+        </template>
+
+        <div v-else style="text-align:center;padding:80px 0;">
+          <p class="pixel" style="font-size:12px;">No gallery images yet.</p>
+        </div>
+      </div>
+    </section>
+
+    <Lightbox v-model="lightbox" />
+  </div>
+</template>
+
+<script setup lang="ts">
+definePageMeta({ layout: 'default' })
+
+const { t, locale } = useI18n()
+const route = useRoute()
+const lightbox = ref<string | null>(null)
+
+useSeoMeta({
+  title: computed(() => t('seo.galleryTitle')),
+  ogTitle: computed(() => t('seo.galleryTitle')),
+  description: computed(() => t('seo.galleryDescription')),
+  ogDescription: computed(() => t('seo.galleryDescription')),
+  ogImage: 'https://8bitjelly.com/og.png',
+  ogType: 'website',
+  ogUrl: computed(() => `https://8bitjelly.com${route.path}`),
+  ogLocale: computed(() => locale.value === 'pl' ? 'pl_PL' : 'en_US'),
+  twitterCard: 'summary_large_image',
+  twitterTitle: computed(() => t('seo.galleryTitle')),
+  twitterDescription: computed(() => t('seo.galleryDescription')),
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: computed(() => `https://8bitjelly.com${route.path}`) }],
+})
+
+const { data: gallery, pending } = await useFetch('/api/gallery')
+</script>
+
+<style scoped>
+@media (max-width: 1000px) {
+  div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: repeat(2,1fr) !important; }
+}
+@media (max-width: 600px) {
+  div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+}
+</style>
