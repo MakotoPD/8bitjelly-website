@@ -77,8 +77,8 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          src: 'https://cloud.umami.is/script.js',
-          'data-website-id': 'f5e6e1c2-8bca-41c2-b6e3-c0f66d215ddf',
+          src: 'https://analytics.makoto.com.pl/script.js',
+          'data-website-id': '148d2ff7-199c-43fe-9ac4-d9d99ec18c09',
           defer: true,
         },
       ],
@@ -125,7 +125,7 @@ export default defineNuxtConfig({
     smtpPassword: '',
     contactTo: 'hello@8bitjelly.com',
     public: {
-      turnstileSiteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY || '',
+      turnstileSiteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY || '',
     },
   },
 
