@@ -149,6 +149,21 @@
     "contactTitle": "Contact — 8BitJelly",
     "contactDescription": "Get in touch with the 8BitJelly crew — join the team, collaborate, or just say hello."
   },
+  "error": {
+    "eyebrow": "Game Over",
+    "404": {
+      "title": "This level does not exist",
+      "text": "The page you are looking for got lost somewhere between worlds. Check the address or jump back to the start."
+    },
+    "403": {
+      "title": "No key for this door",
+      "text": "You do not have access to this area. If that seems wrong, get in touch with us."
+    },
+    "500": {
+      "title": "Something broke on our side",
+      "text": "Our jelly slipped on a bug. Try again in a moment — if it keeps happening, let us know."
+    }
+  },
   "common": {
     "loading": "Loading...",
     "error": "Something went wrong",

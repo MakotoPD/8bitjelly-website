@@ -149,6 +149,21 @@
     "contactTitle": "Kontakt — 8BitJelly",
     "contactDescription": "Skontaktuj się z ekipą 8BitJelly — dołącz do zespołu, nawiąż współpracę lub po prostu napisz cześć."
   },
+  "error": {
+    "403": {
+      "title": "Brak klucza do tych drzwi",
+      "text": "Nie masz dostępu do tego miejsca. Jeśli to pomyłka, napisz do nas."
+    },
+    "404": {
+      "title": "Ten poziom nie istnieje",
+      "text": "Strona, której szukasz, zgubiła się gdzieś między światami. Sprawdź adres albo wróć na start."
+    },
+    "500": {
+      "title": "Coś się zepsuło po naszej stronie",
+      "text": "Nasza galaretka poślizgnęła się na bugu. Spróbuj za chwilę — jeśli problem wraca, daj nam znać."
+    },
+    "eyebrow": "Game Over"
+  },
   "common": {
     "loading": "Ładowanie...",
     "error": "Coś poszło nie tak",
