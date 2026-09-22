@@ -40,6 +40,15 @@
             </div>
           </div>
 
+          <div v-if="form.reason === 'join'" class="join-notice">
+            <p>
+              <strong>{{ $t('contact.joinNoticeLead') }}</strong>
+              {{ $t('contact.joinNoticeBeforeUnpaid') }}
+              <strong>{{ $t('contact.joinNoticeUnpaid') }}</strong>
+              {{ $t('contact.joinNoticeRest') }}
+            </p>
+          </div>
+
           <!-- Step 2: Info -->
           <div class="form-step">
             <div class="step-label">
@@ -240,6 +249,16 @@ async function submit() {
 }
 .topic h4 { margin: 0 0 4px; font-size: 16px; font-weight: 700; }
 .topic p { margin: 0; font-size: 13px; line-height: 1.4; }
+.join-notice {
+  margin: -8px 0 32px;
+  padding: 18px 20px;
+  border: 2.5px solid var(--ink);
+  border-radius: 14px;
+  background: var(--yellow);
+  box-shadow: 4px 4px 0 var(--ink);
+  line-height: 1.55;
+}
+.join-notice p { margin: 0; }
 .fields { display: grid; gap: 18px; }
 .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
