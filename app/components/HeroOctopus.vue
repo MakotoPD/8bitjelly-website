@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Group, Material, MeshStandardMaterial, Texture, WebGLRenderer } from 'three'
+import type { Group, Material, MeshToonMaterial, Texture, WebGLRenderer } from 'three'
 
 const host = ref<HTMLElement>()
 const failed = ref(false)
@@ -20,7 +20,8 @@ const pointer = { x: 0, y: 0 }
 let renderer: WebGLRenderer | undefined
 let model: Group | undefined
 let bodyTexture: Texture | undefined
-let materials: MeshStandardMaterial[] = []
+let toonGradient: Texture | undefined
+let materials: Material[] = []
 let visibilityObserver: IntersectionObserver | undefined
 let resizeObserver: ResizeObserver | undefined
 let disposed = false
@@ -74,13 +75,18 @@ onMounted(async () => {
     model = octopus
     bodyTexture = texture
     texture.colorSpace = THREE.SRGBColorSpace
-    const materialByName: Record<string, MeshStandardMaterial> = {
-      'Material.001': new THREE.MeshStandardMaterial({ map: texture, roughness: 0.8 }),
-      'Material.002': new THREE.MeshStandardMaterial({ color: '#853249', roughness: 0.8 }),
-      'Material.003': new THREE.MeshStandardMaterial({ color: '#b13e60', roughness: 0.8 }),
-      'Material.004': new THREE.MeshStandardMaterial({ color: '#9b758e', roughness: 0.8 }),
+    toonGradient = new THREE.DataTexture(new Uint8Array([45, 115, 190, 255]), 4, 1, THREE.RedFormat)
+    toonGradient.minFilter = THREE.NearestFilter
+    toonGradient.magFilter = THREE.NearestFilter
+    toonGradient.needsUpdate = true
+    const materialByName: Record<string, MeshToonMaterial> = {
+      'Material.001': new THREE.MeshToonMaterial({ map: texture, gradientMap: toonGradient }),
+      'Material.002': new THREE.MeshToonMaterial({ color: '#71263f', gradientMap: toonGradient }),
+      'Material.003': new THREE.MeshToonMaterial({ color: '#b93660', gradientMap: toonGradient }),
+      'Material.004': new THREE.MeshToonMaterial({ color: '#8f6680', gradientMap: toonGradient }),
     }
-    materials = Object.values(materialByName)
+    const outlineMaterial = new THREE.MeshBasicMaterial({ color: '#1b0b2e', side: THREE.BackSide })
+    materials = [...Object.values(materialByName), outlineMaterial]
     octopus.traverse(child => {
       if (!(child instanceof THREE.Mesh)) return
       const original = child.material
@@ -90,18 +96,25 @@ onMounted(async () => {
     })
 
     const bounds = new THREE.Box3().setFromObject(octopus)
+    const center = bounds.getCenter(new THREE.Vector3())
     const scale = 4.2 / Math.max(...bounds.getSize(new THREE.Vector3()).toArray())
-    octopus.position.copy(bounds.getCenter(new THREE.Vector3())).multiplyScalar(-scale)
-    octopus.scale.setScalar(scale)
+    octopus.position.copy(center).multiplyScalar(-1)
+    const outline = octopus.clone()
+    outline.scale.setScalar(1.025)
+    outline.position.copy(center).multiplyScalar(-1.025)
+    outline.traverse(child => {
+      if (child instanceof THREE.Mesh) child.material = outlineMaterial
+    })
     const pivot = new THREE.Group()
-    pivot.add(octopus)
+    pivot.scale.setScalar(scale)
+    pivot.add(outline, octopus)
     scene.add(pivot)
 
-    scene.add(new THREE.HemisphereLight(0xffffff, 0x7a3553, 1.4))
-    const keyLight = new THREE.DirectionalLight(0xffffff, 1.8)
+    scene.add(new THREE.HemisphereLight(0xfff6fb, 0x67203d, 0.7))
+    const keyLight = new THREE.DirectionalLight(0xffffff, 2.2)
     keyLight.position.set(-3, 5, 6)
     scene.add(keyLight)
-    const fillLight = new THREE.DirectionalLight(0xffc4d9, 0.8)
+    const fillLight = new THREE.DirectionalLight(0xff8fba, 0.35)
     fillLight.position.set(4, -2, -3)
     scene.add(fillLight)
 
@@ -154,6 +167,7 @@ onUnmounted(() => {
   })
   materials.forEach(material => material.dispose())
   bodyTexture?.dispose()
+  toonGradient?.dispose()
   renderer?.dispose()
   renderer?.domElement.remove()
 })
