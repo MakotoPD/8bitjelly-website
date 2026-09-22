@@ -126,7 +126,8 @@
     "sending": "Wysyłanie...",
     "success": "Wiadomość wysłana! Odezwiemy się wkrótce.",
     "error": "Coś poszło nie tak. Spróbuj ponownie.",
-    "whale": "Cześć! 👋"
+    "whale": "Cześć! 👋",
+    "turtleAlt": "Animowany żółwik 3D"
   },
   "footer": {
     "desc": "Hobbyistyczna ekipa twórców gier, artystów i marzycieli tworzących gry z miłością.",

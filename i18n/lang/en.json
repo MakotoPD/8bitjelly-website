@@ -126,7 +126,8 @@
     "sending": "Sending...",
     "success": "Message sent! We'll get back to you soon.",
     "error": "Something went wrong. Please try again.",
-    "whale": "Hello! 👋"
+    "whale": "Hello! 👋",
+    "turtleAlt": "Animated 3D turtle"
   },
   "footer": {
     "desc": "A hobby group of game developers, artists, and dreamers making games with love.",

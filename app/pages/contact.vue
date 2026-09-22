@@ -7,9 +7,9 @@
           <h1 class="display">{{ $t('contact.title') }} <em>{{ $t('contact.titleEm') }}</em></h1>
           <p>{{ $t('contact.subtitle') }}</p>
         </div>
-        <div class="whale-side">
-          <div class="whale-side-disc"></div>
-          <img src="/whale.png" alt="Whale mascot" class="whale-side-img" />
+        <div class="turtle-side">
+          <div class="turtle-side-disc"></div>
+          <ContactTurtle />
           <div class="speech">{{ $t('contact.whale') }}</div>
         </div>
       </div>
@@ -188,15 +188,14 @@ async function submit() {
 </script>
 
 <style scoped>
-.whale-side {
+.turtle-side {
   position: relative; height: 320px;
   display: flex; align-items: center; justify-content: center;
 }
-.whale-side-disc {
+.turtle-side-disc {
   position: absolute; width: 260px; height: 260px; border-radius: 50%;
   background: var(--yellow); border: 3px solid var(--ink); box-shadow: 8px 8px 0 var(--ink);
 }
-.whale-side-img { position: relative; width: 280px; z-index: 2; filter: drop-shadow(0 14px 22px rgba(27,11,46,.25)); }
 .speech {
   position: absolute; top: 10px; left: -10px;
   background: var(--cream); border: 2.5px solid var(--ink);
@@ -277,7 +276,7 @@ async function submit() {
 
 @media (max-width: 1000px) {
   .contact-grid { grid-template-columns: 1fr; }
-  .whale-side { display: none; }
+  .turtle-side { display: none; }
 }
 @media (max-width: 600px) {
   .contact-section { padding: 24px 0 60px; }
