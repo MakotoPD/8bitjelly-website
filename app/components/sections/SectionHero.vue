@@ -6,7 +6,7 @@
     <div class="blob b3"></div>
 
     <div class="wrap hero-grid">
-      <div class="hero-left" ref="heroLeft">
+      <div class="hero-left">
         <span class="eyebrow">{{ $t('hero.eyebrow') }}</span>
         <h1 class="hero-title display">
           <span class="row"><span class="word">{{ $t('hero.title1') }}</span></span>
@@ -25,9 +25,9 @@
         </div>
       </div>
 
-      <div class="hero-whale-stage" ref="whaleStage">
-        <div class="whale-disc"></div>
-        <img src="/whale.png" class="whale-img" alt="8BitJelly whale mascot" ref="whaleImg" />
+      <div class="hero-octopus-stage">
+        <div class="octopus-disc"></div>
+        <HeroOctopus />
         <div class="orbit-dot d1">🎮</div>
         <div class="orbit-dot d2">🎨</div>
         <div class="orbit-dot d3">🎵</div>
@@ -41,22 +41,15 @@
 import { gsap } from 'gsap'
 
 const localePath = useLocalePath()
-const heroLeft = ref<HTMLElement>()
-const whaleStage = ref<HTMLElement>()
-const whaleImg = ref<HTMLElement>()
-
 onMounted(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
   gsap.from('.hero-left .eyebrow', { y: 30, opacity: 0, duration: 0.7, ease: 'power3.out' })
   gsap.from('.hero-title .word', { y: 80, opacity: 0, duration: 0.8, stagger: 0.12, ease: 'power3.out', delay: 0.1 })
   gsap.from('.hero-sub', { y: 20, opacity: 0, duration: 0.6, ease: 'power3.out', delay: 0.45 })
   gsap.from('.hero-cta', { y: 20, opacity: 0, duration: 0.6, ease: 'power3.out', delay: 0.6 })
-  gsap.from('.whale-disc', { scale: 0, opacity: 0, duration: 0.8, ease: 'back.out(1.5)', delay: 0.3 })
-  gsap.from('.whale-img', { y: 40, opacity: 0, duration: 0.9, ease: 'power3.out', delay: 0.5 })
+  gsap.from('.octopus-disc', { scale: 0, opacity: 0, duration: 0.8, ease: 'back.out(1.5)', delay: 0.3 })
+  gsap.from('.octopus-model', { y: 40, opacity: 0, duration: 0.9, ease: 'power3.out', delay: 0.5 })
   gsap.from('.orbit-dot', { scale: 0, opacity: 0, duration: 0.4, stagger: 0.1, ease: 'back.out(2)', delay: 0.9 })
-
-  if (whaleImg.value) {
-    gsap.to(whaleImg.value, { y: -18, duration: 2.8, ease: 'power1.inOut', yoyo: true, repeat: -1 })
-  }
 
   gsap.to('.orbit-dot.d1', { y: 14, duration: 2.4, ease: 'sine.inOut', yoyo: true, repeat: -1 })
   gsap.to('.orbit-dot.d2', { y: -16, duration: 2.8, ease: 'sine.inOut', yoyo: true, repeat: -1 })
@@ -113,12 +106,12 @@ onMounted(() => {
 }
 .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
 
-.hero-whale-stage {
+.hero-octopus-stage {
   position: relative;
   height: 540px;
   display: flex; align-items: center; justify-content: center;
 }
-.whale-disc {
+.octopus-disc {
   position: absolute;
   width: 460px; height: 460px;
   border-radius: 50%;
@@ -126,17 +119,11 @@ onMounted(() => {
   border: 3px solid var(--ink);
   box-shadow: 10px 10px 0 var(--ink);
 }
-.whale-disc::before {
+.octopus-disc::before {
   content: ''; position: absolute; inset: 14px;
   border: 2px dashed var(--cream);
   border-radius: 50%;
   opacity: 0.5;
-}
-.whale-img {
-  position: relative;
-  width: 480px; max-width: 90%;
-  filter: drop-shadow(0 18px 30px rgba(27,11,46,.25));
-  z-index: 2;
 }
 .orbit-dot {
   position: absolute;
@@ -154,8 +141,7 @@ onMounted(() => {
 
 @media (max-width: 1000px) {
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-whale-stage { height: 380px; }
-  .whale-disc { width: 320px; height: 320px; }
-  .whale-img { width: 340px; }
+  .hero-octopus-stage { height: 380px; }
+  .octopus-disc { width: 320px; height: 320px; }
 }
 </style>
